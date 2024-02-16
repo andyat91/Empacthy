@@ -9,8 +9,8 @@ export default function Header() {
         <div className="header wrap">
         <h4>Empacthy</h4>
         <div className="linkheader">
-            <Link className="buttonheader" to="/empacthy">¿Quienes somos?</Link>
-            <Link className="buttonheader" to="/registro">REGISTRATE</Link>
+            <Link className="buttonheader" to="/empacthy">¿Quiénes somos?</Link>
+            <Link className="buttonheader" to="/registro">REGÍSTRATE</Link>
             <Link className="buttonheader" to="/registro">Iniciar Sesion</Link>
             
         </div>

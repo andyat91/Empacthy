@@ -1,0 +1,9 @@
+.mosaic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rowmosaic {
+    display: flex;
+    flex-direction: row;
+}
