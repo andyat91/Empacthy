@@ -1,0 +1,35 @@
+.header h4{
+    margin-top: 16px;
+    margin-bottom: 16px;
+  
+}
+
+.header{
+
+    background-color: var(--white);
+    color: var(--outerspace);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    
+}
+.linkheader{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.buttonheader{
+
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 8px;
+    color: var(--outerspace);
+    margin-left: 4px;
+   
+
+    text-decoration: none;
+}
+
+
+
