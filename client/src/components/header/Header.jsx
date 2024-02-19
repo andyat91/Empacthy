@@ -11,7 +11,7 @@ export default function Header() {
         <div className="linkheader">
             <Link className="buttonheader" to="/empacthy">¿Quiénes somos?</Link>
             <Link className="buttonheader" to="/registro">REGÍSTRATE</Link>
-            <Link className="buttonheader" to="/registro">Iniciar Sesion</Link>
+            <Link className="buttonheader" to="/login">Iniciar Sesion</Link>
             
         </div>
         </div>

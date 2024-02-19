@@ -5,7 +5,7 @@ export default function  ElementMosaic() {
 
     return(
         <div className="elementmosaic">
-            <h1>E</h1>
+            <h1>Empacthy</h1>
         </div>
     )
 }
