@@ -1,0 +1,93 @@
+.logincontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px;
+    
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    border:4px solid;
+    border-color: var(--primary);
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+
+}
+
+.login button {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border:2px solid;
+    border-color: var(--primary);
+    color:var(--purple);
+    background-color: var(--white);
+    font-size: large;
+    font-weight: 800;
+
+}
+.login button:hover {
+    background-color: var(--purple);
+    color: var(--white);
+    border-color: var(--purple);
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+   
+
+
+}
+
+.login form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid;
+    border-color: var(--primary);
+}
+
+.login .linktoregister{
+    padding: 8px;
+    text-decoration: none;
+    font-size: large;
+}
+
+.login .linktoregister:hover{
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 8px;
+    
+}
+
+.login .inputlogin{
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border:2px solid;
+    border-color: var(--primary);
+    color:var(--purple);
+    background-color: var(--white);
+    font-weight: 900;
+    text-align: center;
+}
+
+.login h1{
+    margin: 0px;
+ 
+}
+.login .bi-person{
+    margin: 0px;
+    color: var(--purple);
+    font-size: 160px;
+}

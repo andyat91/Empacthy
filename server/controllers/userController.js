@@ -79,7 +79,7 @@ const loginUserCompany = async (req, res) => {
       .setExpirationTime("2h")
       .sign(encoder.encode(process.env.JWT_SECRET));
 
-    return res.send({ jwt });
+    return res.send(user);
   } catch (e) {
     console.log(e.message);
   }
@@ -166,7 +166,7 @@ const loginUserOrganization = async (req, res) => {
       .setExpirationTime("2h")
       .sign(encoder.encode(process.env.JWT_SECRET));
 
-    return res.send({ jwt });
+    return res.send({ user });
   } catch (e) {
     console.log(e.message);
   }

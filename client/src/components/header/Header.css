@@ -1,11 +1,19 @@
-.header h4 {
+.nameslogan {
   margin-top: 16px;
   margin-bottom: 16px;
 }
+.nameslogan h4 {
+  margin: 0px;
+  font-weight: bold;
+  color: var(--purple);
+}
+.nameslogan h5 {
+  margin: 0px;
+}
 
 .header {
-  background-color: var(--white);
-  color: var(--outerspace);
+
+  color: var(--black);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,14 +25,51 @@
 }
 
 .buttonheader {
+  font-weight: 800;
   padding: 8px;
   border: 2px solid;
   border-radius: 8px;
-  color: var(--outerspace);
+  color: var(--pearl);
   margin-left: 6px;
   text-decoration: none;
 }
 
 .buttonheader:hover{
-color: var(--primary);
+color: var(--white);
+background-color: var(--purple);
+}
+
+@media only screen and (max-width: 600px) {
+ 
+  .linkheader{
+    display: flex;
+  }
+ .buttonheader{
+  font-size: 0;
+  padding: 6px;
+ 
+ } 
+
+ .aboutus::before{
+
+  content: '\F434';
+  font-family: 'bootstrap-icons';
+  font-size: 20px;
+  margin:0px
+ }
+ .registroheader::before{
+
+  content: '\F4DD';
+  font-family: 'bootstrap-icons';
+  font-size: 20px;
+  margin:0px
+ }
+ .loginheader::before{
+
+  content: '\F67A';
+  font-family: 'bootstrap-icons';
+  font-size: 20px;
+  margin:0px
+ }
+ 
 }

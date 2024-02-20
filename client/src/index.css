@@ -11,25 +11,22 @@
   
   :root{
 /* B8A382 */
-  --hue:38;
+  --hue:62;
   --primary: 
-  hsl(var(--hue) 28%, 62%, 1);
+  hsl(var(--hue) 41%, 57%, 1);
   --dark-primary: 
   hsl(var(--hue) 30%, 35%, 1);
   --clear-primary: 
   hsl(var(--hue) 30%, 70%, 1);
   --white:
-  hsl(var(--hue) 20%, 94%, 1);
+  hsl(var(--hue) 20%, 97%, 1);
   --black:
   hsl(var(--hue) 30%, 10%, 1);
 
 /* EDDFC7 */
-  --pearl:
-  hsl(37 51%, 85%, 1);
+  --purple:
+  hsl(244 25%, 45%, 1);
 
-/* 47484C */
-  --outerspace:
-  hsl(228 3%,29%, 1);
   }
 
   
@@ -65,7 +62,7 @@
   
 
   body{
-    color: var(--dark-primary);
+    color: var(--pearl);
     background-color: var(--white);
     margin: 0px
   }
