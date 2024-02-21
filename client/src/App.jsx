@@ -6,6 +6,11 @@ import Registro from "./views/Registro/Registro";
 import AboutUs from "./views/AboutUs/AboutUs";
 import AuthContextProvider from "./context/AuthContext";
 import { Toaster } from "react-hot-toast";
+import PublicRoutes from "./router/PublicRoutes/PublicRoutes";
+import PrivateRoutes from "./router/PrivetRoutes/PrivateRoutes";
+import CompanyHome from "./views/CompanyHome/CompanyHome";
+import OrganizationHome from "./views/OrganizationHome.jsx/OrganizationHome";
+import Match from "./views/Match/Match";
 
 function App() {
   return (
@@ -15,9 +20,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registro" element={<Registro />} />
-            <Route path="/empacthy" element={<AboutUs />} />
+            <Route element={<PublicRoutes/>}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/registro" element={<Registro />} />
+              <Route path="/empacthy" element={<AboutUs />} />
+            </Route>
+            <Route element={<PrivateRoutes/>}>
+              <Route path="/companyhome" element={<CompanyHome/>}>
+                <Route path="/companyhome/match" element={<Match/>}/>
+              </Route>
+              <Route path="/companyorganization" element={<OrganizationHome/> }/>
+            </Route>
           </Route>
         </Routes>
       </AuthContextProvider>

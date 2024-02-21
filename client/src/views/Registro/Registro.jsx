@@ -1,8 +1,13 @@
-
+import PersonLogin from "../../assets/icons/PersonLogin"
+import "./Registro.css"
 
 export default function Registro() {
 
     return(
-        <h1>Esto es register</h1>
+        <div className="registercontainer">
+            <div className="register">
+                <PersonLogin/>
+            </div>
+        </div>
     )
 }
