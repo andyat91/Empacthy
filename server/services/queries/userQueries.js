@@ -41,6 +41,7 @@ userQueries.addCompany = async (userData) => {
            cargo: userData.cargo,
            sector: userData.sector,
            tipoempresa: userData.tipoempresa,
+           localizacion: userData.localizacion,
            registerDate: moment().format("YYYY-MM-DD HH:mm:ss"),
            rol: 0
         }                  

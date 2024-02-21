@@ -1,5 +1,6 @@
 import { createContext, useState, useContext } from "react";
 import toast from "react-hot-toast";
+import { host } from "../const/host";
 
 
 const AuthContext = createContext({
@@ -20,7 +21,7 @@ export default function AuthContextProvider({ children }) {
 
   async function login(user) {
     try {
-      const response = await fetch(`http://localhost:8000/user/logincompany`, {
+      const response = await fetch(`${host}/user/logincompany`, {
         method: "POST",
         body: JSON.stringify(user),
         headers: {

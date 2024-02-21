@@ -12,7 +12,8 @@ const addCompany = async (req, res) => {
     telefono,
     cargo,
     sector,
-    tipoempresa
+    tipoempresa,
+    localizacion
   } = req.body;
 
   if (
@@ -24,7 +25,8 @@ const addCompany = async (req, res) => {
     !telefono||
     !cargo ||
     !sector ||
-    !tipoempresa 
+    !tipoempresa ||
+    !localizacion
   )
     return res.status(400).send({ message: "Error al recibir campos vacios" });
 

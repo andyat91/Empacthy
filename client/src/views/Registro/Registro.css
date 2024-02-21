@@ -8,7 +8,8 @@
 .register{
     display: flex;
     flex-direction: column;
-    max-width: 480px;
+    align-items: center;
+    max-width: 680px;
     border:4px solid;
     border-color: var(--primary);
     padding-right: 80px;
@@ -18,5 +19,89 @@
     border-radius: 16px;
     margin-bottom: 16px;
     text-align: center;
+
+}
+
+.register .inputregister{
+   width: 100%;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border:2px solid;
+    border-color: var(--primary);
+    color:var(--purple);
+    background-color: var(--white);
+    font-weight: 900;
+    text-align: center;
+}
+
+.register h1{
+    margin: 0px;
+ 
+}
+.register .bi-person{
+    margin: 0px;
+    color: var(--purple);
+    font-size: 160px;
+}
+
+.register form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+   
+}
+
+.register form .registercolumn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    
+   
+}
+
+.register form .registercolumn .columnleft{
+
+    margin-right: 32px;
+    padding-right: 32px;
+    border-right: 2px solid;
+    border-color: var(--primary);
+   
+}
+
+
+.register button {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border:2px solid;
+    border-color: var(--primary);
+    color:var(--purple);
+    background-color: var(--white);
+    font-size: large;
+    font-weight: 800;
+
+}
+.register button:hover {
+    background-color: var(--purple);
+    color: var(--white);
+    border-color: var(--purple);
+}
+
+.register .bi-fingerprint {
+
+    color: var(--purple);
+    font-size: 160px;
+    max-width: 160px;
+    border: 6px solid;
+    border-radius: 60px;
+    margin-bottom: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 170px;
+    padding-left: 16px;
+    
 
 }
