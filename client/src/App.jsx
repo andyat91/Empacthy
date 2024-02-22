@@ -11,6 +11,7 @@ import PrivateRoutes from "./router/PrivetRoutes/PrivateRoutes";
 import CompanyHome from "./views/CompanyHome/CompanyHome";
 import OrganizationHome from "./views/OrganizationHome.jsx/OrganizationHome";
 import Match from "./views/Match/Match";
+import RegistroOrg from "./views/RegisterOrg/RegistroOrg";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route element={<PublicRoutes/>}>
               <Route path="/login" element={<Login />} />
               <Route path="/registro" element={<Registro />} />
+              <Route path="/registroorg" element={<RegistroOrg/>}/>
               <Route path="/empacthy" element={<AboutUs />} />
             </Route>
             <Route element={<PrivateRoutes/>}>

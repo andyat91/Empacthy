@@ -98,9 +98,9 @@ const addOrganization = async (req, res) => {
     password,
     telefono,
     cargo,
-    areaong,
     causas,
-    tipo
+    tipo,
+    localizacion
   } = req.body;
 
   if (
@@ -111,9 +111,9 @@ const addOrganization = async (req, res) => {
     !password ||
     !telefono||
     !cargo ||
-    !areaong ||
     !causas ||
-    !tipo
+    !tipo ||
+    !localizacion
   )
     return res.status(400).send({ message: "Error al recibir campos vacios" });
 

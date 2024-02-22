@@ -67,9 +67,9 @@ userQueries.addOrganization = async (userData) => {
            password: md5(userData.password),
            telefono: userData.telefono,
            cargo: userData.cargo,
-           areaong: userData.areaong,
            causas: userData.causas,
            tipo: userData.tipo,
+           localizacion: userData.localizacion,
            registerDate: moment().format("YYYY-MM-DD HH:mm:ss"),
            rol: 0
         }                      

@@ -105,3 +105,18 @@
     
 
 }
+
+@media only screen and (max-width: 800px) {
+ 
+    .register form .registercolumn{
+        display: flex;
+        flex-direction: column;
+    }
+    .register form .registercolumn .columnleft {
+        margin: 0;
+        border:none;
+        padding: 0;
+       
+    }
+   
+  }

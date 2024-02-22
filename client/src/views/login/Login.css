@@ -21,6 +21,20 @@
 
 }
 
+.login h2 {
+    margin: 0;
+    font-size: inherit;
+}
+.login h2 a{
+  
+    color: var(--purple);
+    font-family: "Black Ops One", system-ui;
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+
+}
+
 .login button {
     margin-bottom: 8px;
     padding: 8px;

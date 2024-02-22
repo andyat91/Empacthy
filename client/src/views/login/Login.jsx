@@ -3,6 +3,7 @@ import PersonLogin from "../../assets/icons/PersonLogin";
 import { useAuthContext } from "../../context/AuthContext";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import BrandLogo from "../../assets/icons/BrandLogo";
 
 export default function Login() {
   const { login, errorMessage } = useAuthContext();
@@ -29,7 +30,7 @@ export default function Login() {
         <h1>
           <PersonLogin />{" "}
         </h1>
-        <h4>Bievenido de nuevo a Empacthy</h4>
+        <h4>Bievenido de nuevo a <BrandLogo className="brandlogo"/> </h4>
         <button onClick={handleLogintype}>{logintype === "Soy una Empresa"? "Soy una Empresa" : "Soy una Organización"} </button>
         <form onSubmit={handleLogin}>
           <div>
