@@ -8,6 +8,7 @@ const AuthContext = createContext({
   login: () => {},
   logout: () => {},
   errorMessage: "",
+
 });
 
 export default function AuthContextProvider({ children }) {
@@ -19,9 +20,24 @@ export default function AuthContextProvider({ children }) {
 
   const [errorMessage, setErrorMessage] = useState("");
 
-  async function login(user) {
+  async function login(user,logintype) {
+    
+let response ;
+
     try {
-      const response = await fetch(`${host}/user/logincompany`, {
+
+      if(logintype === "Soy una Empresa") {
+
+       response = await fetch(`${host}/user/logincompany`, {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } else {
+
+       response = await fetch(`${host}/user/loginorganization`, {
         method: "POST",
         body: JSON.stringify(user),
         headers: {
@@ -29,10 +45,11 @@ export default function AuthContextProvider({ children }) {
         },
       });
 
+    }
       if (response.ok) {
         const userLogged = await response.json();
-        setUser(userLogged);
-        console.log(userLogged)
+        setUser({...userLogged, tipo:logintype });
+       
         localStorage.setItem("user", JSON.stringify(userLogged));
         setErrorMessage("");
         toast.success(`Estas en la Home de ${userLogged.denominacion}`)

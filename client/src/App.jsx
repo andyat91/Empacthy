@@ -29,7 +29,7 @@ function App() {
               <Route path="/companyhome" element={<CompanyHome/>}>
                 <Route path="/companyhome/match" element={<Match/>}/>
               </Route>
-              <Route path="/companyorganization" element={<OrganizationHome/> }/>
+              <Route path="/organizationhome" element={<OrganizationHome/> }/>
             </Route>
           </Route>
         </Routes>

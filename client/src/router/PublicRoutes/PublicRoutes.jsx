@@ -6,9 +6,10 @@ export default function PublicRoutes() {
 
 const {user} = useAuthContext();
 const location = useLocation();
+const destinationLogin = user?.tipo === "Soy una Empresa" ? "/companyhome" : "/organizationhome" ;
 
 return user ? (
-    <Navigate to="/companyhome" state={{from: location }} replace/>
+    <Navigate to={destinationLogin} state={{from: location }} replace/>
 ) : (
     <Outlet/>
 )

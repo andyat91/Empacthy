@@ -8,6 +8,7 @@ export default function Login() {
   const { login, errorMessage } = useAuthContext();
   const [email, setEmail] = useState("");
   const [PASSWORD, setPassword] = useState("");
+  const [logintype, setLogintype] = useState("Soy una Empresa");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,8 +16,13 @@ export default function Login() {
       email,
       PASSWORD,
     };
-    login(user);
+    login(user,logintype);
   };
+
+  function handleLogintype() {
+    setLogintype((prevLoginType) => (prevLoginType === "Soy una Empresa" ? "Soy una Organización" : "Soy una Empresa"))
+  }
+
   return (
     <div className="logincontainer">
       <div className="login">
@@ -24,6 +30,7 @@ export default function Login() {
           <PersonLogin />{" "}
         </h1>
         <h4>Bievenido de nuevo a Empacthy</h4>
+        <button onClick={handleLogintype}>{logintype === "Soy una Empresa"? "Soy una Empresa" : "Soy una Organización"} </button>
         <form onSubmit={handleLogin}>
           <div>
             <input
