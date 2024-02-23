@@ -20,8 +20,8 @@ export default function Header() {
     return(
         <div className="header wrap">
             <div className="nameslogan">
-        <BrandLogo/>
-        <h5>Match making B2Org </h5>
+        <h2><BrandLogo/></h2>
+        <h5>Matchmaking B2Org </h5>
         </div>
         <div className="linkheader">
             {user ? (

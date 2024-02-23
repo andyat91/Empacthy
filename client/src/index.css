@@ -22,6 +22,8 @@
   hsl(var(--hue) 20%, 97%, 1);
   --black:
   hsl(var(--hue) 30%, 10%, 1);
+  --grey:
+  hsl(var(--hue) 41%, 34%, 0.5);
 
 /* EDDFC7 */
   --purple:

@@ -30,7 +30,7 @@ export default function Login() {
         <h1>
           <PersonLogin />{" "}
         </h1>
-        <h4>Bievenido de nuevo a <BrandLogo className="brandlogo"/> </h4>
+        <h4>Bievenido de nuevo a <BrandLogo /> </h4>
         <button onClick={handleLogintype}>{logintype === "Soy una Empresa"? "Soy una Empresa" : "Soy una Organización"} </button>
         <form onSubmit={handleLogin}>
           <div>

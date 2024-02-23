@@ -1,0 +1,79 @@
+.footercontainer {
+  background-color: var(--grey);
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: var(--white);
+}
+
+.footer ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: large;
+  padding-left: 0px;
+
+}
+.footer ul li:hover {
+    color:var(--purple);
+    cursor: pointer;
+}
+.footer h2 {
+  margin: 0px;
+}
+.footer h2 a {
+  font-weight: bold;
+  color: var(--purple);
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.footer h5 {
+  margin: 0px;
+  font-family: "Black Ops One", system-ui;
+  color: var(--white);
+  padding-bottom: 32px;
+  border-bottom: 2px solid;
+}
+
+.footer .brandcopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .copyright {
+    font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.footer .redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+
+}
+.redes h4 {
+    margin: 0px;
+}
+
+.redes a{
+    text-decoration: none;
+    color: var(--white);
+    font-size: large;
+}
+.redes a:hover{
+    color:var(--purple);
+    cursor: pointer;
+}

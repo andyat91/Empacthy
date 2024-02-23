@@ -21,16 +21,15 @@
 
 }
 
-.login h2 {
+.login h4 {
     margin: 0;
     font-size: inherit;
 }
-.login h2 a{
+.login h4 a{
   
     color: var(--purple);
     font-family: "Black Ops One", system-ui;
     font-weight: 200;
-    font-style: normal;
     text-decoration: none;
 
 }
