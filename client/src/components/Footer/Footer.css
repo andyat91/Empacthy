@@ -21,6 +21,7 @@
   align-items: baseline;
   font-size: large;
   padding-left: 0px;
+  padding-right: 60px;
 
 }
 .footer ul li:hover {
@@ -76,4 +77,31 @@
 .redes a:hover{
     color:var(--purple);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+ 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer ul{
+  display: flex;
+  align-items: center;
+  padding-right: 0px;
+}
+ 
+.footer .brandcopy {
+  margin-top: 32px;
+}
+
+.copyright{
+  display: none;
+}
+
+.footer .redes{
+  display: flex;
+  align-items: center;
+}
 }
