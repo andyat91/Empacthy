@@ -33,6 +33,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  position: relative;
+  z-index: 1;
   
 }
 .linkheader {
@@ -90,8 +92,13 @@ color: var(--white);
 background-color: var(--purple);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .linkheader{
     display: flex;
   }
@@ -99,6 +106,15 @@ background-color: var(--purple);
   font-size: 0;
   padding: 6px;
  } 
+.nameslogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+.nameslogan h2 {
+  font-size: 200;
+}
 
  .aboutus::before{
 

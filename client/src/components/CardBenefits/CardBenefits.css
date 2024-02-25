@@ -1,0 +1,10 @@
+.cardbusiness {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.cardbusiness img {
+   width: 35%;
+}
