@@ -9,7 +9,7 @@ export default function Login() {
   const { login, errorMessage } = useAuthContext();
   const [email, setEmail] = useState("");
   const [PASSWORD, setPassword] = useState("");
-  const [logintype, setLogintype] = useState("Soy una Empresa");
+  const [logintype, setLogintype] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -20,8 +20,8 @@ export default function Login() {
     login(user,logintype);
   };
 
-  function handleLogintype() {
-    setLogintype((prevLoginType) => (prevLoginType === "Soy una Empresa" ? "Soy una Organización" : "Soy una Empresa"))
+  function handleLogintype(type) {
+    setLogintype(type)
   }
 
   return (
@@ -30,8 +30,11 @@ export default function Login() {
         <h1>
           <PersonLogin />{" "}
         </h1>
-        <h4>Bievenido de nuevo a <BrandLogo /> </h4>
-        <button onClick={handleLogintype}>{logintype === "Soy una Empresa"? "Soy una Empresa" : "Soy una Organización"} </button>
+        <h4>Bienvenido de nuevo a <BrandLogo />. </h4>
+        <div className="togglelogin">
+        <button onClick={() => handleLogintype("Soy una Empresa")} className={logintype == "Soy una Empresa" ? "activebuttontoggle buttontoggle" : "buttontoggle"} >Empresa</button>
+        <button onClick={() => handleLogintype("Soy una Organizacion")} className={logintype == "Soy una Organizacion" ? "activebuttontoggle buttontoggle" : "buttontoggle"}>Organización </button>
+        </div>
         <form onSubmit={handleLogin}>
           <div>
             <input

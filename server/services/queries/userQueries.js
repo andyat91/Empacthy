@@ -98,5 +98,27 @@ userQueries.getUserByEmailOrganization = async (email) => {
     };
 };
 
+userQueries.addInquiry = async (userData) => {
+
+    let conn = null
+    try {
+        conn = await db.createConnection()
+    
+        let userObj = {
+           consulta: userData.consulta,
+           nombre: userData.nombre,
+           email: userData.email,
+           telefono: userData.telefono,
+           registerDate: moment().format("YYYY-MM-DD HH:mm:ss")
+        }                      
+        return await db.query('INSERT INTO informacion SET ?', userObj, 'insert', conn)
+    } catch (e) {
+       throw new Error(e)
+    } finally {
+        conn && await conn.end();
+    }
+}
+
+
 
 module.exports =  userQueries ;

@@ -1,0 +1,24 @@
+.formbox h4{
+    margin: 0;
+}
+.formbox h5{
+    margin: 0;
+}
+
+.formbox{
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: var(--purple);
+    color: var(--white);
+}
+.formbox .formtext{
+    width: 30%;
+}
+
+.formbox form {
+    display: flex;
+}

@@ -13,4 +13,7 @@ dao.addOrganization= async (userData) => await userQueries.addOrganization(userD
 // Obtener usuario por email Organizaciones
 dao.getUserByEmailOrganization = async (email) => await userQueries.getUserByEmailOrganization(email);
 
+// Formulario de consulta
+dao.addInquiry= async (userData) => await userQueries.addInquiry(userData);
+
 module.exports = dao;

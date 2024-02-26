@@ -174,4 +174,34 @@ const loginUserOrganization = async (req, res) => {
   }
 };
 
-module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization};
+
+const addInquiry = async (req, res) => {
+  const {
+    consulta,
+    nombre,
+    email,
+    telefono
+  } = req.body;
+
+  if (
+    !consulta ||
+    !nombre||
+    !email ||
+    !telefono
+  )
+    return res.status(400).send({ message: "Error al recibir campos vacios" });
+
+  try {
+   
+    const addInquiry = await dao.addInquiry(req.body);
+    if (addInquiry)
+      return res.status(201).send({ message: `Gracias ${nombre}. En breve nos pondremos en contacto con usted.` });
+  } catch (e) {
+    console.log(e.message);
+    //Throw sirve para lanzar error inesperado, se puede señalar explicitamente que algo inusual ha sucedido
+    throw new Error(e);
+  }
+};
+
+
+module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry};

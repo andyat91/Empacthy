@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 120px;
+    padding: 80px;
     
 }
 .login{
@@ -22,14 +22,15 @@
 }
 
 .login h4 {
-    margin: 0;
+   margin-bottom: 32px;
+   margin-top: 0;
     font-size: inherit;
 }
 .login h4 a{
   
     color: var(--purple);
     font-family: "Black Ops One", system-ui;
-    font-weight: 200;
+    font-weight: 500;
     text-decoration: none;
 
 }
@@ -103,4 +104,35 @@
     margin: 0px;
     color: var(--purple);
     font-size: 160px;
+}
+
+.togglelogin {
+    display: flex;
+    border:2px solid;
+    border-color: var(--purple);
+    color:var(--purple);
+    border-radius: 8px;
+    padding: 0px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    
+}
+
+.togglelogin .buttontoggle{
+    border:none;
+    font-size: medium;
+    font-weight: 600;
+    width: 50%;
+    margin: 0;
+    border-radius: 0;
+    text-align: left;
+    padding: 16px;
+}
+.togglelogin .buttontoggle:hover {
+    background-color: var(--grey);
+}
+
+.togglelogin .activebuttontoggle {
+    background-color: var(--purple);
+    color: var(--white);
 }

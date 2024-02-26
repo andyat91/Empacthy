@@ -45,10 +45,23 @@ export default function RegistroOrg() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        toast.success(response.message);
-        navigate("/login")
+        const responseData = await response.json();
+        toast.success(responseData.message);
+        setNombre("");
+        setEmail("");
+        setTelefono("");
+        setPassword("");
+        setApellidos("");
+        setCargo("");
+        setDenominacion("");
+        setCausas("");
+        setTipo("");
+        setLocalizacion("");
+        navigate("/login");
+        
       } else {
-        toast.error(response.message);
+        const errorData = await response.json();
+        toast.error(errorData.message);
       }
     } catch (error) {
       console.log(error);
