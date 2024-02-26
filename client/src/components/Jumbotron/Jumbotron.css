@@ -12,7 +12,7 @@
   size-adjust: cover;
   border-radius: 16px;
   position: relative;
-  filter: brightness(90%);
+  filter: brightness(50%);
 }
 
 .textphoto {

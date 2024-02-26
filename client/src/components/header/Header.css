@@ -23,7 +23,7 @@
 .nameslogan h5 {
   margin: 0px;
   font-family: "Black Ops One", system-ui;
-  color: var(--primary);
+  color: var(--grey);
 }
 
 .header {
@@ -50,12 +50,23 @@
 .buttonheader {
   font-weight: 800;
   padding: 8px;
-  border: 2px solid;
   border-radius: 8px;
-  color: var(--pearl);
+  color: var(--black);
   margin-left: 6px;
   text-decoration: none;
 }
+
+.linkheader .loginheader {
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+.linkheader .registroheader{
+  border: none;
+}
+
+
+
 
 .header .containermenu {
    display: flex;
