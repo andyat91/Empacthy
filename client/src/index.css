@@ -28,6 +28,8 @@
 /* EDDFC7 */
   --purple:
   hsl(244 25%, 45%, 1);
+  --clear-purple:
+  hsl(244 25%, 65%, 1);
 
   }
 

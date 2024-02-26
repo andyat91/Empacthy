@@ -1,5 +1,6 @@
 .formbox h4{
     margin: 0;
+    font-family: "Black Ops One", system-ui;
 }
 .formbox h5{
     margin: 0;
@@ -7,6 +8,7 @@
 
 .formbox{
     display: flex;
+    justify-content: space-between;
     margin-top: 32px;
     margin-bottom: 32px;
     padding: 32px;
@@ -16,9 +18,87 @@
     color: var(--white);
 }
 .formbox .formtext{
-    width: 30%;
+    width: 40%;
+    padding-right: 16px;
+    border-right: 2px solid;
+}
+.formbox .formtext .icon {
+    margin-right: 44px;
+    text-align: right;
+    font-size: 60px;
 }
 
 .formbox form {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: 32px;
+
+
+}
+
+.formbox .inputformcontact {
+   
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+   
+}
+.formbox .inputformcontact input {
+    padding: 8px;
+    color: var(--purple);
+    border: none;
+    background-color: var(--clear-purple);
+    border-bottom: 2px solid;
+    border-color: var(--white);
+    outline: none;
+
+}
+.formbox .inputformcontact input::placeholder{
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+}
+
+.formbox .inputformquery{
+    display: flex;
+    flex-direction: column;
+}
+
+.formbox .inputformquery input{
+   
+    padding-bottom: 32px;
+    padding-top: 36px;
+    padding-right: 0;
+    padding-left: 0;
+    border: none;
+    color: var(--purple);
+    background-color: var(--clear-purple);
+    border-bottom: 2px solid;
+    border-color: var(--white);
+    margin-top: 8px;
+    margin-bottom: 16px;
+    outline: none;
+   
+}
+
+.formbox .inputformquery input::placeholder{
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+}
+
+.formbox .inputformquery button{
+    font-family: "Inter", sans-serif;
+    padding: 8px;
+    border: 2px solid;
+    border-color: var(--white);
+    color: var(--white);
+    background-color: var(--purple);
+
+}
+
+.formbox .inputformquery button:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
 }

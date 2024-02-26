@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./Form.css";
 import toast from "react-hot-toast";
 import { host } from "../../const/host";
+import Question from "../../assets/icons/Question";
+
 
 export default function Form() {
   const [nombre, setNombre] = useState("");
@@ -53,9 +55,10 @@ export default function Form() {
           estaremos encantados de responderla. Tu satisfacción es nuestra
           prioridad.
         </p>
+        <h5 className="icon"><Question/>  </h5>
       </div>
       <form onSubmit={handleForm}>
-        <div>
+        <div className="inputformcontact"> 
         <input
           type="text"
           placeholder="Nombre completo"
@@ -75,6 +78,7 @@ export default function Form() {
           onChange={(e) => setTelefono(e.target.value)}
         />
         </div>
+        <div className="inputformquery">
         <input
           type="text"
           placeholder="¿Cuál es tu consulta?"
@@ -82,6 +86,7 @@ export default function Form() {
           onChange={(e) => setConsulta(e.target.value)}
         />
         <button type="submit">Realizar consulta</button>
+        </div>
       </form>
     </div>
   );
