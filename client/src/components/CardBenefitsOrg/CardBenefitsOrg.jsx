@@ -5,7 +5,7 @@ export default function CardBenefits() {
 
     return(
 
-        <div className="cardbusiness">
+        <div className="cardbusiness wrap">
             
             <div className="businessbenefits">
                 <h4>Principales beneficios de las Organizaciones</h4>

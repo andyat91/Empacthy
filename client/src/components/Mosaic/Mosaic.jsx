@@ -8,7 +8,7 @@ export default function Mosaic() {
 
     return(
 
-        <div className="mosaic">
+        <div className="mosaic wrap">
             <div className="rowmosaic">
                 <div className="mosaicgeneric">
                     <img src={puzle} />

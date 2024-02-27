@@ -47,7 +47,7 @@ export default function Form() {
     }
   }
   return (
-    <div className="formbox">
+    <div className="formbox wrap">
       <div className="formtext">
         <h4>Optimiza tu Experiencia</h4>
         <p>

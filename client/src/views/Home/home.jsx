@@ -8,7 +8,7 @@ import "./Home.css"
 export default function Home() {
 
     return(
-        <div className="wrap home">
+        <div className=" home">
        <Jumbotron/> 
        <Mosaic/>
        <CardBenefits/>
