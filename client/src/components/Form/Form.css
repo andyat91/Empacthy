@@ -1,12 +1,12 @@
-.formbox h4{
+#formbox h4{
     margin: 0;
     font-family: "Black Ops One", system-ui;
 }
-.formbox h5{
+#formbox h5{
     margin: 0;
 }
 
-.formbox{
+#formbox{
     display: flex;
     justify-content: space-between;
     margin-top: 32px;
@@ -17,18 +17,18 @@
     background-color: var(--purple);
     color: var(--white);
 }
-.formbox .formtext{
+#formbox .formtext{
     width: 45%;
     padding-right: 16px;
     border-right: 2px solid;
 }
-.formbox .formtext .icon {
+#formbox .formtext .icon {
     margin-right: 44px;
     text-align: right;
     font-size: 60px;
 }
 
-.formbox form {
+#formbox form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -38,16 +38,16 @@
 
 }
 
-.formbox .inputformcontact {
+#formbox .inputformcontact {
    
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
    
 }
-.formbox .inputformcontact input {
-    padding: 16px;
-    color: var(--purple);
+#formbox .inputformcontact input {
+    padding: 8px;
+    color: var(--white);
     border: none;
     background-color: var(--clear-purple);
     border-bottom: 2px solid;
@@ -55,24 +55,24 @@
     outline: none;
 
 }
-.formbox .inputformcontact input::placeholder{
+#formbox .inputformcontact input::placeholder{
     color: var(--white);
     font-family: "Inter", sans-serif;
 }
 
-.formbox .inputformquery{
+#formbox .inputformquery{
     display: flex;
     flex-direction: column;
 }
 
-.formbox .inputformquery input{
+#formbox .inputformquery input{
    
     padding-bottom: 32px;
     padding-top: 36px;
     padding-right: 0;
     padding-left: 0;
     border: none;
-    color: var(--purple);
+    color: var(--white);
     background-color: var(--clear-purple);
     border-bottom: 2px solid;
     border-color: var(--white);
@@ -82,14 +82,14 @@
    
 }
 
-.formbox .inputformquery input::placeholder{
+#formbox .inputformquery input::placeholder{
     color: var(--white);
     font-family: "Inter", sans-serif;
 }
 
-.formbox .inputformquery button{
+#formbox .inputformquery button{
     font-family: "Inter", sans-serif;
-    padding: 16px;
+    padding: 8px;
     border: 2px solid;
     border-color: var(--white);
     color: var(--white);
@@ -97,8 +97,8 @@
 
 }
 
-.formbox .inputformquery button:hover {
+#formbox .inputformquery button:hover {
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--purple);
     border-color: var(--primary);
 }

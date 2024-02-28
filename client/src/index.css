@@ -3,11 +3,7 @@
 * {
     box-sizing: border-box;
   }
-  .wrap {
-    max-width: 1400px;
-    padding: 0 16px;
-    margin: 0 auto;
-  }
+
   
   :root{
 /* B8A382 */
@@ -69,4 +65,9 @@
     color: var(--pearl);
     background-color: var(--white);
     margin: 0px
+  }
+
+  .wrap {
+    max-width: 1400px;
+    margin: 0 auto;
   }

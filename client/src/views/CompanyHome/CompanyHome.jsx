@@ -1,16 +1,18 @@
-import { useAuthContext } from "../../context/AuthContext"
+import CompanyInformation from "../../components/CompanyInformation/CompanyInformation";
+import UserInformation from "../../components/UserInformation/UserInformation";
+import "./CompanyHome.css"
 
 
 export default function CompanyHome() {
 
-const { user } = useAuthContext();
 
-console.log(user.descripcion)
+
+
     return(
 
-        <>
-        <h1>Esta es la Home de la empresa</h1>
-        <h2>{user.denominacion} </h2>
-        </>
+        <div className="companyhome wrap">
+        <CompanyInformation />
+        <UserInformation/>
+        </div>
     )
 }

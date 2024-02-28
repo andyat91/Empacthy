@@ -1,0 +1,6 @@
+#userinformation {
+    width: 30%;
+    border-radius: 16px;
+    border: 4px solid;
+    border-color: var(--primary);
+}
