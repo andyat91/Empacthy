@@ -10,10 +10,10 @@
 }
 .nameslogan h2 a{
 
-  font-weight: bold;
+
   color: var(--purple);
-  font-family: "Black Ops One", system-ui;
-  font-weight: 400;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
   font-style: normal;
   text-decoration: none;
 

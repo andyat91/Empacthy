@@ -4,6 +4,6 @@ export default function BrandLogo() {
 
     return(
 
-        <Link to="/">  Empacthy </Link>
+        <Link to="/">  EMPACTHY </Link>
     )
 }

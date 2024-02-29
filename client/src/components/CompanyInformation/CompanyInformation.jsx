@@ -21,7 +21,7 @@ export default function CompanyInformation() {
         </div>
       </div>
       <div className="companyalliance">
-    <h4>Alianzas</h4>
+    <h4>Aquí aparecen los match</h4>
       </div>
     </div>
   );
