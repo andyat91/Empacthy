@@ -12,6 +12,7 @@ import CompanyHome from "./views/CompanyHome/CompanyHome";
 import OrganizationHome from "./views/OrganizationHome.jsx/OrganizationHome";
 import Match from "./views/Match/Match";
 import RegistroOrg from "./views/RegisterOrg/RegistroOrg";
+import ModifyCompany from "./views/ModifyCompany/ModifyCompany";
 
 function App() {
   return (
@@ -28,9 +29,10 @@ function App() {
               <Route path="/empacthy" element={<AboutUs />} />
             </Route>
             <Route element={<PrivateRoutes/>}>
-              <Route path="/companyhome" element={<CompanyHome/>}>
-                <Route path="/companyhome/match" element={<Match/>}/>
-              </Route>
+              <Route path="/companyhome" element={<CompanyHome/>}/>
+              <Route path="/companyhome/match" element={<Match/>}/>
+              <Route path="/companyhome/modify" element={<ModifyCompany/>}/>
+             
               <Route path="/organizationhome" element={<OrganizationHome/> }/>
             </Route>
           </Route>

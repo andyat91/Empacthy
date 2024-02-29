@@ -7,6 +7,9 @@ dao.addCompany= async (userData) => await userQueries.addCompany(userData);
 // Obtener usuario por email Empresas
 dao.getUserByEmailCompany = async (email) => await userQueries.getUserByEmailCompany(email);
 
+// Actualizar informacion y datos de Empresas
+dao.updateCompany = async (userData) => await userQueries.updateCompany(userData);
+
 //Añadir una nueva organización
 dao.addOrganization= async (userData) => await userQueries.addOrganization(userData);
 

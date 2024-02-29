@@ -87,6 +87,28 @@ const loginUserCompany = async (req, res) => {
   }
 };
 
+const updateCompany = async (req, res) => {
+  const { id,denominacion,nombre,apellidos,email,password,telefono,cargo,sector,tipoempresa,localizacion } = req.body;
+
+  if (!id || !denominacion || !nombre || !apellidos || !email || !password || !telefono || !cargo || !sector || !tipoempresa || !localizacion)
+    return res.status(400).send({ message: "Error al recibir el body" });
+
+  try {
+
+    const updateCompany = await dao.updateCompany(req.body);
+
+    if (updateCompany)
+      return res.send({
+        message: `Perfil de ${denominacion} modificado correctamente`,
+      });
+  } catch (error) {
+    console.log(error);
+
+    throw new Error(error);
+  }
+};
+
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
 const addOrganization = async (req, res) => {
@@ -204,4 +226,4 @@ const addInquiry = async (req, res) => {
 };
 
 
-module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry};
+module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany};

@@ -5,6 +5,8 @@ const moment = require("moment");
 //algoritmo que se utiliza para verificar la integridad de datos
 const md5 = require("md5");
 
+const { removeUndefinedKeys } = require("../../utils/utils");
+
 
 const userQueries = {};
 
@@ -52,6 +54,39 @@ userQueries.addCompany = async (userData) => {
         conn && await conn.end();
     }
 };
+
+userQueries.updateCompany = async (userData) => {
+    let conn = null;
+    try {
+      conn = await db.createConnection();
+  
+      let userObj = {
+        denominacion: userData.denominacion,
+        nombre: userData.nombre,
+        apellidos: userData.apellidos,
+        email: userData.email,
+        telefono: userData.telefono,
+        cargo: userData.cargo,
+        sector: userData.sector,
+        tipoempresa: userData.tipoempresa,
+        localizacion: userData.localizacion,
+        password: md5(userData.password),
+      };
+  
+      userObj = await removeUndefinedKeys(userObj);
+  
+      return await db.query(
+        "UPDATE empresas SET ? WHERE id = ?",
+        [userObj, userData.id],
+        "update",
+        conn
+      );
+    } catch (e) {
+      throw new Error(e);
+    } finally {
+      conn && (await conn.end());
+    }
+  };
 
 userQueries.addOrganization = async (userData) => {
 

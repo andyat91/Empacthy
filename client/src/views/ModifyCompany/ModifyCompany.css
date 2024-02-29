@@ -1,0 +1,26 @@
+#modifycompany{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 8px;
+    border: 4px solid;
+    border-color: var(--primary);
+}
+#modifycompany form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#modifycompany form input {
+    font-weight: 600;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: none;
+   background-color: var(--white);
+    border: 2px solid;
+    border-color: var(--primary);
+    padding: 8px;
+    outline: none;
+}

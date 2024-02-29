@@ -46,6 +46,9 @@
 #companyinformation .companyname{
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid;
+    padding-bottom: 16px;
+    border-color: var(--primary);
 }
 
 #companyinformation  .plan{
