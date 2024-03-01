@@ -1,0 +1,14 @@
+.perfilcompany {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#companyinformation  .plan{
+    margin: 0;
+    background-color: var(--purple);
+    padding: 8px;
+    color: var(--white);
+    border-radius: 8px;
+}

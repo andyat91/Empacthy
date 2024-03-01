@@ -1,5 +1,5 @@
-import CompanyInformation from "../../components/CompanyInformation/CompanyInformation";
-import UserInformation from "../../components/UserInformation/UserInformation";
+
+import { Link } from "react-router-dom"
 import "./CompanyHome.css"
 
 
@@ -11,8 +11,7 @@ export default function CompanyHome() {
     return(
 
         <div className="companyhome wrap">
-        <CompanyInformation />
-        <UserInformation/>
+            <Link to="/perfil">Perfil</Link>
         </div>
     )
 }

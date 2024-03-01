@@ -13,6 +13,7 @@ import OrganizationHome from "./views/OrganizationHome.jsx/OrganizationHome";
 import Match from "./views/Match/Match";
 import RegistroOrg from "./views/RegisterOrg/RegistroOrg";
 import ModifyCompany from "./views/ModifyCompany/ModifyCompany";
+import PerfilCompany from "./views/PerfilCompany/PerfilCompany";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/empacthy" element={<AboutUs />} />
             </Route>
             <Route element={<PrivateRoutes/>}>
+              <Route path="/perfil" element={<PerfilCompany/>}/>
               <Route path="/companyhome" element={<CompanyHome/>}/>
               <Route path="/companyhome/match" element={<Match/>}/>
               <Route path="/companyhome/modify" element={<ModifyCompany/>}/>
