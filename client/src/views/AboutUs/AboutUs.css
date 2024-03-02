@@ -1,0 +1,31 @@
+#aboutus p{
+    padding-left: 48px;
+    padding-right: 48px;
+    font-size: large;
+}
+#aboutus ul li{
+    padding-left: 48px;
+    padding-right: 48px;
+    list-style-type: none;
+}
+
+#aboutus h4{
+    border-bottom: 2px solid;
+    border-color: var(--grey);
+    font-weight: 600;
+    font-family: "Bebas Neue", sans-serif;
+}
+#aboutus .h5{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#aboutus .sectionaboutus {
+    display: flex;
+    align-items: center;
+   
+}
+
+#aboutus img {
+    width: 20%;
+    height: 200px;
+}

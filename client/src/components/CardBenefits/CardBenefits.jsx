@@ -1,21 +1,43 @@
-import empresa from "../../assets/images/empresa.jpg"
-import "./CardBenefits.css"
+import { Link } from "react-router-dom";
+import empresa from "../../assets/images/beneficiosempresa.jpg";
+import "./CardBenefits.css";
 export default function CardBenefits() {
+  return (
+    <div className=" wrap" id="cardbusiness">
+      <img src={empresa} alt="Beneficios de empresa" className="empresa" />
+      <div className="businessbenefits">
+        <h4>Beneficios y ventajas para Empresas</h4>
+        <ul>
+          <li>
+            <b>Match:</b> Facilitamos el patrocinio de ONGs y causas alineadas
+            con vuestra cultura e identidad empresarial.
+          </li>
+          <li>
+            <b>Simple:</b> Eliminamos esfuerzos en todos los sentidos,
+            simplificando el proceso de principio a fin.
+          </li>
+          <li>
+            <b>Marketing con Causa:</b> Compartimos vuestras actividades de
+            patrocinio y acción social, porque lo que no se comparte se pierde.
+          </li>
+          <li>
+            <b>Fidelización:</b> Permitimos donaciones en nombre de clientes y
+            empleados, entregándoles el correspondiente certificado a su nombre.
+          </li>
+          <li>
+            <b>Ventajas:</b> Reducción de riesgos, gestión integral sin
+            esfuerzo, mejora en la reputación e imagen de marca, fidelización,
+            hasta un 50% de beneficio fiscal, y un corazón social y empresarial
+            más pleno.
+          </li>
+        </ul>
 
-    return(
-
-        <div className="cardbusiness wrap">
-            <img src={empresa} alt="Beneficios de empresa"/>
-            <div className="businessbenefits">
-                <h4>Principales beneficios de las empresas</h4>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-                </ul>
-
-            </div>
+        <div className="containerbutton">
+          <Link to="registro" className="registro">
+            REGÍSTRATE
+          </Link>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

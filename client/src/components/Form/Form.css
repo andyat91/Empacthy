@@ -1,7 +1,4 @@
-#formbox h4{
-    margin: 0;
-    font-family: "Black Ops One", system-ui;
-}
+
 #formbox h5{
     margin: 0;
 }
@@ -11,8 +8,8 @@
     justify-content: space-between;
     margin-top: 32px;
     margin-bottom: 32px;
-    padding: 32px;
-    border-radius: 16px;
+    padding: 40px;
+    border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     background-color: var(--purple);
     color: var(--white);
@@ -101,4 +98,9 @@
     background-color: var(--primary);
     color: var(--purple);
     border-color: var(--primary);
+}
+
+#formbox h4{
+    margin: 0;
+    font-family: "Black Ops One", system-ui;
 }

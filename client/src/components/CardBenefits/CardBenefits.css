@@ -1,10 +1,63 @@
-.cardbusiness {
+#cardbusiness {
     display: flex;
     justify-content: space-between;
-    border-radius: 16px;
+    align-items: top;
+    border-radius: 6px;
     overflow: hidden;
+    padding: 40px;
+    border: 4px solid;
+    border-color: var(--purple);
+    margin-bottom: 32px;
+    background-color: white
+
 }
 
-.cardbusiness img {
+#cardbusiness img {
    width: 35%;
+   height: auto;
+   border-radius: 6px;
+}
+
+#cardbusiness  .empresa{
+    margin-right: 40px;
+}
+
+#cardbusiness  .organizacion{
+    margin-left: 40px;
+}
+
+
+#cardbusiness h4{
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    border-bottom: 2px solid;
+    border-color: var(--grey);
+}
+#cardbusiness ul{
+    list-style-type:circle;
+}
+#cardbusiness ul li {
+    margin-bottom: 6px;
+}
+
+#cardbusiness .registro{
+    text-decoration: none;
+    border: 2px solid;
+    background-color: var(--grey);
+    color: var(--white);
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+#cardbusiness .containerbutton {
+    display: flex;
+    justify-content: end;
+}
+
+#cardbusiness .containerbuttonorg {
+    display: flex;
+    justify-content: start;
 }
