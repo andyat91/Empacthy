@@ -1,4 +1,5 @@
 const userQueries = require('./queries/userQueries');
+const dataQueries = require('./queries/dataQueries');
 const dao = {};
 
 // Añadir una nueva empresa
@@ -18,5 +19,8 @@ dao.getUserByEmailOrganization = async (email) => await userQueries.getUserByEma
 
 // Formulario de consulta
 dao.addInquiry= async (userData) => await userQueries.addInquiry(userData);
+
+// Obtener info de tarjetas de landing
+dao.infoCard= async () => await dataQueries.infoCard();
 
 module.exports = dao;

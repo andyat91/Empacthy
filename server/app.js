@@ -8,6 +8,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 //Uso de rutas
 const userRouter = require("./routes/userRoutes");
+const dataRouter = require("./routes/dataRoutes")
 const cors = require("cors");
 dotenv.config();
 const PORT = process.env.PORT;
@@ -20,6 +21,7 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 
 app.use("/user", userRouter);
+app.use("/data", dataRouter);
 
 
 
