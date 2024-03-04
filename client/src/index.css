@@ -15,7 +15,7 @@
   --clear-primary: 
   hsl(var(--hue) 30%, 70%, 1);
   --white:
-  hsl(var(--hue) 10%, 96%, 1);
+  hsl(var(--hue) 10%, 90%, 1);
   --black:
   hsl(var(--hue) 30%, 10%, 1);
   --grey:

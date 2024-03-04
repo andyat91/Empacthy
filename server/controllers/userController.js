@@ -88,9 +88,9 @@ const loginUserCompany = async (req, res) => {
 };
 
 const updateCompany = async (req, res) => {
-  const { id,denominacion,nombre,apellidos,email,password,telefono,cargo,sector,tipoempresa,localizacion } = req.body;
+  const { id,denominacion,nombre,apellidos,email,telefono,cargo,sector,tipoempresa,localizacion } = req.body;
 
-  if (!id || !denominacion || !nombre || !apellidos || !email || !password || !telefono || !cargo || !sector || !tipoempresa || !localizacion)
+  if (!id || !denominacion || !nombre || !apellidos || !email || !telefono || !cargo || !sector || !tipoempresa || !localizacion)
     return res.status(400).send({ message: "Error al recibir el body" });
 
   try {

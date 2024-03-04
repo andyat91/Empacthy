@@ -69,8 +69,7 @@ userQueries.updateCompany = async (userData) => {
         cargo: userData.cargo,
         sector: userData.sector,
         tipoempresa: userData.tipoempresa,
-        localizacion: userData.localizacion,
-        password: md5(userData.password),
+        localizacion: userData.localizacion
       };
   
       userObj = await removeUndefinedKeys(userObj);

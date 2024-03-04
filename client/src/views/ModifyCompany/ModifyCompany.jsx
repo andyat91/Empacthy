@@ -3,7 +3,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import "./ModifyCompany.css";
 import toast from "react-hot-toast";
 import { host } from "../../const/host";
-import { Link } from "react-router-dom";
+
 
 export default function ModifyCompany() {
   const { user } = useAuthContext();
@@ -13,7 +13,6 @@ export default function ModifyCompany() {
     nombre: user.nombre,
     apellidos: user.apellidos,
     email: user.email,
-    password: user.password,
     telefono: user.telefono,
     cargo: user.cargo,
     sector: user.sector,
@@ -28,7 +27,6 @@ export default function ModifyCompany() {
       nombre: user.nombre,
       apellidos: user.apellidos,
       email: user.email,
-      password: user.password,
       telefono: user.telefono,
       cargo: user.cargo,
       sector: user.sector,
@@ -114,15 +112,7 @@ export default function ModifyCompany() {
               onChange={(e) =>handleChange(e)}
             />
           </label>
-          <label>
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={(e) =>handleChange(e)}
-            />
-          </label>
+        
           </div>
           <div className="formright">
           <label>
@@ -172,7 +162,7 @@ export default function ModifyCompany() {
           </label>
           </div>
           </div>
-          <Link to="/companyhome" className="linktocompanyhome"> <button type="submit">Guardar cambios</button></Link>
+          <button type="submit">Guardar cambios</button>
         </form>
     
         </div>
