@@ -13,5 +13,22 @@ const infoCard = async (req, res) => {
     }
   };
 
+  const infoMatch = async (req, res) => {
 
-module.exports = { infoCard };
+    const { id } = req.params;
+    try {
+
+      let info = await dao.infoMatch(id);
+      if (info.length <= 0)
+      return res.status(404).send({ message: "No hay historial de Match" });
+  
+      return res.send(info);
+    } catch (error) {
+      console.log(error);
+  
+      throw new Error(error);
+    }
+  };
+
+
+module.exports = { infoCard, infoMatch };

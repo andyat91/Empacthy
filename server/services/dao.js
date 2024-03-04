@@ -23,4 +23,7 @@ dao.addInquiry= async (userData) => await userQueries.addInquiry(userData);
 // Obtener info de tarjetas de landing
 dao.infoCard= async () => await dataQueries.infoCard();
 
+// Obtener info de tarjetas de landing
+dao.infoMatch= async (id) => await dataQueries.infoMatch(id);
+
 module.exports = dao;

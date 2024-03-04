@@ -7,6 +7,7 @@ const AuthContext = createContext({
   user: null,
   login: () => {},
   logout: () => {},
+  updateUser: ()=> {},
   errorMessage: "",
 
 });
@@ -66,10 +67,15 @@ let response ;
     localStorage.removeItem("user");
   }
 
+  function updateUser(user) {
+setUser(user);
+  }
+
   const value = {
     user,
     login,
     logout,
+    updateUser,
     errorMessage,
   };
 

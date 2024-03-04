@@ -6,7 +6,7 @@ import { host } from "../../const/host";
 
 
 export default function ModifyCompany() {
-  const { user } = useAuthContext();
+  const { user, updateUser } = useAuthContext();
   const [formData, setFormData] = useState({
     id: user.id,
     denominacion: user.denominacion,
@@ -56,6 +56,8 @@ export default function ModifyCompany() {
           });
 
           if (response.ok) {
+           updateUser(formData);
+           
             toast.success(response.message);
           }else {
             toast.error(response.message);

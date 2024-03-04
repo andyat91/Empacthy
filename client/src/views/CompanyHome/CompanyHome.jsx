@@ -1,39 +1,53 @@
 
 import { Link } from "react-router-dom"
 import "./CompanyHome.css"
+import { useAuthContext } from "../../context/AuthContext"
+import { useEffect, useState } from "react"
+import toast from "react-hot-toast";
+import { host } from "../../const/host";
 
 
 export default function CompanyHome() {
 
+const { user } = useAuthContext();
+const [infoMatch, setInfoMatch] = useState([]);
 
 
+useEffect(()=> {
+
+    let id= user.id;
+
+    async function Match() {
+
+        try {
+           
+            const response = await fetch(`${host}/data/match/${id}`);
+            const infoMatch =  await response.json();
+            setInfoMatch(infoMatch);
+
+        } catch (error) {
+            toast.error(error)
+        }
+    }
+    Match()
+
+},[user])
 
     return(
 
         <div className="companyhome wrap">
 
-            <div>
-                <h4>Mis preferencias de match</h4>
-
-                <div>
-                    <p>Valores: (select valores)</p>
-                    <p>ODS: (Select ODS)</p>
-                </div>
-                <button>Cambiar preferencias</button>
-            </div>
-            <div> 
-                <h4>Mis KPIS</h4>
-            <div>
-                <p>Info de matchs ejemplo matches: 8</p>
-                <p>Dinero donado: 300euris</p>
-
-                </div>
-            </div>
-            <div>
+         
+            <div className="">
                 <h4>Mis Matches</h4>
-                <div>
-                    <p>No puedo poner nombre de la empresa</p>
+                {infoMatch.map((match)=> (   
+                <div className="matchorg" key={match.id}>
+                    <p>{match.denominacion} </p>
+                    <p>{match.causas} </p>
+                    <p>{match.causas} </p>
+                    <p>{match.causas} </p>
                 </div>
+                ))}
             </div>
             <Link to="/perfil">Perfil</Link>
         </div>
