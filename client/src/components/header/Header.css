@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   position: relative;
   z-index: 1;
   
@@ -103,6 +103,41 @@ color: white;
 background-color: var(--purple);
 }
 
+.header .userlogged{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  
+}
+.header .userlogged img {
+  width: 7%;
+  border-radius: 100%;
+  margin-right: 8px;
+  border: 2px solid;
+  border-color: var(--purple);
+}
+.header .userlogged .perfil{
+  text-decoration: none;
+}
+.header .userlogged h5{
+  margin: 0;
+  color: var(--purple);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header .userlogged button {
+  margin-left: 8px ;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: var(--purple);
+  border: none;
+  color: white;
+}
+
+.header .userlogged button:hover{
+  background-color: var(--grey);
+}
 @media only screen and (max-width: 950px) {
  
   .header {
@@ -112,6 +147,12 @@ background-color: var(--purple);
   }
   .linkheader{
     display: flex;
+
+  }
+  .header .userlogged{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
  .buttonheader{
   font-size: 0;

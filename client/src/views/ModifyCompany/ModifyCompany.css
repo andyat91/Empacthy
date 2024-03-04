@@ -1,26 +1,73 @@
-#modifycompany{
+#modifycompany .modifycompany{
+    width: 50%;
+    padding: 40px;
+    border-radius: 6px;
+    border: 4px solid;
+    border-color: var(--purple);
+    background-color: white;
     margin: 40px;
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    border-radius: 8px;
-    border: 4px solid;
-    border-color: var(--primary);
+    align-items: center;
 }
 #modifycompany form {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
+#modifycompany h4{
+    font-family: "Bebas Neue", sans-serif;
+}
+#modifycompany form .form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#modifycompany form label {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
 #modifycompany form input {
-    font-weight: 600;
-    border-radius: 8px;
+    display: inline-block;
+    border-radius: 6px;
     margin-bottom: 8px;
     border: none;
-   background-color: var(--white);
-    border: 2px solid;
-    border-color: var(--primary);
-    padding: 8px;
+   background-color: var(--clear-purple);
+   color: white;
+   border: none;
+    padding: 6px;
     outline: none;
+}
+#modifycompany form .formleft{
+    margin-right: 8px;
+    padding-right: 16px;
+    border-right: 2px solid;
+    border-color: var(--purple);
+}
+
+#modifycompany form .formright{
+    margin-left: 8px;
+}
+#modifycompany{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#modifycompany .linktocompanyhome{
+    width: 100%;
+    margin-top: 16px;
+}
+#modifycompany button {
+   width: 100%;
+   border: none;
+   padding: 8px;
+   background-color: var(--purple);
+   border-radius: 6px;
+   color: white;
+   font-size: large;
+   font-weight: 600;
 }

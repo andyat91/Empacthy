@@ -138,7 +138,7 @@ export default function RegistroOrg() {
               />
               <input
                 className="inputregister"
-                placeholder="Alcance geográfico"
+                placeholder="Tipo de empresa"
                 type="text"
                 value={tipo}
                 onChange={(e) => setTipo(e.target.value)}

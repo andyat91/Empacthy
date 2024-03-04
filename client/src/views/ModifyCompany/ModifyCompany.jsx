@@ -3,6 +3,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import "./ModifyCompany.css";
 import toast from "react-hot-toast";
 import { host } from "../../const/host";
+import { Link } from "react-router-dom";
 
 export default function ModifyCompany() {
   const { user } = useAuthContext();
@@ -71,10 +72,12 @@ export default function ModifyCompany() {
 
   return (
     <div id="modifycompany" className="wrap">
-     
-        <h4>Info de empresa</h4>
+     <div className="modifycompany">
+        <h4>Modificar datos</h4>
 
         <form onSubmit={handleSubmit}>
+          <div className="form">
+          <div className="formleft">
           <label>
             Nombre de la empresa:
             <input
@@ -120,6 +123,8 @@ export default function ModifyCompany() {
               onChange={(e) =>handleChange(e)}
             />
           </label>
+          </div>
+          <div className="formright">
           <label>
             Teléfono:
             <input
@@ -165,10 +170,12 @@ export default function ModifyCompany() {
               onChange={(e) =>handleChange(e)}
             />
           </label>
-          <button type="submit">Guardar cambios</button>
+          </div>
+          </div>
+          <Link to="/companyhome" className="linktocompanyhome"> <button type="submit">Guardar cambios</button></Link>
         </form>
     
-
+        </div>
     </div>
   );
 }
