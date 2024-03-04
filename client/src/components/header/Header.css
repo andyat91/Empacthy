@@ -58,7 +58,7 @@
 
 .linkheader .loginheader {
   background-color: var(--grey);
-  color: var(--white);
+  color: white;
 }
 
 .linkheader .registroheader{
@@ -99,7 +99,7 @@
   border-color: var(--purple);
 } 
 .buttonheader:hover{
-color: var(--white);
+color: white;
 background-color: var(--purple);
 }
 

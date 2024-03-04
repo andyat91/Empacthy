@@ -8,14 +8,20 @@
     border: 4px solid;
     border-color: var(--purple);
     margin-bottom: 32px;
-    background-color: white
+    background-color: white;
+    filter: brightness(90%);
+    transition: transform 0.5s;
 
+}
+#cardbusiness:hover {
+    transform: scale(1.06);
 }
 
 #cardbusiness img {
    width: 35%;
    height: auto;
    border-radius: 6px;
+   filter: brightness(90%);
 }
 
 #cardbusiness  .empresa{
@@ -43,14 +49,19 @@
 
 #cardbusiness .registro{
     text-decoration: none;
-    border: 2px solid;
+   
     background-color: var(--grey);
-    color: var(--white);
+    color: white;
     text-align: center;
     padding: 8px;
     border-radius: 6px;
     font-weight: 600;
     margin-top: 16px;
+}
+#cardbusiness .registro:hover{
+    background-color: var(--purple);
+    color: white;
+ 
 }
 #cardbusiness .containerbutton {
     display: flex;

@@ -13,7 +13,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     background-color: var(--purple);
     color: var(--white);
+    transition: transform 0.5s;
 }
+#formbox:hover{
+    transform:scale(1.06);
+}
+
 #formbox .formtext{
     width: 45%;
     padding-right: 16px;
