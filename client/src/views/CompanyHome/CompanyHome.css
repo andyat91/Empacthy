@@ -1,4 +1,16 @@
-.companyhome {
+#companyhome .companyhome{
+    margin: 80px;
     display: flex;
-    justify-content: space-between;
+    flex-direction:row;
+    justify-content: space-evenly;
+
+    border-radius: 6px;
+    border:4px solid;
+    background-color: white;
+    border-color: var(--purple);
+
+}
+
+#companyhome .companyhome .mismatch{
+    width: 70%;
 }

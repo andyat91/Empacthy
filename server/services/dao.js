@@ -26,4 +26,10 @@ dao.infoCard= async () => await dataQueries.infoCard();
 // Obtener info de tarjetas de landing
 dao.infoMatch= async (id) => await dataQueries.infoMatch(id);
 
+// Obtener cantidad de match asociados a la empresa
+dao.infoCount= async (id) => await dataQueries.infoCount(id);
+
+// Obtener total de donaciones por empresa
+dao.infoDonation= async (id) => await dataQueries.infoDonation(id);
+
 module.exports = dao;
