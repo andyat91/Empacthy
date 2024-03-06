@@ -1,7 +1,7 @@
 #cardinfo {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 36px;
   }
   
   #cardinfo  .card {

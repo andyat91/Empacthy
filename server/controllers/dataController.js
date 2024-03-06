@@ -64,4 +64,49 @@ const infoCard = async (req, res) => {
     }
   };
 
-module.exports = { infoCard, infoMatch, infoCount, infoDonation };
+  const infoFilter = async (req, res) => {
+
+    const { valor,ods } = req.params;
+    try {
+
+      let ongfilter = await dao.infoFilter(valor,ods);
+      return res.send(ongfilter);
+    
+    } catch (error) {
+      console.log(error);
+  
+      throw new Error(error);
+    }
+  };
+
+  const makeMatch = async (req, res) => {
+    const {
+      idong,
+      idempresa
+    } = req.body;
+  
+    if (
+      !idong ||
+      !idempresa
+    )
+      return res.status(400).send({ message: "Error al recibir campos vacios" });
+  
+    try {
+      const match = await dao.getMatchById(idong,idempresa);
+   
+      if (match.length > 0) {
+        return res.send({ message: "Ya tienes un Match con esta organización" });
+      // Si no existe lo registramos
+    } else {
+      const makeMatch = await dao.makeMatch(req.body);
+      if (makeMatch)
+        return res.status(201).send({ message: `!Enhorabuena¡ Tienes un nuevo Match en proceso de validación` });
+      }
+    } catch (e) {
+      console.log(e.message);
+      //Throw sirve para lanzar error inesperado, se puede señalar explicitamente que algo inusual ha sucedido
+      throw new Error(e);
+    }
+  };
+
+module.exports = { infoCard, infoMatch, infoCount, infoDonation, infoFilter, makeMatch };

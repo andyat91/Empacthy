@@ -2,7 +2,7 @@
   max-width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: right;
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
   overflow: hidden;
@@ -17,8 +17,9 @@
 
 
 .textphoto {
+  text-align: right;
   position: absolute;
-  top: 20%;
+  top: 16%;
   max-width: 1000px;
   font-family: "Black Ops One", system-ui;
   text-align: center;

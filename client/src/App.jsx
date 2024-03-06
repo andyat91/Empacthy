@@ -18,29 +18,27 @@ import PerfilCompany from "./views/PerfilCompany/PerfilCompany";
 function App() {
   return (
     <BrowserRouter>
-    <Toaster/>
+      <Toaster />
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route element={<PublicRoutes/>}>
+            <Route element={<PublicRoutes />}>
               <Route path="/login" element={<Login />} />
               <Route path="/registro" element={<Registro />} />
-              <Route path="/registroorg" element={<RegistroOrg/>}/>
+              <Route path="/registroorg" element={<RegistroOrg />} />
               <Route path="/empacthy" element={<AboutUs />} />
             </Route>
-            <Route element={<PrivateRoutes/>}>
-              <Route path="/perfil" element={<PerfilCompany/>}/>
-              <Route path="/companyhome" element={<CompanyHome/>}/>
-              <Route path="/companyhome/match" element={<Match/>}/>
-              <Route path="/companyhome/modify" element={<ModifyCompany/>}/>
-             
-              <Route path="/organizationhome" element={<OrganizationHome/> }/>
+            <Route element={<PrivateRoutes />}>
+              <Route path="/perfil" element={<PerfilCompany />} />
+              <Route path="/companyhome" element={<CompanyHome />} />
+              <Route path="/companyhome/match" element={<Match />} />
+              <Route path="/companyhome/modify" element={<ModifyCompany />} />
+              <Route path="/organizationhome" element={<OrganizationHome />} />
             </Route>
           </Route>
         </Routes>
       </AuthContextProvider>
-   
     </BrowserRouter>
   );
 }
