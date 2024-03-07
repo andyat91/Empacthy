@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px;
+    padding: 60px;
     
 }
 .login{
@@ -10,7 +10,7 @@
     flex-direction: column;
     max-width: 480px;
     border:4px solid;
-    border-color: var(--primary);
+    border-color: var(--greyblue);
     padding-right: 80px;
     padding-left: 80px;
     padding-top: 100px;
@@ -28,7 +28,7 @@
 }
 .login h4 a{
   
-    color: var(--purple);
+    color: var(--greyblue);
     font-family: "Black Ops One", system-ui;
     font-weight: 500;
     text-decoration: none;
@@ -39,18 +39,17 @@
     margin-bottom: 8px;
     padding: 8px;
     border-radius: 8px;
-    border:2px solid;
-    border-color: var(--primary);
-    color:var(--purple);
-    background-color: var(--white);
+    border: none;
+    color:var(--blue);
+    background-color: var(--green);
     font-size: large;
     font-weight: 800;
 
 }
 .login button:hover {
-    background-color: var(--purple);
-    color: var(--white);
-    border-color: var(--purple);
+    background-color: var(--blue);
+    color: var(--cleargreen);
+    border-color: var(--cleargreen);
 }
 
 .login form {
@@ -68,17 +67,22 @@
     margin-bottom: 16px;
     padding-bottom: 16px;
     border-bottom: 2px solid;
-    border-color: var(--primary);
+    border-color: var(--greyblue);
 }
 
 .login .linktoregister{
     padding: 8px;
     text-decoration: none;
     font-size: large;
+    color: var(--greyblue);
+    border: 2px solid;
+    border-radius: 6px;
+    border-color: var(--greyblue);
+    font-weight: 600;
 }
 
 .login .linktoregister:hover{
-    background-color: var(--purple);
+    background-color: var(--greyblue);
     color: var(--white);
     border-radius: 8px;
     
@@ -89,11 +93,16 @@
     padding: 8px;
     border-radius: 8px;
     border:2px solid;
-    border-color: var(--primary);
-    color:var(--purple);
+    border-color: var(--greyblue);
+    color:var(--greyblue);
     background-color: var(--white);
     font-weight: 900;
     text-align: center;
+}
+.login input::placeholder{
+    color: var(--greyblue);
+    font-family: "Inter", sans-serif;
+
 }
 
 .login h1{
@@ -102,15 +111,15 @@
 }
 .login .bi-person{
     margin: 0px;
-    color: var(--purple);
+    color: var(--green);
     font-size: 160px;
 }
 
 .togglelogin {
     display: flex;
     border:2px solid;
-    border-color: var(--purple);
-    color:var(--purple);
+    border: none;
+    color:var(--greyblue);
     border-radius: 8px;
     padding: 0px;
     margin-bottom: 16px;
@@ -125,14 +134,15 @@
     width: 50%;
     margin: 0;
     border-radius: 0;
-    text-align: left;
+    text-align: center;
     padding: 16px;
 }
 .togglelogin .buttontoggle:hover {
-    background-color: var(--grey);
+    background-color: var(--blue);
+    color: var(--cleargreen);
 }
 
 .togglelogin .activebuttontoggle {
-    background-color: var(--purple);
-    color: var(--white);
+    background-color: var(--blue);
+    color: var(--cleargreen);
 }

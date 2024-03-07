@@ -24,7 +24,7 @@ dataQueries.infoCard = async () => {
     let conn = null;
     try {
       conn = await db.createConnection();
-      return await db.query("SELECT organizaciones.denominacion as organizacionname, organizaciones.causas, organizaciones.tipo, organizaciones.localizacion,alianza.estado,alianza.donacion FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE empresas.id = ?", id, "select", conn);
+      return await db.query("SELECT organizaciones.denominacion as organizacionname, organizaciones.causas, organizaciones.tipo, organizaciones.localizacion,alianza.estado,alianza.donacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE empresas.id = ?", id, "select", conn);
     } catch (e) {
       throw new Error(e);
     } finally {
@@ -60,7 +60,7 @@ dataQueries.infoCard = async () => {
     let conn = null;
     try {
       conn = await db.createConnection();
-      return await db.query("SELECT organizaciones.id,organizaciones.denominacion,organizaciones.causas, organizaciones.tipo,organizaciones.localizacion FROM organizaciones JOIN valores_organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones JOIN ods_organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE ods_organizaciones.idODS = ? AND valores_organizaciones.idvalores = ?;", [valor,ods], "select", conn);
+      return await db.query("SELECT organizaciones.id,organizaciones.denominacion,organizaciones.causas, organizaciones.tipo,organizaciones.localizacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN valores_organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones JOIN ods_organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE ods_organizaciones.idODS = ? AND valores_organizaciones.idvalores = ?;", [valor,ods], "select", conn);
     } catch (e) {
       throw new Error(e);
     } finally {

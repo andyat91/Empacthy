@@ -11,7 +11,6 @@
 }
 .jumbotroncontainer {
   border-bottom: 2px solid;
-  border-color: var(--primary);
   margin-bottom: 32px;
 }
 
@@ -23,7 +22,7 @@
   max-width: 1000px;
   font-family: "Black Ops One", system-ui;
   text-align: center;
-  color: white;
+  color: var(--greyblue);
 }
 
 .jumbotron .video {

@@ -5,10 +5,10 @@
     border-radius: 6px;
     overflow: hidden;
     padding: 40px;
-    border: 4px solid;
-    border-color: var(--purple);
+    color: var(--blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 32px;
-    background-color: white;
+    background-color:var(--cleargreen);
     filter: brightness(90%);
     transition: transform 0.5s;
 
@@ -38,7 +38,7 @@
     font-family: "Bebas Neue", sans-serif;
     text-align: center;
     border-bottom: 2px solid;
-    border-color: var(--grey);
+    border-color: var(--white);
 }
 #cardbusiness ul{
     list-style-type:circle;
@@ -51,7 +51,7 @@
 #cardbusiness .registro{
     text-decoration: none;
    
-    background-color: var(--grey);
+    background-color: var(--blue);
     color: white;
     text-align: center;
     padding: 8px;
@@ -60,7 +60,7 @@
     margin-top: 16px;
 }
 #cardbusiness .registro:hover{
-    background-color: var(--purple);
+    background-color: var(--green);
     color: white;
  
 }

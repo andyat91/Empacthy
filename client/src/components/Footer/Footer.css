@@ -1,5 +1,5 @@
 .footercontainer {
-  background-color: var(--grey);
+  background-color: var(--greyblue);
   padding-top: 48px;
   padding-bottom: 32px;
 }
@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  color: var(--white);
+  color: var(--cleargreen);
 }
 
 .footer ul {
@@ -43,7 +43,7 @@
 .footer h5 {
   margin: 0px;
   font-family: "Black Ops One", system-ui;
-  color: var(--white);
+  color: var(--green);
   padding-bottom: 32px;
   border-bottom: 2px solid;
 }
@@ -71,11 +71,11 @@
 
 .redes a{
     text-decoration: none;
-    color: var(--white);
+    color: var(--cleargreen);
     font-size: large;
 }
 .redes a:hover{
-    color:var(--purple);
+    color:var(--white);
     cursor: pointer;
 }
 

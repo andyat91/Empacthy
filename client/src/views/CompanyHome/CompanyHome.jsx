@@ -55,23 +55,32 @@ export default function CompanyHome() {
 
   return (
     <div id="companyhome" className=" wrap">
-      <div className="companyhome">
+     
         <div className="mismatch">
-          <h4>Mis Matchs</h4>
+          <h4>Mis Matches</h4>
           {infoMatch.map((match) => (
             <div className="matchorg" key={match.id}>
-              <p>
+              <img src={match.imagen} alt="img" />
+              <div className="info">
+                <div className="principalinfo">
+              <h5>
                 <b>{match.organizacionname}</b>{" "}
-              </p>
-              <p>Causa principal: {match.causas} </p>
-              <p>Tipo de organizacion: {match.tipo} </p>
+              </h5>
+              <p>{match.causas} </p>
+              </div>
+              <div className="descripcion">
+              <p>{match.descripcion} </p>
               <p>Provincia: {match.localizacion} </p>
+              </div>
+              <div className="estado">
               <p>Estado: {match.estado} </p>
               <p>Donación: {match.donacion} </p>
+              </div>
+              </div>
             </div>
           ))}
         </div>
-        <div>
+        <div className="kpis">
           <h4>Mis KPIs</h4>
           {infoCount.map((count) => (
             <p key={count.id}>
@@ -91,7 +100,7 @@ export default function CompanyHome() {
             Buscar MATCH
           </Link>
         </div>
-      </div>
+     
     </div>
   );
 }

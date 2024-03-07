@@ -1,15 +1,69 @@
-#companyhome .companyhome{
-    margin: 80px;
+#companyhome{
+    margin-top: 40px;
+    margin-bottom: 40px;
     display: flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    border-radius: 6px;
-    border:4px solid;
-    background-color: white;
-    border-color: var(--purple);
+}
+
+.mismatch{
+    padding: 40px;
+    background-color: var(--greyblue);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 65%;
+}
+#companyhome .kpis{
+    padding: 40px;
+    margin-left: 32px;
+    width: 35%;
+    background-color: var(--cleargreen);
+    color: var(--blue);
+    border-radius: 8px;
+}
+#companyhome .kpis h4{
+    margin: 0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    border-bottom: 2px solid; 
+}
+
+#companyhome .mismatch h4{
+    margin: 0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    border-bottom: 2px solid;
+
+}
+#companyhome .mismatch h5{
+    margin: 0;
+}
+
+#companyhome .matchorg{
+    display: flex;
 
 }
 
-#companyhome .companyhome .mismatch{
-    width: 70%;
+#companyhome .matchorg img{
+    width: 20%;
+
+ 
+}
+
+#companyhome .matchorg .info {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+#companyhome .matchorg .principalinfo{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid;
+}
+
+#companyhome .matchorg .estado{
+    width: 30%;
 }
