@@ -5,15 +5,18 @@
 }
 
 .mismatch{
-    padding: 40px;
+    padding: 60px;
     background-color: var(--greyblue);
     border-radius: 8px;
-    border: none;
     color: var(--white);
     width: 65%;
+    margin-right: 32px;
+   
+    border-right: 4px solid;
+    border-color: var(--greyblue);
 }
 #companyhome .kpis{
-    padding: 40px;
+    padding: 60px;
     margin-left: 32px;
     width: 35%;
     background-color: var(--cleargreen);
@@ -38,32 +41,116 @@
     border-bottom: 2px solid;
 
 }
+
 #companyhome .mismatch h5{
     margin: 0;
+    
 }
 
 #companyhome .matchorg{
+    padding: 32px;
     display: flex;
+    align-items: center;
+    width: 100%;
+    border: 4px solid;
+    border-radius: 8px;
+    background-color: var(--cleargreen);
+    border-color: var(--cleargreen);
+    margin-bottom: 32px;
+    color: var(--blue);
+    box-shadow: 0 4px 8px rgba(127, 123, 123, 0.5);
+    transition: transform 0.3s ease-in-out;
 
+}
+#companyhome .matchorg:hover{
+    transform: scale(1.05);
 }
 
 #companyhome .matchorg img{
-    width: 20%;
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+    margin-right: 16px;
+    border-radius: 8px;
+    filter: brightness(90%);
+}
+#companyhome .matchorg button{
+    background-color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--greyblue);
+    border: 2px solid;
+    border-color: var(--white);
+    padding: 6px;
 
- 
 }
 
 #companyhome .matchorg .info {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+#companyhome .matchorg .info .descripcion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-left: 5px;
 }
 #companyhome .matchorg .principalinfo{
     display: flex;
+    width: 100%;
     justify-content: space-between;
     border-bottom: 2px solid;
+    padding: 6px;
+}
+#companyhome .matchorg .estado{
+  
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    border-radius: 6px;
+    text-align: right;
+    padding: 6px;
+    
 }
 
-#companyhome .matchorg .estado{
-    width: 30%;
+#companyhome .matchorg .estado .estadoname{
+    display: flex;
+    padding-right: 2px;
 }
+#companyhome .matchorg  .info .state2{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--greyblue);
+    color: var(--cleargreen);
+}
+
+#companyhome .matchorg  .info .state1{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--green);
+
+}
+
+
+#companyhome .matchorg p{
+    padding-right: 4px;
+    font-weight: 600;
+}
+#companyhome .matchorg p {
+    margin: 0;
+}
+
+#companyhome .matchorg button:hover{
+    background-color: lightsalmon;
+    border-color: lightsalmon;
+}
+
+
+

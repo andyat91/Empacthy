@@ -40,4 +40,7 @@ dao.getMatchById= async (idong,idempresa) => await dataQueries.getMatchById(idon
 
 // Realizar nuevo Match
 dao.makeMatch= async (infoData) => await dataQueries.makeMatch(infoData);
+
+// Eliminar match
+dao.deleteMatch= async (infoData) => await dataQueries.deleteMatch(infoData);
 module.exports = dao;

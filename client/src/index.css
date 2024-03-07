@@ -1,13 +1,8 @@
-/* Hola de estilo que se aplica a toda la pagina */
 
 * {
     box-sizing: border-box;
   }
-/* nourd, lato */
-/* rgb(185,209,179) verde*/
-/* rgb(26,34,71) azul*/
-/* rgb(60,71,97) verde gris boton */
-/* rgb(243,244,246) blanco */
+
   :root{
 /* rgb(185,209,179) verde*/
   --green:
@@ -27,7 +22,9 @@
  /* blanco claro rgb(255,255,255) */
   --clearwhite:
   rgb(255,255,255);
-
+  /* gris rgb(244,244,244) */
+  --grey:
+  rgb(205, 205, 209);
 
   }
 

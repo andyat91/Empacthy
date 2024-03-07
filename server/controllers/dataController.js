@@ -39,7 +39,7 @@ const infoCard = async (req, res) => {
       if (info.length <= 0)
       return res.status(404).send({ message: "No hay historial de Match" });
   
-      return res.send(info);
+      return res.send(info[0]);
     } catch (error) {
       console.log(error);
   
@@ -56,7 +56,7 @@ const infoCard = async (req, res) => {
       if (info.length <= 0)
       return res.status(404).send({ message: "No hay historial de donaciones" });
   
-      return res.send(info);
+      return res.send(info[0]);
     } catch (error) {
       console.log(error);
   
@@ -109,4 +109,22 @@ const infoCard = async (req, res) => {
     }
   };
 
-module.exports = { infoCard, infoMatch, infoCount, infoDonation, infoFilter, makeMatch };
+  const deleteMatch = async (req, res) => {
+  
+    try {
+
+    const {idorg,idempresa} = req.body
+      
+    await dao.deleteMatch(req.body)
+    // Devolvemos la respuesta
+
+    return res.status(201).send({ message: `Match eliminado` });
+  } catch (e) {
+    console.log(e.message);
+  }
+  };
+
+
+
+
+module.exports = { infoCard, infoMatch, infoCount, infoDonation, infoFilter, makeMatch,deleteMatch };

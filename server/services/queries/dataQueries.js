@@ -24,7 +24,7 @@ dataQueries.infoCard = async () => {
     let conn = null;
     try {
       conn = await db.createConnection();
-      return await db.query("SELECT organizaciones.denominacion as organizacionname, organizaciones.causas, organizaciones.tipo, organizaciones.localizacion,alianza.estado,alianza.donacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE empresas.id = ?", id, "select", conn);
+      return await db.query("SELECT organizaciones.id,organizaciones.denominacion as organizacionname, organizaciones.causas, organizaciones.tipo, organizaciones.localizacion,alianza.estado,alianza.donacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE empresas.id = ?", id, "select", conn);
     } catch (e) {
       throw new Error(e);
     } finally {
@@ -99,6 +99,19 @@ dataQueries.makeMatch = async (infoData) => {
       return await db.query('INSERT INTO alianza SET ?', userObj, 'insert', conn)
   } catch (e) {
      throw new Error(e)
+  } finally {
+      conn && await conn.end();
+  }
+};
+
+dataQueries.deleteMatch = async (userData) => {
+  // Conectamos con la base de datos y eliminamos el usuario por su id.
+  let conn = null
+  try {
+      conn = await db.createConnection()
+      return await db.query('DELETE FROM alianza WHERE idorganizaciones = ? AND idempresa = ?', [userData.idorg,userData.idempresa], 'delete', conn)         
+  } catch (e) {
+      throw new Error(e)
   } finally {
       conn && await conn.end();
   }

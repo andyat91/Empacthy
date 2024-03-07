@@ -1,0 +1,44 @@
+ .matchtipo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    background-color: var(--grey);
+    padding: 24px;
+    border-radius: 16px;
+
+}
+
+ .statetype0, .statetype1, .statetype2{
+
+    padding: 16px;
+    width: 33%;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+ 
+
+}
+.matchtipo .statetype0{
+    margin-right: 16px;
+}
+.matchtipo .statetype1{
+    margin-right: 16px;
+}
+.matchtipo .statetype0:hover, .statetype1:hover, .statetype2:hover{
+    transform: scale(1.1);
+}
+ .matchtipo .statetype0{
+    background-color: var(--cleargreen);
+    color: var(--blue);
+
+}
+.matchtipo .statetype1{
+    background-color: var(--green);
+    color: var(--blue);
+
+}
+.matchtipo .statetype2{
+    background-color: var(--greyblue);
+    color: var(--white);
+ 
+}
