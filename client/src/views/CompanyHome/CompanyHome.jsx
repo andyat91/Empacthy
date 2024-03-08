@@ -10,11 +10,13 @@ import State1 from "../../assets/icons/State1";
 import State2 from "../../assets/icons/State2";
 import InfoStates from "../../components/InfoState/InfoStates";
 
+
 export default function CompanyHome() {
   const { user } = useAuthContext();
   const [infoMatch, setInfoMatch] = useState([]);
   const [infoCount, setInfoCount] = useState([]);
   const [infoDonation, setInfoDonation] = useState([]);
+  const [deleteClick, setDeleteClick] = useState(false);
 
   useEffect(() => {
     let id = user.id;
@@ -49,24 +51,22 @@ export default function CompanyHome() {
       }
     }
 
-    
     fetchCount();
 
     fetchMatch();
 
     fetchDonation();
-  }, [user]);
+  }, [user, deleteClick]);
 
-  async function deleteMatch(idorg){
-    console.log(idorg)
+  async function deleteMatch(idorg) {
+    console.log(idorg);
     let idempresa = user.id;
 
     const formData = {
       idorg,
-      idempresa
-    }
+      idempresa,
+    };
     try {
-      
       const response = await fetch(`${host}/data/deletematch`, {
         method: "DELETE",
         headers: {
@@ -74,30 +74,27 @@ export default function CompanyHome() {
         },
         body: JSON.stringify(formData),
       });
-      const message =  await response.json();
-      if( response.ok){
-        toast.success(message.message)
-       
-      }else {
-        toast.error(message.message)
+      const message = await response.json();
+      if (response.ok) {
+        toast.success(message.message);
+        setDeleteClick((prev) => !prev);
+      } else {
+        toast.error(message.message);
       }
-
     } catch (error) {
-      console.log((error))
+      console.log(error);
     }
-
   }
 
   return (
     <div id="companyhome" className=" wrap">
       <div className="mismatch">
         <h4> Mis Matches</h4>
-        <InfoStates/>
+        <InfoStates />
         {infoMatch.map((match) => (
           <div className="matchorg" key={match.id}>
             <div className="img">
               <img src={match.imagen} alt="img" />
-              
             </div>
             <div className="info">
               <div className="principalinfo">
@@ -107,11 +104,13 @@ export default function CompanyHome() {
                 <p>{match.causas} </p>
               </div>
               <div className="descripcion">
-              <p>
+                <p>
                   <Location /> {match.localizacion}
                 </p>
-              <button onClick={()=> deleteMatch(match.id)}><i className="bi bi-trash3-fill"></i> Deshacer Match</button>
-              {console.log(match.id)}
+                <button onClick={() => deleteMatch(match.id)}>
+                  <i className="bi bi-trash3-fill"></i> Deshacer Match
+                </button>
+                {console.log(match.id)}
                 {/* <p>{match.descripcion} </p> */}
               </div>
               <div
@@ -125,7 +124,6 @@ export default function CompanyHome() {
                     : ""
                 }
               >
-               
                 <div className="estadoname">
                   <p>
                     {match.estado === 0 && <State0 />}
@@ -147,34 +145,33 @@ export default function CompanyHome() {
                     ? ""
                     : `Donación: ${match.donacion}€`}
                 </p>
-                
               </div>
-             
             </div>
-            
           </div>
         ))}
-       
       </div>
       <div className="kpis">
         <h4>Mis KPIs</h4>
+        <div className="kpisdata">
+          <div>
+          <h4>MATCHES:</h4> 
+          <h4>{infoCount.cantidad } </h4>
+          </div>
+          <div className="donation">
+          <h4> Dinero donado: </h4>
+          <h4>{infoDonation.cantidad} €</h4>
+          </div>
+        </div>
        
-          <p >
-            <b>Cantidad de matchs: {infoCount.cantidad}</b>{" "}
-          </p>
-     
-
-        
-          <p >
-            <b>Dinero donado: {infoDonation.cantidad} €</b>{" "}
-          </p>
-    
-        <Link to="/perfil" className="perfil">
-          Editar perfil
-        </Link>
         <Link to="/companyhome/match" className="matchlink">
           Buscar MATCH
         </Link>
+        <Link to="/perfil" className="perfil">
+          Editar perfil
+        </Link>
+      <div className="news">
+        <h4>NEWS</h4>
+      </div>
       </div>
     </div>
   );

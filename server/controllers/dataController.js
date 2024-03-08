@@ -114,7 +114,8 @@ const infoCard = async (req, res) => {
     try {
 
     const {idorg,idempresa} = req.body
-      
+    if (!idorg || !idempresa) return res.sendStatus(401).send({message:"Error en el servidor"});
+
     await dao.deleteMatch(req.body)
     // Devolvemos la respuesta
 
