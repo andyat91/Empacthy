@@ -93,9 +93,7 @@ export default function CompanyHome() {
         <InfoStates />
         {infoMatch.map((match) => (
           <div className="matchorg" key={match.id}>
-            <div className="img">
-              <img src={match.imagen} alt="img" />
-            </div>
+            <img src={match.imagen} alt="img" />
             <div className="info">
               <div className="principalinfo">
                 <h5>

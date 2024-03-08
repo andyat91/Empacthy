@@ -6,16 +6,9 @@
     overflow: hidden;
     padding: 40px;
     color: var(--blue);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 32px;
-    background-color:var(--cleargreen);
-    filter: brightness(90%);
-    transition: transform 0.5s;
+}
 
-}
-#cardbusiness:hover {
-    transform: scale(1.06);
-}
 
 #cardbusiness img {
    width: 35%;
@@ -50,14 +43,14 @@
 
 #cardbusiness .registro{
     text-decoration: none;
-   
     background-color: var(--blue);
     color: white;
     text-align: center;
-    padding: 8px;
+    padding: 8px 40px;
     border-radius: 6px;
     font-weight: 600;
     margin-top: 16px;
+    display: block;
 }
 #cardbusiness .registro:hover{
     background-color: var(--green);
@@ -66,10 +59,10 @@
 }
 #cardbusiness .containerbutton {
     display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 
 #cardbusiness .containerbuttonorg {
     display: flex;
-    justify-content: start;
+    justify-content: center;
 }
