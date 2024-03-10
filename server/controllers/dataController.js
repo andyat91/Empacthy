@@ -125,7 +125,22 @@ const infoCard = async (req, res) => {
   }
   };
 
+  const infoMatchOrg = async (req, res) => {
+
+    const { id } = req.params;
+    try {
+
+      let info = await dao.infoMatchOrg(id);
+      if (info.length <= 0)
+      return res.status(404).send({ message: "No hay historial de Match" });
+  
+      return res.send(info);
+    } catch (error) {
+      console.log(error);
+  
+      throw new Error(error);
+    }
+  };
 
 
-
-module.exports = { infoCard, infoMatch, infoCount, infoDonation, infoFilter, makeMatch,deleteMatch };
+module.exports = { infoCard , infoMatch , infoCount , infoDonation , infoFilter , makeMatch , deleteMatch , infoMatchOrg };

@@ -23,7 +23,7 @@ dao.addInquiry= async (userData) => await userQueries.addInquiry(userData);
 // Obtener info de tarjetas de landing
 dao.infoCard= async () => await dataQueries.infoCard();
 
-// Obtener info de tarjetas de landing
+// Obtener info match de empresas
 dao.infoMatch= async (id) => await dataQueries.infoMatch(id);
 
 // Obtener cantidad de match asociados a la empresa
@@ -43,4 +43,11 @@ dao.makeMatch= async (infoData) => await dataQueries.makeMatch(infoData);
 
 // Eliminar match
 dao.deleteMatch= async (infoData) => await dataQueries.deleteMatch(infoData);
+
+// Obtener info match de org
+dao.infoMatchOrg= async (id) => await dataQueries.infoMatchOrg(id);
+
+
+
+
 module.exports = dao;

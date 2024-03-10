@@ -1,0 +1,39 @@
+.matchtipoorg{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    background-color: var(--grey);
+    padding: 16px;
+    border-radius: 16px;
+    color: var(--white);
+
+}
+
+.matchtipoorg p{
+    margin: 0;
+    text-align: center;
+}
+.matchtipoorg .bi{
+    font-weight: 700;
+    font-size: 30px;
+}
+.statetype1, .statetype2{
+    width: 50%;
+    padding: 16px;
+    width: 33%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.matchtipoorg .statetype1{
+    background-color: var(--greyblue);
+}
+.matchtipoorg .statetype2{
+    background-color: var(--blue);
+    color:var(--white);
+ 
+}

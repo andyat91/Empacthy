@@ -69,14 +69,10 @@ dataQueries.infoCard = async () => {
   };
 
  dataQueries.getMatchById = async (idong,idempresa) => {
-    // Conectamos con la base de datos y buscamos si existe el usuario por el email.
-    //variable conn = null
-    let conn = null
-    //try catch finnally para cerrar la conexion al final
+   
+  let conn = null
     try {
-        //Creamoa la conexion a base de datos de mysql.js
         conn = await db.createConnection()
-        //Devolvemos los cuatro parametros: consulta, parametro, tipo de consulta y conexion
         return await db.query('SELECT * FROM alianza WHERE idorganizaciones = ? and idempresa = ?', [idong,idempresa], 'select', conn)
     } catch (e) {
         throw new Error(e)
@@ -117,5 +113,16 @@ dataQueries.deleteMatch = async (userData) => {
   }
 };
 
+dataQueries.infoMatchOrg = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT empresas.id,empresas.denominacion as empresaname, empresas.sector, empresas.tipoempresa, empresas.localizacion,alianza.estado,alianza.donacion,empresas.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE organizaciones.id = ?", id, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
 module.exports =  dataQueries ;
