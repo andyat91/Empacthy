@@ -3,7 +3,6 @@ import { useAuthContext } from "../../context/AuthContext";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import BrandLogo from "../../assets/icons/BrandLogo";
-import releevant from "../../assets/images/releevant.png"
 export default function Header() {
   const { user, logout } = useAuthContext();
   const [menu, setMenu] = useState(false);
@@ -39,7 +38,7 @@ export default function Header() {
       <div className="linkheader">
         {user ? (
           <div className="userlogged">
-            <img src={releevant} />
+            <img src={user.imagen} />
             <Link to="/companyhome" className="perfil"> <h5>{user.denominacion} </h5></Link>
             <button onClick={() => logout()}>Logout</button>
           </div>

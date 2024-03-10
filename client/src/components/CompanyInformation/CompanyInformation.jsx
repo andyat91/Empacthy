@@ -1,6 +1,5 @@
 import "./CompanyInformation.css";
 import { useAuthContext } from "../../context/AuthContext";
-import releevant from "../../assets/images/releevant.png";
 import { Link } from "react-router-dom";
 
 export default function CompanyInformation() {
@@ -11,7 +10,7 @@ export default function CompanyInformation() {
       <div className="companyinformation">
         <div className="imagename">
           <div className="image">
-          <img src={releevant} />
+          <img src={user.imagen} />
           <h3>{user.denominacion} </h3>
           </div>
           <div className="plancontratado">

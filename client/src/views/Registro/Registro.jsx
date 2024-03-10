@@ -71,9 +71,10 @@ export default function Registro() {
   return (
     <div className="registercontainer">
       <div className="register">
-        
-        <FingerPrint/>
-        <h3>Registro de Empresa</h3>
+        <div className="fingerprint">
+        <FingerPrint />
+        </div>
+        <h4>Registro de Empresa</h4>
         <form onSubmit={handleRegister}>
           <div className="registercolumn">
             <div className="columnleft">

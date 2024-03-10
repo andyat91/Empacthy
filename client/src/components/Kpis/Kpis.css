@@ -1,0 +1,107 @@
+#companyhome .kpis{
+    padding: 60px;
+    margin-left: 32px;
+    width: 35%;
+    background-color: var(--cleargreen);
+    color: var(--blue);
+    border-radius: 8px;
+
+}
+#companyhome .kpis h4{
+    margin: 0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    border-bottom: 2px solid; 
+}
+
+#companyhome .kpis .kpisdata{
+    margin-top: 40px;
+    background-color: var(--greyblue);
+    border-radius: 8px;
+    padding: 24px;
+    color: var(--white);
+
+}
+#companyhome .kpis .kpisdata h4{
+    border: none;
+    margin:0;
+    padding: 16px;
+}
+#companyhome .kpis .kpisdata div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid; 
+    border-color: var(--cleargreen);
+  
+   
+}
+
+#companyhome .kpis .kpisdata .donation{
+    border: none;
+    padding-top: 8px;
+}
+#companyhome .kpis .matchlink{
+    margin-top: 16px;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+#companyhome .kpis .perfil{
+    margin-top: 16px;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+    border-radius: 8px;
+    transition-duration: 0.5s;
+}
+
+#companyhome .kpis .matchlink:hover, .perfil:hover{
+    transform: scale(1.1);
+}
+
+
+#companyhome .kpis .news{
+    margin-top: 32px;
+}
+
+#companyhome .kpis .news a{
+text-decoration: none;
+color: var(--blue);
+margin: 0;
+
+}
+
+#companyhome .kpis .news a:hover {
+    text-decoration: underline;
+}
+#companyhome .kpis .news .new{
+ border-bottom: 2px solid;
+ padding-bottom: 16px;
+ margin-bottom: 32px;
+}
+
+#companyhome .kpis .news .new h5{
+    padding: 8px;
+    margin: 0;
+}
+
+#companyhome .kpis img {
+    width: 100%;
+}
+

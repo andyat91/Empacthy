@@ -47,8 +47,9 @@ let response ;
       });
 
     }
+    const userLogged = await response.json();
       if (response.ok) {
-        const userLogged = await response.json();
+        
         setUser({...userLogged, tipo:logintype });
        
         localStorage.setItem("user", JSON.stringify(userLogged));
@@ -56,6 +57,7 @@ let response ;
         toast.success(`Estas en la Home de ${userLogged.denominacion}`)
       } else {
         setErrorMessage(response.message);
+        toast.error(userLogged.message);
       }
     } catch (error) {
       setErrorMessage("Error en el servidor");

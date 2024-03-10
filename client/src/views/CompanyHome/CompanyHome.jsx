@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./CompanyHome.css";
 import { useAuthContext } from "../../context/AuthContext";
 import { useEffect, useState } from "react";
@@ -9,13 +8,13 @@ import State0 from "../../assets/icons/State0";
 import State1 from "../../assets/icons/State1";
 import State2 from "../../assets/icons/State2";
 import InfoStates from "../../components/InfoState/InfoStates";
+import Kpis from "../../components/Kpis/Kpis";
 
 
 export default function CompanyHome() {
   const { user } = useAuthContext();
   const [infoMatch, setInfoMatch] = useState([]);
-  const [infoCount, setInfoCount] = useState([]);
-  const [infoDonation, setInfoDonation] = useState([]);
+
   const [deleteClick, setDeleteClick] = useState(false);
 
   useEffect(() => {
@@ -30,32 +29,9 @@ export default function CompanyHome() {
         toast.error(error);
       }
     }
-
-    async function fetchCount() {
-      try {
-        const response = await fetch(`${host}/data/count/${id}`);
-        const infoCount = await response.json();
-        setInfoCount(infoCount);
-      } catch (error) {
-        toast.error(error);
-      }
-    }
-
-    async function fetchDonation() {
-      try {
-        const response = await fetch(`${host}/data/donation/${id}`);
-        const infoDonation = await response.json();
-        setInfoDonation(infoDonation);
-      } catch (error) {
-        toast.error(error);
-      }
-    }
-
-    fetchCount();
-
     fetchMatch();
 
-    fetchDonation();
+   
   }, [user, deleteClick]);
 
   async function deleteMatch(idorg) {
@@ -148,29 +124,7 @@ export default function CompanyHome() {
           </div>
         ))}
       </div>
-      <div className="kpis">
-        <h4>Mis KPIs</h4>
-        <div className="kpisdata">
-          <div>
-          <h4>MATCHES:</h4> 
-          <h4>{infoCount.cantidad } </h4>
-          </div>
-          <div className="donation">
-          <h4> Dinero donado: </h4>
-          <h4>{infoDonation.cantidad} €</h4>
-          </div>
-        </div>
-       
-        <Link to="/companyhome/match" className="matchlink">
-          Buscar MATCH
-        </Link>
-        <Link to="/perfil" className="perfil">
-          Editar perfil
-        </Link>
-      <div className="news">
-        <h4>NEWS</h4>
-      </div>
-      </div>
+     <Kpis deleteClick={deleteClick} />
     </div>
   );
 }

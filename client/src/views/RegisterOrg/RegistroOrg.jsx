@@ -71,9 +71,11 @@ export default function RegistroOrg() {
   return (
     <div className="registercontainer">
       <div className="register">
-        
+        <div className="fingerprint">
         <FingerPrint/>
-        <h3>Registro de Organización</h3>
+        </div>
+        <h4>Registro de Organización</h4>
+        
         <form onSubmit={handleRegister}>
           <div className="registercolumn">
             <div className="columnleft">

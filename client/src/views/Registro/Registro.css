@@ -15,8 +15,8 @@
     background-color: var(--white);
     padding-right: 80px;
     padding-left: 80px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     border-radius: 6px;
     margin-bottom: 16px;
     text-align: center;
@@ -44,6 +44,7 @@
     margin: 0px;
  
 }
+
 
 .register form {
     display: flex;
@@ -88,19 +89,22 @@
     color: var(--cleargreen);
  
 }
-
-.register .bi-fingerprint {
-
-    color: var(--green);
-    font-size: 160px;
-    max-width: 160px;
+.register .fingerprint{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 6px solid;
     border-radius: 60px;
-    margin-bottom: 32px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-right: 170px;
-    padding-left: 16px;
+    border-color: var(--green);
+    padding: 16px;
+   
+}
+.register .bi-fingerprint {
+    text-align: center;
+    color: var(--green);
+    font-size: 80px;
+    max-width: 80px;
+ 
     
 
 }

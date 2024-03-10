@@ -3,8 +3,7 @@
     padding: 40px;
     border-radius: 6px;
     border: 4px solid;
-    border-color: var(--purple);
-    background-color: white;
+    border-color: var(--greyblue);
     margin: 40px;
     display: flex;
     flex-direction: column;
@@ -36,8 +35,8 @@
     border-radius: 6px;
     margin-bottom: 8px;
     border: none;
-   background-color: var(--clear-purple);
-   color: white;
+   background-color: var(--cleargreen);
+   color:var(--greyblue);
    border: none;
     padding: 6px;
     outline: none;
@@ -46,7 +45,7 @@
     margin-right: 8px;
     padding-right: 16px;
     border-right: 2px solid;
-    border-color: var(--purple);
+    border-color: var(--greyblue);
 }
 
 #modifycompany form .formright{
@@ -62,12 +61,18 @@
     margin-top: 16px;
 }
 #modifycompany button {
+    margin-top: 16px;
    width: 100%;
    border: none;
    padding: 8px;
-   background-color: var(--purple);
+   background-color: var(--green);
    border-radius: 6px;
-   color: white;
+   color: var(--blue);
    font-size: large;
    font-weight: 600;
+}
+
+#modifycompany button:hover{
+    background-color: var(--blue);
+    color: var(--white);
 }
