@@ -1,4 +1,4 @@
-.matchtipoorg{
+#matchtipoorg{
     display: flex;
     justify-content: space-evenly;
     margin-top: 32px;
@@ -10,15 +10,15 @@
 
 }
 
-.matchtipoorg p{
+#matchtipoorg p{
     margin: 0;
     text-align: center;
 }
-.matchtipoorg .bi{
+#matchtipoorg .bi{
     font-weight: 700;
     font-size: 30px;
 }
-.statetype1, .statetype2{
+#matchtipoorg .statetype1,#matchtipoorg .statetype2{
     width: 48%;
     padding: 16px;
     border-radius: 8px;
@@ -28,10 +28,10 @@
     align-items: center;
 }
 
-.matchtipoorg .statetype1{
+#matchtipoorg .statetype1{
     background-color: var(--greyblue);
 }
-.matchtipoorg .statetype2{
+#matchtipoorg .statetype2{
     background-color: var(--blue);
     color:var(--white);
  

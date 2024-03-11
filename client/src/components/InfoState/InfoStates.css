@@ -1,4 +1,4 @@
- .matchtipo{
+ #matchtipo{
     display: flex;
     justify-content: space-between;
     margin-top: 32px;
@@ -10,18 +10,18 @@
 
 }
 
-.matchtipo p{
+#matchtipo p{
     margin: 0;
     text-align: center;
 }
-.matchtipo .bi{
+#matchtipo .bi{
     font-weight: 700;
     font-size: 30px;
 }
- .statetype0, .statetype1, .statetype2{
+#matchtipo .statetype0,#matchtipo .statetype1,#matchtipo .statetype2{
 
     padding: 16px;
-    width: 33%;
+    width: 32%;
     border-radius: 8px;
 
     display: flex;
@@ -31,13 +31,13 @@
 }
 
 
- .matchtipo .statetype0{
+#matchtipo .statetype0{
     background-color: var(--green);
 }
-.matchtipo .statetype1{
+#matchtipo .statetype1{
     background-color: var(--greyblue);
 }
-.matchtipo .statetype2{
+#matchtipo .statetype2{
     background-color: var(--blue);
     color:var(--white);
  

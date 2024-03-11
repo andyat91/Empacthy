@@ -15,7 +15,7 @@
 #organizationinfo .image{
     display: flex;
     justify-content: left;
-    align-items: top;
+    align-items: center;
 }
 #organizationinfo .organizationinfo {
     display: flex;
@@ -62,7 +62,7 @@
 }
 
 
-#organizationinfo .plancontratado h5{
+#organizationinfo .imagename h5{
     margin: 0;
     white-space: nowrap;
 }

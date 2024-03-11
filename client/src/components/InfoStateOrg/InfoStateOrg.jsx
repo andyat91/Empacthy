@@ -4,7 +4,7 @@ import State2 from "../../assets/icons/State2";
 
 export default function InfoStatesOrg() {
   return (
-    <div className="matchtipoorg">
+    <div id="matchtipoorg">
       <div className="statetype1">
         <State1 />
         <p>Has aceptado el Match de la empresa.</p>
