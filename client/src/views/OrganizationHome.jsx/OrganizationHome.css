@@ -1,0 +1,162 @@
+#organizationhome{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+#organizationhome .mismatch{
+    padding: 60px;
+    border-radius: 8px;
+    color: var(--white);
+    width: 65%;
+    margin-right: 32px;
+}
+
+#organizationhome .mismatch h4{
+    color: var(--blue);
+    margin: 0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    border-bottom: 2px solid;
+
+}
+
+#organizationhome .mismatch h5{
+    margin: 0;
+    
+}
+
+#organizationhome .matchorg{
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 4px solid;
+    border-radius: 8px;
+    background-color: var(--cleargreen);
+    border-color: var(--cleargreen);
+    margin-bottom: 32px;
+    color: var(--blue);
+    box-shadow: 0 4px 8px rgba(127, 123, 123, 0.5);
+    transition: transform 0.3s ease-in-out;
+
+}
+#organizationhome .matchorg:hover{
+    transform: scale(1.05);
+}
+
+#organizationhome .matchorg img{
+    width: 148px;
+    height: 148px;
+    object-fit: cover;
+    margin-right: 16px;
+    border-radius: 8px;
+    filter: brightness(90%);
+}
+#organizationhome .matchorg button{
+    background-color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--greyblue);
+    border: 2px solid;
+    border-color: var(--white);
+    padding: 6px;
+
+}
+
+#organizationhome .matchorg .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+#organizationhome .matchorg .info .descripcion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-left: 5px;
+}
+#organizationhome .matchorg .principalinfo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 2px solid;
+    padding: 6px;
+}
+#organizationhome .matchorg .estado{
+  
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    border-radius: 6px;
+    text-align: right;
+    padding: 6px;
+    
+}
+
+#organizationhome .matchorg .estado .estadoname{
+    display: flex;
+    padding-right: 2px;
+}
+#organizationhome .matchorg  .info .state2{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+#organizationhome .matchorg  .info .state1{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--greyblue);
+    color: var(--white);
+
+}
+#organizationhome .matchorg  .info .state0{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--green);
+    color: var(--white);
+}
+
+
+#organizationhome .matchorg p{
+    padding-right: 4px;
+    font-weight: 600;
+}
+#organizationhome .matchorg p {
+    margin: 0;
+}
+
+#organizationhome .matchorg button:hover{
+    background-color: var(--salmon);
+    border-color:var(--salmon);
+    color: var(--white);
+}
+
+#organizationhome .state0button{
+    display: flex;
+    align-items: center;
+}
+
+#organizationhome .state0button button {
+    margin: 6px 32px;
+    background-color: var(--greyblue);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+}
+
+#organizationhome .state0button .accept:hover{
+    background-color: var(--blue);
+    color: var(--white);
+}

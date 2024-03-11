@@ -47,7 +47,14 @@ dao.deleteMatch= async (infoData) => await dataQueries.deleteMatch(infoData);
 // Obtener info match de org
 dao.infoMatchOrg= async (id) => await dataQueries.infoMatchOrg(id);
 
+// Aceptar el match por la organizacion
+dao.acceptMatch= async (infoData) => await dataQueries.acceptMatch(infoData);
 
+// Obtener cantidad de match asociados a la org
+dao.infoCountOrg= async (id) => await dataQueries.infoCountOrg(id);
+
+// Obtener total de donaciones recibidas en la org
+dao.infoDonationOrg= async (id) => await dataQueries.infoDonationOrg(id);
 
 
 module.exports = dao;

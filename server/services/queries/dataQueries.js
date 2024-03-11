@@ -125,4 +125,49 @@ dataQueries.infoMatchOrg = async (id) => {
   }
 };
 
+dataQueries.acceptMatch = async (infoData) => {
+  let conn = null
+  try {
+      conn = await db.createConnection();
+
+      let userObj = {
+         idempresa: infoData.idempresa,
+         idorganizaciones: infoData.idorg,
+         estado: 1,
+         fecha_inicio: moment().format("YYYY-MM-DD HH:mm:ss")
+      }
+
+      userObj = await removeUndefinedKeys(userObj)
+
+      return await db.query('UPDATE alianza SET ? WHERE idempresa = ? AND idorganizaciones = ?', [userObj, infoData.idempresa,infoData.idorg], 'update', conn);
+  } catch (e) {
+     throw new Error(e);
+  } finally {
+      conn && await conn.end();
+  }
+};
+
+dataQueries.infoCountOrg = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT COUNT(idorganizaciones) AS cantidad FROM alianza WHERE idorganizaciones = ?", id, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+dataQueries.infoDonationOrg = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT sum(donacion) AS cantidad FROM alianza WHERE idorganizaciones = ?", id, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 module.exports =  dataQueries ;

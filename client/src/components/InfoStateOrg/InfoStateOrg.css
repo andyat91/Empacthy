@@ -1,6 +1,6 @@
 .matchtipoorg{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 32px;
     margin-bottom: 32px;
     background-color: var(--grey);
@@ -19,9 +19,8 @@
     font-size: 30px;
 }
 .statetype1, .statetype2{
-    width: 50%;
+    width: 48%;
     padding: 16px;
-    width: 33%;
     border-radius: 8px;
     display: flex;
     flex-direction: column;

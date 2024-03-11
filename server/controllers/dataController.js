@@ -132,7 +132,7 @@ const infoCard = async (req, res) => {
 
       let info = await dao.infoMatchOrg(id);
       if (info.length <= 0)
-      return res.status(404).send({ message: "No hay historial de Match" });
+      return res.status(201).send({ message: "No hay historial de Match" });
   
       return res.send(info);
     } catch (error) {
@@ -142,5 +142,61 @@ const infoCard = async (req, res) => {
     }
   };
 
+  const acceptMatch = async (req, res) => {
 
-module.exports = { infoCard , infoMatch , infoCount , infoDonation , infoFilter , makeMatch , deleteMatch , infoMatchOrg };
+    const { idempresa, idorg} = req.body;
+   
+    if (Object.keys(req.body).length === 0) return res.status(400).send("Error al recibir el body");
+  
+    try {
+    
+      const acceptMatch = await dao.acceptMatch(req.body);
+  
+      if(acceptMatch) {
+        return res.status(201).send({ message: `Match aceptado. En breve, Empacthy se pondrá en contacto para establecer la colaboración.` });
+  
+      } else {
+        res.sendStatus(500).send({message:"Error en el servidor"});
+      }
+      
+  
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  const infoCountOrg = async (req, res) => {
+
+    const { id } = req.params;
+    try {
+
+      let info = await dao.infoCountOrg(id);
+      if (info.length <= 0)
+      return res.status(404).send({ message: "No hay historial de Match" });
+  
+      return res.send(info[0]);
+    } catch (error) {
+      console.log(error);
+  
+      throw new Error(error);
+    }
+  };
+
+  const infoDonationOrg = async (req, res) => {
+
+    const { id } = req.params;
+    try {
+
+      let info = await dao.infoDonationOrg(id);
+      if (info.length <= 0)
+      return res.status(404).send({ message: "No hay historial de donaciones" });
+  
+      return res.send(info[0]);
+    } catch (error) {
+      console.log(error);
+  
+      throw new Error(error);
+    }
+  };
+
+module.exports = { infoCard , infoMatch , infoCount , infoDonation , infoFilter , makeMatch , deleteMatch , infoMatchOrg , acceptMatch , infoCountOrg , infoDonationOrg};
