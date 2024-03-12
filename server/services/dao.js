@@ -62,5 +62,13 @@ dao.getValores= async (id) => await dataQueries.getValores(id);
 // Obtener Valores asociados a la org
 dao.getOds= async (id) => await dataQueries.getOds(id);
 
+// Obtener si hay alguna organización con valores ya asignados
+dao.infoOrgValor= async (idorg) => await dataQueries.infoOrgValor(idorg);
+
+// Insertar nuevos valores en el caso de que no haya valores asignados
+dao.insertNewValor= async (infoData) => await dataQueries.insertNewValor(infoData);
+
+
+
 
 module.exports = dao;

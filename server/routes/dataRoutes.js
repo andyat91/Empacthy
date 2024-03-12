@@ -1,22 +1,37 @@
 const express = require("express");
 
-const { infoCard,infoMatch,infoCount,infoDonation,infoFilter,makeMatch,deleteMatch,infoMatchOrg,acceptMatch,infoCountOrg,infoDonationOrg,getValores, getOds } = require("../controllers/dataController");
+const {
+  infoCard,
+  infoMatch,
+  infoCount,
+  infoDonation,
+  infoFilter,
+  makeMatch,
+  deleteMatch,
+  infoMatchOrg,
+  acceptMatch,
+  infoCountOrg,
+  infoDonationOrg,
+  getValores,
+  getOds,
+  safeValores,
+} = require("../controllers/dataController");
 
-const dataRouter =  express.Router();
-
+const dataRouter = express.Router();
 
 dataRouter.get("/infocard", infoCard);
-dataRouter.get("/match/:id", infoMatch );
-dataRouter.get("/count/:id", infoCount );
-dataRouter.get("/donation/:id", infoDonation );
+dataRouter.get("/match/:id", infoMatch);
+dataRouter.get("/count/:id", infoCount);
+dataRouter.get("/donation/:id", infoDonation);
 dataRouter.get("/filter/:valor/:ods", infoFilter);
 dataRouter.post("/makematch", makeMatch);
-dataRouter.delete("/deletematch",deleteMatch);
-dataRouter.get("/matchorg/:id", infoMatchOrg );
+dataRouter.delete("/deletematch", deleteMatch);
+dataRouter.get("/matchorg/:id", infoMatchOrg);
 dataRouter.post("/acceptmatch", acceptMatch);
-dataRouter.get("/countorg/:id", infoCountOrg );
-dataRouter.get("/donationorg/:id", infoDonationOrg );
+dataRouter.get("/countorg/:id", infoCountOrg);
+dataRouter.get("/donationorg/:id", infoDonationOrg);
 dataRouter.get("/valoresinfo/:id", getValores);
 dataRouter.get("/odsinfo/:id", getOds);
+dataRouter.post("/safeValores", safeValores);
 
-module.exports = dataRouter
+module.exports = dataRouter;

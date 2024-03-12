@@ -194,4 +194,33 @@ dataQueries.getOds = async (id) => {
     conn && (await conn.end());
   }
 };
+
+dataQueries.infoOrgValor = async (idorg) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT * from valores_organizaciones where idorganizaciones = ?", idorg, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+dataQueries.insertNewValor = async (infoData) => {
+  
+  let conn = null
+  try {
+      conn = await db.createConnection()
+  
+      let userObj = {
+        
+      }                  
+      return await db.query('INSERT INTO valores_organizaciones SET ?', userObj, 'insert', conn)
+  } catch (e) {
+     throw new Error(e)
+  } finally {
+      conn && await conn.end();
+  }
+};
 module.exports =  dataQueries ;
