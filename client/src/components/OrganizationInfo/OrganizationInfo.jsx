@@ -1,37 +1,59 @@
 import "./OrganizationInfo.css";
 import { useAuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
-import {  useState } from "react";
+import {  useEffect, useState } from "react";
+import { host } from "../../const/host";
 
 
 
 export default function OrganizationInfo() {
-  const [valor1, setValor1] = useState("1");
-  const [valor2, setValor2] = useState("1");
-  const [valor3, setValor3] = useState("1");
-  const [ods1, setOds1] = useState("1");
-  const [ods2, setOds2] = useState("1");
-  const [ods3, setOds3] = useState("1");
   const { user } = useAuthContext();
+  const [valor1, setValor1] = useState("");
+  const [valor2, setValor2] = useState("");
+  const [valor3, setValor3] = useState("");
+  const [ods1, setOds1] = useState("");
+  const [ods2, setOds2] = useState("");
+  const [ods3, setOds3] = useState("");
 
-async function handleValor1(event){
-  setValor1(event.target.value);
-}
-async function handleValor2(event){
-  setValor2(event.target.value);
-}
-async function handleValor3(event){
-  setValor3(event.target.value);
+useEffect(() => {
+
+  let id= user.id;
+  async function showValor(){
+
+    const response = await fetch(`${host}/data/valoresinfo/${id}`);
+    const valor = await response.json();
+
+    setValor1(valor[0].id);
+    setValor2(valor[1].id);
+    setValor3(valor[2].id);
+  }
+  async function showOds(){
+
+    const response = await fetch(`${host}/data/odsinfo/${id}`);
+    const ods = await response.json();
+
+    setOds1(ods[0].id);
+    setOds2(ods[1].id);
+    setOds3(ods[2].id);
+  }
+  showValor()
+  showOds()
+},[user])
+
+
+
+ 
+
+
+
+  
+async function handleChange(event, setStateFunction) {
+  setStateFunction(event.target.value);
 }
 
-async function handleOds1(event){
-  setOds1(event.target.value);
-}
-async function handleOds2(event){
-  setOds2(event.target.value);
-}
-async function handleOds3(event){
-  setOds3(event.target.value);
+async function savePreferencesValor(){
+
+
 }
   return (
     <div id="organizationinfo">
@@ -51,12 +73,13 @@ async function handleOds3(event){
         </div>
       </div>
       <div className="preferences">
-        <div>
-          <h5>Mis valores y ODS</h5>
+      <h5>Mis valores y ODS</h5>
+        <div className="select">
+          
           <div>
           <div>
             <p>Valor1</p>
-          <select value={valor1} onChange={handleValor1}>
+          <select value={valor1 || ""} onChange={(event)=>handleChange(event, setValor1)}>
           <option value="1">Justicia, Inclusión y Diversidad</option>
           <option value="2">Proactividad e Innovación</option>
           <option value="3">Impacto+ y Sostenibilidad</option>
@@ -70,7 +93,7 @@ async function handleOds3(event){
         </div>
         <div>
             <p>Valor2</p>
-          <select value={valor2} onChange={handleValor2}>
+            <select value={valor2 || ""} onChange={(event)=>handleChange(event, setValor2)}>
           <option value="1">Justicia, Inclusión y Diversidad</option>
           <option value="2">Proactividad e Innovación</option>
           <option value="3">Impacto+ y Sostenibilidad</option>
@@ -84,7 +107,7 @@ async function handleOds3(event){
         </div>
         <div>
             <p>Valor3</p>
-          <select value={valor3} onChange={handleValor3}>
+            <select value={valor3 || ""} onChange={(event)=>handleChange(event, setValor3)}>
           <option value="1">Justicia, Inclusión y Diversidad</option>
           <option value="2">Proactividad e Innovación</option>
           <option value="3">Impacto+ y Sostenibilidad</option>
@@ -96,12 +119,12 @@ async function handleOds3(event){
           <option value="9">Empatía y gratitud</option>
         </select>
         </div>
-        <button>Guardar</button>
+        <button onClick={()=> savePreferencesValor()}>Guardar</button>
         </div>
         <div>
         <div>
           <p>ODS 1</p>
-        <select value={ods1} onChange={handleOds1}>
+          <select value={ods1 || ""} onChange={(event)=>handleChange(event, setOds1)}>
           <option value="1">Fin de la pobreza</option>
           <option value="2">Hambre cero</option>
           <option value="3">Salud y bienestar</option>
@@ -124,7 +147,7 @@ async function handleOds3(event){
         </div>
         <div>
           <p>ODS 2</p>
-        <select value={ods2} onChange={handleOds2}>
+          <select value={ods2 || ""} onChange={(event)=>handleChange(event, setOds2)}>
           <option value="1">Fin de la pobreza</option>
           <option value="2">Hambre cero</option>
           <option value="3">Salud y bienestar</option>
@@ -147,7 +170,7 @@ async function handleOds3(event){
         </div>
         <div>
           <p>ODS 3</p>
-        <select value={ods3} onChange={handleOds3}>
+          <select value={ods3 || ""} onChange={(event)=>handleChange(event, setOds3)}>
           <option value="1">Fin de la pobreza</option>
           <option value="2">Hambre cero</option>
           <option value="3">Salud y bienestar</option>

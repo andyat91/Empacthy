@@ -56,5 +56,11 @@ dao.infoCountOrg= async (id) => await dataQueries.infoCountOrg(id);
 // Obtener total de donaciones recibidas en la org
 dao.infoDonationOrg= async (id) => await dataQueries.infoDonationOrg(id);
 
+// Obtener Valores asociados a la org
+dao.getValores= async (id) => await dataQueries.getValores(id);
+
+// Obtener Valores asociados a la org
+dao.getOds= async (id) => await dataQueries.getOds(id);
+
 
 module.exports = dao;

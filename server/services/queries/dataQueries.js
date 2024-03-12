@@ -170,4 +170,28 @@ dataQueries.infoDonationOrg = async (id) => {
     conn && (await conn.end());
   }
 };
+
+dataQueries.getValores = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT valores.id,valores.denominacion FROM valores JOIN valores_organizaciones ON valores_organizaciones.idvalores = valores.id JOIN organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones WHERE organizaciones.id= ?", id, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+dataQueries.getOds = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT ods.id,ods.denominacion FROM ods JOIN ods_organizaciones ON ods_organizaciones.idods = ods.id JOIN organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE organizaciones.id= ?", id, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 module.exports =  dataQueries ;

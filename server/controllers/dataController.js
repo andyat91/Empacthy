@@ -199,4 +199,33 @@ const infoCard = async (req, res) => {
     }
   };
 
-module.exports = { infoCard , infoMatch , infoCount , infoDonation , infoFilter , makeMatch , deleteMatch , infoMatchOrg , acceptMatch , infoCountOrg , infoDonationOrg};
+  const getValores = async (req, res) => {
+
+    const { id } = req.params;
+    try {
+
+      let info = await dao.getValores(id);
+  
+      return res.send(info);
+    } catch (error) {
+      console.log(error);
+  
+      throw new Error(error);
+    }
+  };
+
+  const getOds = async (req, res) => {
+
+    const { id } = req.params;
+    try {
+
+      let info = await dao.getOds(id);
+  
+      return res.send(info);
+    } catch (error) {
+      console.log(error);
+  
+      throw new Error(error);
+    }
+  };
+module.exports = { infoCard , infoMatch , infoCount , infoDonation , infoFilter , makeMatch , deleteMatch , infoMatchOrg , acceptMatch , infoCountOrg , infoDonationOrg, getValores, getOds};

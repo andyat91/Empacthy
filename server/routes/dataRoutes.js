@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { infoCard,infoMatch,infoCount,infoDonation,infoFilter,makeMatch,deleteMatch,infoMatchOrg,acceptMatch,infoCountOrg,infoDonationOrg } = require("../controllers/dataController");
+const { infoCard,infoMatch,infoCount,infoDonation,infoFilter,makeMatch,deleteMatch,infoMatchOrg,acceptMatch,infoCountOrg,infoDonationOrg,getValores, getOds } = require("../controllers/dataController");
 
 const dataRouter =  express.Router();
 
@@ -16,5 +16,7 @@ dataRouter.get("/matchorg/:id", infoMatchOrg );
 dataRouter.post("/acceptmatch", acceptMatch);
 dataRouter.get("/countorg/:id", infoCountOrg );
 dataRouter.get("/donationorg/:id", infoDonationOrg );
+dataRouter.get("/valoresinfo/:id", getValores);
+dataRouter.get("/odsinfo/:id", getOds);
 
 module.exports = dataRouter
