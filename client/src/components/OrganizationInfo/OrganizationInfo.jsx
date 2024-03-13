@@ -3,6 +3,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { host } from "../../const/host";
+import toast from "react-hot-toast";
 
 export default function OrganizationInfo() {
   const { user } = useAuthContext();
@@ -72,7 +73,7 @@ export default function OrganizationInfo() {
 
     let idorg = user.id;
     
-    const formData = {
+    const formDataValor = {
       idorg,
       prevValor1,
       prevValor2,
@@ -84,7 +85,18 @@ export default function OrganizationInfo() {
 
     try {
       
-      const response = await fetch("/")
+      const response = await fetch(`${host}/data/safevalores`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataValor),
+      });
+      const message = await response.json();
+      if(response.ok){
+        toast.success(message.message)
+      } 
+
     } catch (error) {
       console.log(error)
     }

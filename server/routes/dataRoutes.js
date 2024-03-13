@@ -32,6 +32,6 @@ dataRouter.get("/countorg/:id", infoCountOrg);
 dataRouter.get("/donationorg/:id", infoDonationOrg);
 dataRouter.get("/valoresinfo/:id", getValores);
 dataRouter.get("/odsinfo/:id", getOds);
-dataRouter.post("/safeValores", safeValores);
+dataRouter.post("/safevalores", safeValores);
 
 module.exports = dataRouter;

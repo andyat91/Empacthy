@@ -68,6 +68,8 @@ dao.infoOrgValor= async (idorg) => await dataQueries.infoOrgValor(idorg);
 // Insertar nuevos valores en el caso de que no haya valores asignados
 dao.insertNewValor= async (infoData) => await dataQueries.insertNewValor(infoData);
 
+// Borra valores antes de insertar nuevos valores
+dao.deleteValores= async (idorg) => await dataQueries.deleteValores(idorg);
 
 
 

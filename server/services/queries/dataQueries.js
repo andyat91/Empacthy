@@ -208,19 +208,39 @@ dataQueries.infoOrgValor = async (idorg) => {
 };
 
 dataQueries.insertNewValor = async (infoData) => {
-  
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+
+    const userObj = [
+      [infoData.idorg, infoData.valor1],
+      [infoData.idorg, infoData.valor2],
+      [infoData.idorg, infoData.valor3]
+    ];
+
+    for (const values of userObj) {
+      await db.query('INSERT INTO valores_organizaciones (idorganizaciones, idvalores) VALUES (?, ?)', values, 'insert', conn);
+    }
+
+    return "Ok";
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    if (conn) await conn.end();
+  }
+};
+
+dataQueries.deleteValores = async (idorg) => {
+  // Conectamos con la base de datos y eliminamos el usuario por su id.
   let conn = null
   try {
       conn = await db.createConnection()
-  
-      let userObj = {
-        
-      }                  
-      return await db.query('INSERT INTO valores_organizaciones SET ?', userObj, 'insert', conn)
+      return await db.query('DELETE FROM valores_organizaciones WHERE idorganizaciones = ?', idorg, 'delete', conn)         
   } catch (e) {
-     throw new Error(e)
+      throw new Error(e)
   } finally {
       conn && await conn.end();
   }
 };
+
 module.exports =  dataQueries ;

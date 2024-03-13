@@ -86,11 +86,9 @@ const makeMatch = async (req, res) => {
     } else {
       const makeMatch = await dao.makeMatch(req.body);
       if (makeMatch)
-        return res
-          .status(201)
-          .send({
-            message: `!Enhorabuena¡ Tienes un nuevo Match en proceso de validación`,
-          });
+        return res.status(201).send({
+          message: `!Enhorabuena¡ Tienes un nuevo Match en proceso de validación`,
+        });
     }
   } catch (e) {
     console.log(e.message);
@@ -139,11 +137,9 @@ const acceptMatch = async (req, res) => {
     const acceptMatch = await dao.acceptMatch(req.body);
 
     if (acceptMatch) {
-      return res
-        .status(201)
-        .send({
-          message: `Match aceptado. En breve, Empacthy se pondrá en contacto para establecer la colaboración.`,
-        });
+      return res.status(201).send({
+        message: `Match aceptado. En breve, Empacthy se pondrá en contacto para establecer la colaboración.`,
+      });
     } else {
       res.sendStatus(500).send({ message: "Error en el servidor" });
     }
@@ -211,15 +207,25 @@ const getOds = async (req, res) => {
 };
 
 const safeValores = async (req, res) => {
-  const { idorg, prevValor1, prevValor2, prevValor3, valor1, valor2, valor3 } = req.body;
+  const { idorg, prevValor1, prevValor2, prevValor3, valor1, valor2, valor3 } =
+    req.body;
   try {
     let infoOrgValor = await dao.infoOrgValor(idorg);
     if (infoOrgValor.length <= 0) {
+    
+      let insertNewValor = await dao.insertNewValor(req.body);
+      if(insertNewValor)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+    } else {
 
-      let insertNewValor = await dao.insertNewValor(req.body)
+      let deleteValores = await dao.deleteValores(idorg)
+      if(deleteValores){
+        let insertNewValor = await dao.insertNewValor(req.body);
+        if(insertNewValor)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+      }
+
     }
 
-    return res.send(info[0]);
+ 
   } catch (error) {
     console.log(error);
 
