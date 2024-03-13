@@ -15,6 +15,7 @@ import RegistroOrg from "./views/RegisterOrg/RegistroOrg";
 import ModifyCompany from "./views/ModifyCompany/ModifyCompany";
 import PerfilCompany from "./views/PerfilCompany/PerfilCompany";
 import PerfilOrganization from "./views/PerfilOrganization/PerfilOrganization";
+import ModifyOrganization from "./views/ModigyOrganization/ModifyOrganization";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/companyhome/match" element={<Match />} />
               <Route path="/companyhome/modify" element={<ModifyCompany />} />
               <Route path="/organizationhome" element={<OrganizationHome />} />
+              <Route path="/organizationhome/modify" element={<ModifyOrganization/>}/>
               <Route path="/perfilorg" element={<PerfilOrganization/>}/>
             </Route>
           </Route>

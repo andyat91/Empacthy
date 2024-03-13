@@ -48,9 +48,10 @@ let response ;
 
     }
     const userLogged = await response.json();
+    console.log(logintype)
       if (response.ok) {
         
-        setUser({...userLogged, tipo:logintype });
+        setUser({...userLogged, logintipo:logintype });
        
         localStorage.setItem("user", JSON.stringify(userLogged));
         setErrorMessage("");

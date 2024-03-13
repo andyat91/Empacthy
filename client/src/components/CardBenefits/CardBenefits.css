@@ -14,7 +14,9 @@
    width: 35%;
    height: auto;
    border-radius: 6px;
-   filter: brightness(90%);
+   filter: brightness(80%);
+   max-width: 480px; /* Ancho máximo deseado */
+   max-height: 400px; /* Altura máxima deseada */
 }
 
 #cardbusiness  .empresa{
@@ -31,7 +33,7 @@
     font-family: "Bebas Neue", sans-serif;
     text-align: center;
     border-bottom: 2px solid;
-    border-color: var(--white);
+    border-color: var(--green);
 }
 #cardbusiness ul{
     list-style-type:circle;

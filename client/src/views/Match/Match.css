@@ -1,0 +1,46 @@
+#searchmatch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#searchmatch .searchmatch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+ 
+#searchmatch h3{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#searchmatch .filter{
+    display: flex;
+ justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--blue);
+    padding: 16px;
+    border-radius: 6px;
+    color: var(--white);
+}
+#searchmatch .filter .filterselect{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+#searchmatch .filter .filter label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+#searchmatch .filter select{
+width: 80%;
+padding: 8px;
+border: none;
+}

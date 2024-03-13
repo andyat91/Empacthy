@@ -28,50 +28,60 @@ export default function Header() {
 
   return (
     <div className="headercontainer">
-    <div className="header wrap">
-      <div className="nameslogan">
-        <h2>
-          <BrandLogo />
-        </h2>
-        <h5>Matchmaking B2Org </h5>
-      </div>
-      <div className="linkheader">
-        {user ? (
-          <div className="userlogged">
-            <img src={user.imagen} />
-            <Link to="/companyhome" className="perfil"> <h5>{user.denominacion} </h5></Link>
-            <button onClick={() => logout()}>Logout</button>
-          </div>
-        ) : (
-          <>
-            <Link className="buttonheader aboutus" to="/empacthy">
-              ¿Quiénes somos?
-            </Link>
+      <div className="header wrap">
+        <div className="nameslogan">
+          <h2>
+            <BrandLogo />
+          </h2>
+          <h5>Matchmaking B2Org </h5>
+        </div>
+        
+        <div className="linkheader">
+          {user ? (
+            <div className="userlogged">
+              <img src={user.imagen} />
+              <Link
+                to={
+                  user.logintipo === "Soy una Empresa"
+                    ? "/companyhome"
+                    : "/organizationhome"
+                }
+                className="perfil"
+              >
+                <h5>{user.denominacion}</h5>
+              </Link>
+              <button onClick={() => logout()}>Logout</button>
+            </div>
+          ) : (
+            <>
+              <Link className="buttonheader aboutus" to="/empacthy">
+                ¿Quiénes somos?
+              </Link>
 
-            <button
-              className="buttonheader registroheader"
-              onClick={() => handleMenu()}
-            >
-              REGÍSTRATE
-            </button>
-            {menu && (
-              <div className="containermenu">
-                <Link to="/registro" className="linkcontainer">
-                  Soy una Empresa
-                </Link>
-                <Link to="/registroorg" className="linkcontainer">
-                  Soy una Organización
-                </Link>
-              </div>
-            )}
+              <button
+                className="buttonheader registroheader"
+                onClick={() => handleMenu()}
+              >
+                REGÍSTRATE
+              </button>
+              {menu && (
+                <div className="containermenu">
+                  <Link to="/registro" className="linkcontainer">
+                    Soy una Empresa
+                  </Link>
+                  <Link to="/registroorg" className="linkcontainer">
+                    Soy una Organización
+                  </Link>
+                </div>
+              )}
 
-            <Link className="buttonheader loginheader" to="/login">
-              Iniciar Sesion
-            </Link>
-          </>
-        )}
+              <Link className="buttonheader loginheader" to="/login">
+                Iniciar Sesion
+              </Link>
+            </>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

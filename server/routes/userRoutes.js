@@ -1,7 +1,7 @@
 
 const express = require("express");
 
-const { loginUserCompany ,addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany } = require('../controllers/userController');
+const { loginUserCompany ,addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany,updateOrganization } = require('../controllers/userController');
 //Routes sirve para modularizar y organizar rutas de manera mas efectiva, libreria express
 const userRouter = express.Router();
 
@@ -13,6 +13,7 @@ userRouter.post("/logincompany", loginUserCompany);
 userRouter.post("/loginorganization", loginUserOrganization);
 userRouter.post("/inquiry", addInquiry);
 userRouter.post("/updatecompany", updateCompany);
+userRouter.post("/updateorganization", updateOrganization);
 
 
 

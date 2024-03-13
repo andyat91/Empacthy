@@ -243,4 +243,51 @@ dataQueries.deleteValores = async (idorg) => {
   }
 };
 
+dataQueries.infoOrgOds = async (idorg) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT * from ods_organizaciones where idorganizaciones = ?", idorg, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+dataQueries.insertNewOds = async (infoData) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+
+    const userObj = [
+      [infoData.idorg, infoData.ods1],
+      [infoData.idorg, infoData.ods2],
+      [infoData.idorg, infoData.ods3]
+    ];
+
+    for (const values of userObj) {
+      await db.query('INSERT INTO ods_organizaciones (idorganizaciones, idods) VALUES (?, ?)', values, 'insert', conn);
+    }
+
+    return "Ok";
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    if (conn) await conn.end();
+  }
+};
+
+dataQueries.deleteOds = async (idorg) => {
+  // Conectamos con la base de datos y eliminamos el usuario por su id.
+  let conn = null
+  try {
+      conn = await db.createConnection()
+      return await db.query('DELETE FROM ods_organizaciones WHERE idorganizaciones = ?', idorg, 'delete', conn)         
+  } catch (e) {
+      throw new Error(e)
+  } finally {
+      conn && await conn.end();
+  }
+};
 module.exports =  dataQueries ;

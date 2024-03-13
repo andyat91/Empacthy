@@ -1,4 +1,4 @@
-#modifycompany .modifycompany{
+#modifyorganization .modifyorganization{
     width: 50%;
     padding: 40px;
     border-radius: 6px;
@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
 }
-#modifycompany form {
+#modifyorganization form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,20 +17,20 @@
 
 }
 
-#modifycompany h4{
+#modifyorganization h4{
     font-family: "Bebas Neue", sans-serif;
 }
-#modifycompany form .form {
+#modifyorganization form .form {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-#modifycompany form label {
+#modifyorganization form label {
     display: flex;
     flex-direction: column;
     font-size: large;
 }
-#modifycompany form input {
+#modifyorganization form input {
     display: inline-block;
     border-radius: 6px;
     margin-bottom: 8px;
@@ -41,26 +41,26 @@
     padding: 6px;
     outline: none;
 }
-#modifycompany form .formleft{
+#modifyorganization form .formleft{
     margin-right: 8px;
     padding-right: 16px;
     border-right: 2px solid;
     border-color: var(--greyblue);
 }
 
-#modifycompany form .formright{
+#modifyorganization form .formright{
     margin-left: 8px;
 }
-#modifycompany{
+#modifyorganization{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#modifycompany .linktocompanyhome{
+#modifyorganization .linktocompanyhome{
     width: 100%;
     margin-top: 16px;
 }
-#modifycompany button {
+#modifyorganization button {
     margin-top: 16px;
    width: 100%;
    border: none;
@@ -72,12 +72,11 @@
    font-weight: 600;
 }
 
-#modifycompany button:hover{
+#modifyorganization button:hover{
     background-color: var(--blue);
     color: var(--white);
 }
-
-#modifycompany .button{
+#modifyorganization .button{
     margin-top: 16px;
     text-decoration: none;
     color: var(--greyblue);
@@ -89,7 +88,7 @@
 
 }
 
-#modifycompany .button:hover{
+#modifyorganization .button:hover{
     margin-top: 16px;
     text-decoration: none;
     border-radius: 6px;

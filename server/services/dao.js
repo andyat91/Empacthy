@@ -11,6 +11,9 @@ dao.getUserByEmailCompany = async (email) => await userQueries.getUserByEmailCom
 // Actualizar informacion y datos de Empresas
 dao.updateCompany = async (userData) => await userQueries.updateCompany(userData);
 
+// Actualizar informacion y datos de Organizaciones
+dao.updateOrganization = async (userData) => await userQueries.updateOrganization(userData);
+
 //Añadir una nueva organización
 dao.addOrganization= async (userData) => await userQueries.addOrganization(userData);
 
@@ -65,11 +68,21 @@ dao.getOds= async (id) => await dataQueries.getOds(id);
 // Obtener si hay alguna organización con valores ya asignados
 dao.infoOrgValor= async (idorg) => await dataQueries.infoOrgValor(idorg);
 
-// Insertar nuevos valores en el caso de que no haya valores asignados
+// Insertar nuevos valores 
 dao.insertNewValor= async (infoData) => await dataQueries.insertNewValor(infoData);
 
 // Borra valores antes de insertar nuevos valores
 dao.deleteValores= async (idorg) => await dataQueries.deleteValores(idorg);
+
+// Obtener si hay alguna organización con ods ya asignados
+dao.infoOrgOds= async (idorg) => await dataQueries.infoOrgOds(idorg);
+
+// Insertar nuevos ods 
+dao.insertNewOds= async (infoData) => await dataQueries.insertNewOds(infoData);
+
+// Borra ods antes de insertar nuevos valores
+dao.deleteOds= async (idorg) => await dataQueries.deleteOds(idorg);
+
 
 
 

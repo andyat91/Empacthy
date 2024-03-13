@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import empresa from "../../assets/images/beneficiosempresa.jpg";
+import benefitsempresa from "../../assets/images/benefitsempresa.jpg";
 import "./CardBenefits.css";
 export default function CardBenefits() {
   return (
     <div className=" wrap" id="cardbusiness">
-      <img src={empresa} alt="Beneficios de empresa" className="empresa" />
+      <img src={benefitsempresa} alt="Beneficios de empresa" className="empresa" />
       <div className="businessbenefits">
         <h4>Beneficios y ventajas para Empresas</h4>
         <ul>

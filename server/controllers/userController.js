@@ -91,7 +91,7 @@ const updateCompany = async (req, res) => {
   const { id,denominacion,nombre,apellidos,email,telefono,cargo,sector,tipoempresa,localizacion } = req.body;
 
   if (!id || !denominacion || !nombre || !apellidos || !email || !telefono || !cargo || !sector || !tipoempresa || !localizacion)
-    return res.status(400).send({ message: "Error al recibir el body" });
+    return res.status(400).send({ message: "Error del servidor al recibir un campo vacio" });
 
   try {
 
@@ -196,7 +196,6 @@ const loginUserOrganization = async (req, res) => {
   }
 };
 
-
 const addInquiry = async (req, res) => {
   const {
     consulta,
@@ -225,5 +224,27 @@ const addInquiry = async (req, res) => {
   }
 };
 
+const updateOrganization = async (req, res) => {
+  const { id,denominacion,nombre,apellidos,email,telefono,cargo,causas,tipo,localizacion } = req.body;
 
-module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany};
+  if (!id || !denominacion || !nombre || !apellidos || !email || !telefono || !cargo || !causas || !tipo || !localizacion)
+    return res.status(400).send({ message: "Error del servidor al recibir un campo vacio" });
+
+  try {
+
+    const updateOrganization = await dao.updateOrganization(req.body);
+
+    if (updateOrganization)
+      return res.send({
+        message: `Perfil de ${denominacion} modificado correctamente`,
+      });
+  } catch (error) {
+    console.log(error);
+
+    throw new Error(error);
+  }
+};
+
+
+
+module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany, updateOrganization};

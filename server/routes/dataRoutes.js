@@ -15,6 +15,7 @@ const {
   getValores,
   getOds,
   safeValores,
+  safeOds
 } = require("../controllers/dataController");
 
 const dataRouter = express.Router();
@@ -33,5 +34,6 @@ dataRouter.get("/donationorg/:id", infoDonationOrg);
 dataRouter.get("/valoresinfo/:id", getValores);
 dataRouter.get("/odsinfo/:id", getOds);
 dataRouter.post("/safevalores", safeValores);
+dataRouter.post("/safeods", safeOds);
 
 module.exports = dataRouter;

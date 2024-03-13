@@ -77,24 +77,6 @@
    
 }
 
-#organizationinfo .planseleccionado{
-    background-color: var(--cleargreen);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    color: var(--blue);
-    padding: 8px;
-    transition: transform 0.5s;
-}
-
-#organizationinfo .planseleccionado:hover{
-    transform: scale(1.1);
-}
-
-
-#organizationinfo .blank{
-    padding-top: 48px;
-}
 
 #organizationinfo  .plan{
     display: flex;
@@ -130,13 +112,10 @@
     color: var(--white);
 }
 
-#organizationinfo .userinformation .perfil{
 
-    display: flex;
-    justify-content: center;
-}
 #organizationinfo .userinformation h4{
-    margin: 0;
+    margin-top: 0;
+    text-align: center;
 }
 #organizationinfo .userinformation .userdata{
     display: flex;
@@ -146,9 +125,65 @@
     margin-bottom: 16px;
 
 }
+#organizationinfo .preferences {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
+   
 
+}
+
+#organizationinfo .preferences h4{
+    text-align: center;
+    margin-top: 0;
+    
+}
 #organizationinfo .preferences .select{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 32px;
+    border-bottom: 2px solid;
+    border-color: var(--green);
+}
+#organizationinfo .preferences select{
+    width: 100%;
+    margin: 0;
+    background-color: var(--cleargreen);
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 8px;
+    color: var(--blue);
+    font-weight: 600;
+}
+#organizationinfo .preferences .select button {
+    border: none;
+    margin: 32px 0px;
+    width: 100%;
+    padding: 8px;
+    border:2px solid;
+    border-radius: 8px;
+    background-color: var(--greyblue);
+    color: var(--cleargreen);
+    font-weight: 600;
+    font-size: large;
+}
+#organizationinfo .preferences .select button:hover {
+ color: var(--white);
+ border-color: var(--white);
+}
+
+#organizationinfo .preferences .select .containervalor{
+    width: 45%;
+}
+#organizationinfo .preferences .select .containerods{
+    width: 45%;
+}
+
+#organizationinfo .preferences .containervalor div{
+    margin-top: 16px;
+}
+#organizationinfo .preferences .containerods div{
+    margin-top: 16px;
 }
 

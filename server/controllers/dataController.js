@@ -232,6 +232,35 @@ const safeValores = async (req, res) => {
     throw new Error(error);
   }
 };
+
+const safeOds = async (req, res) => {
+  const { idorg, prevValor1, prevValor2, prevValor3, valor1, valor2, valor3 } =
+    req.body;
+  try {
+    let infoOrgOds = await dao.infoOrgOds(idorg);
+    if (infoOrgOds.length <= 0) {
+    
+      let insertNewOds = await dao.insertNewOds(req.body);
+      if(insertNewOds)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+    } else {
+
+      let deleteOds = await dao.deleteOds(idorg)
+      if(deleteOds){
+        let insertNewOds = await dao.insertNewOds(req.body);
+        if(insertNewOds)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+      }
+
+    }
+
+ 
+  } catch (error) {
+    console.log(error);
+
+    throw new Error(error);
+  }
+};
+
+
 module.exports = {
   infoCard,
   infoMatch,
@@ -247,4 +276,5 @@ module.exports = {
   getValores,
   getOds,
   safeValores,
+  safeOds
 };

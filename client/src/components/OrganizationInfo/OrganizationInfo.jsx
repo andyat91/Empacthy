@@ -101,6 +101,40 @@ export default function OrganizationInfo() {
       console.log(error)
     }
   }
+
+  async function savePreferencesOds() {
+
+    let idorg = user.id;
+    
+    const formDataOds = {
+      idorg,
+      prevOds1,
+      prevOds2,
+      prevOds3,
+      ods1,
+      ods2,
+      ods3
+    }
+
+    try {
+      
+      const response = await fetch(`${host}/data/safeods`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataOds),
+      });
+      const message = await response.json();
+      if(response.ok){
+        toast.success(message.message)
+      } 
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div id="organizationinfo">
       <div className="organizationinfo">
@@ -110,24 +144,24 @@ export default function OrganizationInfo() {
             <h3>{user.denominacion} </h3>
           </div>
           <h5>
-            <b>Localización:</b> {user.localizacion}{" "}
+            <b>Localización:</b> {user.localizacion}
           </h5>
         </div>
         <div className="aditionalinfo">
           <h5>
-            <b>Causa principal:</b> {user.causas}{" "}
+            <b>Causa principal:</b> {user.causas}
           </h5>
           <h5>
-            <b>Tipo de Organización:</b> {user.tipo}{" "}
+            <b>Tipo de Organización:</b> {user.tipo}
           </h5>
         </div>
       </div>
       <div className="preferences">
-        <h5>Mis valores y ODS</h5>
+        <h4>Mis valores y ODS</h4>
         <div className="select">
-          <div>
-            <div>
-              <p>Valor1</p>
+          <div className="containervalor">
+            <div >
+              <p>Primer Valor</p>
               <select
                 value={valor1 || ""}
                 onChange={(event) => handleChange(event, setValor1)}
@@ -144,7 +178,7 @@ export default function OrganizationInfo() {
               </select>
             </div>
             <div>
-              <p>Valor2</p>
+              <p>Segundo Valor</p>
               <select
                 value={valor2 || ""}
                 onChange={(event) => handleChange(event, setValor2)}
@@ -161,7 +195,7 @@ export default function OrganizationInfo() {
               </select>
             </div>
             <div>
-              <p>Valor3</p>
+              <p>Tercer Valor</p>
               <select
                 value={valor3 || ""}
                 onChange={(event) => handleChange(event, setValor3)}
@@ -179,9 +213,9 @@ export default function OrganizationInfo() {
             </div>
             <button onClick={() => savePreferencesValor()}>Guardar</button>
           </div>
-          <div>
+          <div className="containerods">
             <div>
-              <p>ODS 1</p>
+              <p>Primer ODS (Objetivos de Desarrollo Sostenible)</p>
               <select
                 value={ods1 || ""}
                 onChange={(event) => handleChange(event, setOds1)}
@@ -206,7 +240,7 @@ export default function OrganizationInfo() {
               </select>
             </div>
             <div>
-              <p>ODS 2</p>
+              <p>Segundo ODS (Objetivos de Desarrollo Sostenible)</p>
               <select
                 value={ods2 || ""}
                 onChange={(event) => handleChange(event, setOds2)}
@@ -231,7 +265,7 @@ export default function OrganizationInfo() {
               </select>
             </div>
             <div>
-              <p>ODS 3</p>
+              <p>Tercer ODS (Objetivos de Desarrollo Sostenible)</p>
               <select
                 value={ods3 || ""}
                 onChange={(event) => handleChange(event, setOds3)}
@@ -255,14 +289,14 @@ export default function OrganizationInfo() {
                 <option value="17">Alianzas para lograr los objetivos</option>
               </select>
             </div>
-            <button>Guardar</button>
+            <button onClick={() => savePreferencesOds()}>Guardar</button>
           </div>
         </div>
       </div>
       <div className="userinformation">
-        <div className="perfil">
+        
           <h4>Responsable</h4>
-        </div>
+        
         <div className="userdata">
           <div>
             <p>
@@ -286,7 +320,7 @@ export default function OrganizationInfo() {
             </p>
           </div>
         </div>
-        <Link className="buttonmodify" to="/companyhome/modify">
+        <Link className="buttonmodify" to="/organizationhome/modify">
           Editar
         </Link>
       </div>

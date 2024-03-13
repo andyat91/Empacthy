@@ -132,6 +132,38 @@ userQueries.getUserByEmailOrganization = async (email) => {
     };
 };
 
+userQueries.updateOrganization = async (userData) => {
+    let conn = null;
+    try {
+      conn = await db.createConnection();
+  
+      let userObj = {
+        denominacion: userData.denominacion,
+        nombre: userData.nombre,
+        apellidos: userData.apellidos,
+        email: userData.email,
+        telefono: userData.telefono,
+        cargo: userData.cargo,
+        causas: userData.causas,
+        tipo: userData.tipo,
+        localizacion: userData.localizacion
+      };
+  
+      userObj = await removeUndefinedKeys(userObj);
+  
+      return await db.query(
+        "UPDATE organizaciones SET ? WHERE id = ?",
+        [userObj, userData.id],
+        "update",
+        conn
+      );
+    } catch (e) {
+      throw new Error(e);
+    } finally {
+      conn && (await conn.end());
+    }
+  };
+
 userQueries.addInquiry = async (userData) => {
 
     let conn = null

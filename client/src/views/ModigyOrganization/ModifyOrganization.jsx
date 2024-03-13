@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../../context/AuthContext";
-import "./ModifyCompany.css";
+import "./ModifyOrganization.css";
 import toast from "react-hot-toast";
 import { host } from "../../const/host";
 import { Link } from "react-router-dom";
 
 
-export default function ModifyCompany() {
+export default function ModifyOrganization() {
   const { user, updateUser } = useAuthContext();
   const [formData, setFormData] = useState({
     id: user.id,
@@ -16,12 +16,14 @@ export default function ModifyCompany() {
     email: user.email,
     telefono: user.telefono,
     cargo: user.cargo,
-    sector: user.sector,
-    tipoempresa: user.tipoempresa,
+    causas: user.causas,
+    tipo: user.tipo,
     localizacion: user.localizacion,
+    imagen: user.imagen
   });
 
   useEffect(() => {
+
     setFormData({
     id: user.id,
       denominacion: user.denominacion,
@@ -30,9 +32,10 @@ export default function ModifyCompany() {
       email: user.email,
       telefono: user.telefono,
       cargo: user.cargo,
-      sector: user.sector,
-      tipoempresa: user.tipoempresa,
+      causas: user.causas,
+      tipo: user.tipo,
       localizacion: user.localizacion,
+      imagen: user.imagen
     });
   }, [user]);
 
@@ -48,20 +51,21 @@ export default function ModifyCompany() {
 
     try {
 
-        const response = await fetch(`${host}/user/updatecompany`, {
+        const response = await fetch(`${host}/user/updateorganization`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData),
           });
-
-          if (response.ok) {
+        const message= await response.json();
+          
+        if (response.ok) {
            updateUser(formData);
            
-            toast.success(response.message);
+            toast.success(message.message);
           }else {
-            toast.error(response.message);
+            toast.error(message.message);
           }
         
     } catch (error) {
@@ -72,8 +76,8 @@ export default function ModifyCompany() {
   }
 
   return (
-    <div id="modifycompany" className="wrap">
-     <div className="modifycompany">
+    <div id="modifyorganization" className="wrap">
+     <div className="modifyorganization">
         <h4>Modificar datos</h4>
 
         <form onSubmit={handleSubmit}>
@@ -140,8 +144,8 @@ export default function ModifyCompany() {
             Sector:
             <input
               type="text"
-              name="sector"
-              value={formData.sector}
+              name="causas"
+              value={formData.causas}
               onChange={(e) =>handleChange(e)}
             />
           </label>
@@ -149,8 +153,8 @@ export default function ModifyCompany() {
             Tipo de Empresa:
             <input
               type="text"
-              name="tipoempresa"
-              value={formData.tipoempresa}
+              name="tipo"
+              value={formData.tipo}
               onChange={(e) =>handleChange(e)}
             />
           </label>
@@ -166,7 +170,7 @@ export default function ModifyCompany() {
           </div>
           </div>
           <button type="submit">Guardar cambios</button>
-          <Link to="/perfil" className="button">Volver</Link>
+          <Link to="/perfilorg" className="button">Volver</Link>
         </form>
     
         </div>

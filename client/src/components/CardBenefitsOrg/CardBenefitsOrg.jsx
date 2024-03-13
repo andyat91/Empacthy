@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import sembrar from "../../assets/images/beficiosorg.jpg";
+import sembrar from "../../assets/images/sembrar.jpg";
 import "../CardBenefits/CardBenefits.css";
 export default function CardBenefits() {
   return (
