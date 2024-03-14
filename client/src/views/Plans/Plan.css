@@ -3,14 +3,33 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
+    
     padding: 16px;
-    background-color: var(--green);
+    background-color: var(--greyblue);
+    border-radius: 8px;
+    color: var(--white);
+    margin-bottom: 40px;
 }
-#plans .currentplan h4{
+#plans  h3{
     margin: 0;
     font-family: "Bebas Neue", sans-serif;
 }
 
 #plans #currentplanselected{
     font-family: "Inter", sans-serif;
+    margin: 0;
+    background-color: var(--cleargreen);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+    padding: 8px;
+
+}
+
+#plans .meetourplans{
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    color: var(--greyblue);
+    margin-bottom: 32px;
 }

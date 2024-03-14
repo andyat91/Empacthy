@@ -17,7 +17,7 @@ export default function PlanExplanation(){
                     <li>Servicio de impacto a demanda</li>
                  </ul>
                  </div>
-                 <h5>50€</h5>
+                 <h5>Gratuito</h5>
             </div>
             <div className="transcendent allplans">
                 <div>
@@ -30,7 +30,7 @@ export default function PlanExplanation(){
                     <li>Servicios a demanda customizados</li>
                  </ul>
                  </div>
-                 <h5>200€</h5>
+                 <h5>60€ / mes</h5>
             </div>
             <div className="universe allplans">
                 <div>
@@ -44,7 +44,7 @@ export default function PlanExplanation(){
                     <li>Matching Business</li>
                  </ul>
                  </div>
-                 <h5>500€</h5>
+                 <h5>80€ / mes</h5>
             </div>
         </div>
     )

@@ -23,7 +23,9 @@
 #planexplanation .allplans:hover{
     transform: scale(1.1);
 }
-
+#planexplanation ul{
+    margin-top: 8px;
+}
 
 #planexplanation h5{
     border-top: 2px solid;
@@ -31,10 +33,11 @@
     padding-top: 16;
     width: 100%;
     font-weight: 500;
-
+    margin-bottom: 8px;
 }
 #planexplanation div h4, div h5{
     margin: 0;
+ 
 }
 #planexplanation .community{
     background-color: var(--green);
