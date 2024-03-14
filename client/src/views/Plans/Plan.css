@@ -1,0 +1,16 @@
+#plans .currentplan{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 16px;
+    background-color: var(--green);
+}
+#plans .currentplan h4{
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#plans #currentplanselected{
+    font-family: "Inter", sans-serif;
+}

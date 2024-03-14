@@ -45,6 +45,9 @@ export default function CompanyInformation() {
         <Link className="buttonmodify" to="/companyhome/modify">
           Editar
         </Link>
+        <Link to="/companyhome/plans" className="buttonplan">
+          Cambiar PLAN
+        </Link>
       </div>
     </div>
   );

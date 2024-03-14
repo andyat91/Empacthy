@@ -25,6 +25,7 @@ dataQueries.infoCard = async () => {
     try {
       conn = await db.createConnection();
       return await db.query("SELECT organizaciones.id,organizaciones.denominacion as organizacionname, organizaciones.causas, organizaciones.tipo, organizaciones.localizacion,alianza.estado,alianza.donacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE empresas.id = ?", id, "select", conn);
+     
     } catch (e) {
       throw new Error(e);
     } finally {

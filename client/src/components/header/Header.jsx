@@ -39,10 +39,12 @@ export default function Header() {
         <div className="linkheader">
           {user ? (
             <div className="userlogged">
-              <img src={user.imagen} />
+              <img src={`/${user.imagen}`} />
+              
               <Link
+              
                 to={
-                  user.logintipo === "Soy una Empresa"
+                  user?.logintipo === "Soy una Empresa"
                     ? "/companyhome"
                     : "/organizationhome"
                 }

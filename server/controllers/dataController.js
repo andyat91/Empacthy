@@ -63,7 +63,7 @@ const infoFilter = async (req, res) => {
   const { valor, ods } = req.params;
   try {
     let ongfilter = await dao.infoFilter(valor, ods);
-    return res.send(ongfilter);
+    if(ongfilter) return res.send(ongfilter);
   } catch (error) {
     console.log(error);
 

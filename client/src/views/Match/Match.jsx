@@ -8,6 +8,7 @@ export default function Match() {
   const [valor, setValor] = useState("1");
   const [ods, setOds] = useState("1");
   const [ongList, setOngList] = useState([]);
+  const [showAllCards, setShowAllCards] = useState(false);
 
   const { user } = useAuthContext();
 
@@ -60,71 +61,91 @@ export default function Match() {
       <div className="searchmatch">
         <h3>Encuentra tu Match</h3>
         <div className="filter">
-          
-         
           <h4>Filtra tu busqueda</h4>
-            <label>Valores
-              <select value={valor} onChange={handleValor}>
-                <option value="1">Justicia, Inclusión y Diversidad</option>
-                <option value="2">Proactividad e Innovación</option>
-                <option value="3">Impacto+ y Sostenibilidad</option>
-                <option value="4">Transparencia y ética</option>
-                <option value="5">Integridad</option>
-                <option value="6">Dedicación con proposito</option>
-                <option value="7">Colaboración</option>
-                <option value="8">Profesionalismo y superación</option>
-                <option value="9">Empatía y gratitud</option>
-              </select>
-            </label>
-            <label>Ods
-              <select value={ods} onChange={handleOds}>
-                <option value="1">Fin de la pobreza</option>
-                <option value="2">Hambre cero</option>
-                <option value="3">Salud y bienestar</option>
-                <option value="4">Educación de calidad</option>
-                <option value="5">Igualdad de género</option>
-                <option value="6">Agua limpia y saneamiento</option>
-                <option value="7">Energía asequible y no contaminante</option>
-                <option value="8">
-                  Trabajo decente y crecimiento económico
-                </option>
-                <option value="9">
-                  Industria, innovación e infraestructuras
-                </option>
-                <option value="10">Reducción de desigualdades</option>
-                <option value="11">Ciudades y comunidades sostenibles</option>
-                <option value="12">Producción y consumo responsable</option>
-                <option value="13">Acción por el clima</option>
-                <option value="14">Vida submarina</option>
-                <option value="15">Vida de ecosistemas terrestres</option>
-                <option value="16">
-                  Paz, justicia e instituciones solidarias
-                </option>
-                <option value="17">Alianzas para lograr los objetivos</option>
-              </select>
-            </label>
-         
+          <label>
+            <p>Valores</p>
+            <select value={valor} onChange={handleValor}>
+              <option value="1">Justicia, Inclusión y Diversidad</option>
+              <option value="2">Proactividad e Innovación</option>
+              <option value="3">Impacto+ y Sostenibilidad</option>
+              <option value="4">Transparencia y ética</option>
+              <option value="5">Integridad</option>
+              <option value="6">Dedicación con proposito</option>
+              <option value="7">Colaboración</option>
+              <option value="8">Profesionalismo y superación</option>
+              <option value="9">Empatía y gratitud</option>
+            </select>
+          </label>
+          <label>
+            <p>(ODS) Objetivos de Desarrollo Sostenible</p>
+            <select value={ods} onChange={handleOds}>
+              <option value="1">Fin de la pobreza</option>
+              <option value="2">Hambre cero</option>
+              <option value="3">Salud y bienestar</option>
+              <option value="4">Educación de calidad</option>
+              <option value="5">Igualdad de género</option>
+              <option value="6">Agua limpia y saneamiento</option>
+              <option value="7">Energía asequible y no contaminante</option>
+              <option value="8">Trabajo decente y crecimiento económico</option>
+              <option value="9">
+                Industria, innovación e infraestructuras
+              </option>
+              <option value="10">Reducción de desigualdades</option>
+              <option value="11">Ciudades y comunidades sostenibles</option>
+              <option value="12">Producción y consumo responsable</option>
+              <option value="13">Acción por el clima</option>
+              <option value="14">Vida submarina</option>
+              <option value="15">Vida de ecosistemas terrestres</option>
+              <option value="16">
+                Paz, justicia e instituciones solidarias
+              </option>
+              <option value="17">Alianzas para lograr los objetivos</option>
+            </select>
+          </label>
         </div>
-        <div>
-          <h4>ONGs que coinciden con tu busqueda</h4>
 
-          <div className="containercardorg">
-            {ongList.length > 0 ? (
-              ongList.map((onglist) => (
-                <div className="cardong" key={onglist.id}>
-                  <h5>{onglist.denominacion}</h5>
-                  <p>{onglist.causas}</p>
-                  <p>{onglist.tipo}</p>
-                  <button onClick={() => makeMatch(onglist.id)}>
-                    Quiero hacer Match
+        <div className="containercardorg">
+          {ongList.length > 0 ? (
+            ongList.slice(0, showAllCards ? ongList.length : 3).map((onglist) => (
+              <div className="card" key={onglist.id}>
+                <img src={`/${onglist.imagen}`} className="card-img-top" />
+                <div className="card-body1">
+                  <h5 className="card-title">
+                    <b>{onglist.denominacion}</b>
+                  </h5>
+                  <p className="card-text">{onglist.descripcion}</p>
+                  <button
+                    className="card-link"
+                    onClick={() => makeMatch(onglist.id)}
+                  >
+                    Quiero hacer MATCH
                   </button>
                 </div>
-              ))
-            ) : (
-              <h3>No hay ONG que coincidan con tu busqueda</h3>
-            )}
-          </div>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">
+                    <b>Causa principal:</b> {onglist.causas}.{" "}
+                  </li>
+                  <li className="list-group-item">
+                    <b>Tipo de Organización: </b>
+                    {onglist.tipo}.{" "}
+                  </li>
+                  <li className="list-group-item">
+                    <b>Provincia: </b>
+                    {onglist.localizacion}.{" "}
+                  </li>
+                </ul>
+              </div>
+            ))
+          ) : (
+            <h3>Todavia no hay ONG que coincidan con tu busqueda</h3>
+          )}
+         
         </div>
+        {ongList.length > 3 && (
+            <button onClick={() => setShowAllCards(!showAllCards)} className="showmore">
+              {showAllCards ? "Ver menos" : "Ver más"}
+            </button>
+          )}
       </div>
     </div>
   );

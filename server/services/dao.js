@@ -35,7 +35,7 @@ dao.infoCount= async (id) => await dataQueries.infoCount(id);
 // Obtener total de donaciones por empresa
 dao.infoDonation= async (id) => await dataQueries.infoDonation(id);
 
-// Trae ong filtradas por valores y ods
+// Trae org filtradas por valores y ods
 dao.infoFilter= async (valor,ods) => await dataQueries.infoFilter(valor,ods);
 
 // Comprobar que no haya un match activo

@@ -16,6 +16,7 @@ import ModifyCompany from "./views/ModifyCompany/ModifyCompany";
 import PerfilCompany from "./views/PerfilCompany/PerfilCompany";
 import PerfilOrganization from "./views/PerfilOrganization/PerfilOrganization";
 import ModifyOrganization from "./views/ModigyOrganization/ModifyOrganization";
+import Plans from "./views/Plans/Plans";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/companyhome" element={<CompanyHome />} />
               <Route path="/companyhome/match" element={<Match />} />
               <Route path="/companyhome/modify" element={<ModifyCompany />} />
+              <Route path="/companyhome/plans" element={<Plans/>}/>
               <Route path="/organizationhome" element={<OrganizationHome />} />
               <Route path="/organizationhome/modify" element={<ModifyOrganization/>}/>
               <Route path="/perfilorg" element={<PerfilOrganization/>}/>

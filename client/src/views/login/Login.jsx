@@ -28,7 +28,7 @@ export default function Login() {
     <div className="logincontainer">
       <div className="login">
         <h1>
-          <PersonLogin />{" "}
+          <PersonLogin />
         </h1>
         <h4>Bienvenido de nuevo a <BrandLogo />. </h4>
         <div className="togglelogin">

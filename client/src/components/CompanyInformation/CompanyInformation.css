@@ -84,12 +84,10 @@
     align-items: center;
     color: var(--blue);
     padding: 8px;
-    transition: transform 0.5s;
+
 }
 
-#companyinformation .planseleccionado:hover{
-    transform: scale(1.1);
-}
+
 
 
 #companyinformation .blank{
@@ -121,15 +119,35 @@
     border-color: var(--purple);
     font-weight: 600;
     font-size: large;
-    color: var(--purple);
+    color: var(--white);
     display: block;
+    margin-bottom: 16px;
+}
+#companyinformation .userinformation .buttonplan{
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid;
+    text-decoration: none;
+    border-radius: 6px;
+    border-color: var(--cleargreen);
+    background-color: var(--cleargreen);
+    color:var(--blue);
+    font-weight: 600;
+    font-size: large;
+    display: block;
+    margin-bottom: 16px;
 }
 #companyinformation .userinformation .buttonmodify:hover{
-    background-color: var(--purple);
-    border-color: var(--purple);
-    color: var(--white);
+    background-color: var(--green);
+    border-color: var(--green);
+    color: var(--blue);
 }
 
+#companyinformation .userinformation .buttonplan:hover{
+    background-color: var(--green);
+    border-color: var(--green);
+}
 #companyinformation .userinformation .perfil{
 
     display: flex;
