@@ -33,3 +33,20 @@
     color: var(--greyblue);
     margin-bottom: 32px;
 }
+
+#plans .changeplan{
+    margin: 40px 0px;
+    padding: 8px;
+    width: 100%;
+    background-color: var(--white);
+    color: var(--greyblue);
+    font-size: large;
+    font-weight: 600;
+    border: 3px solid;
+    border-radius: 8px;
+}
+#plans .changeplan:hover{
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+}

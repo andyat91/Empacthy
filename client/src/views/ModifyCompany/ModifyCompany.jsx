@@ -55,11 +55,11 @@ export default function ModifyCompany() {
             },
             body: JSON.stringify(formData),
           });
-
+          const message =  await response.json()
           if (response.ok) {
            updateUser(formData);
            
-            toast.success(response.message);
+            toast.success(message.message);
           }else {
             toast.error(response.message);
           }

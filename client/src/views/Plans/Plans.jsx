@@ -2,8 +2,16 @@ import PlanExplanation from "../../components/PlanExplanation/PlanExplanation"
 import "./Plan.css"
 import { useAuthContext } from "../../context/AuthContext"
 import PaymentForm from "../../components/PaymentForm/PaymentForm"
+import { useState } from "react"
+import Form from "../../components/Form/Form"
 export default function Plans() {
 
+    const [plan, setPlan] = useState(false);
+
+function changePlanPayment(){
+setPlan(!plan);
+
+}
 const { user } = useAuthContext()
     return(
         <div id="plans" className="wrap">
@@ -13,9 +21,12 @@ const { user } = useAuthContext()
             {user.plan == 0 ? "Empacthy Community":
                                     user.plan == 1 ? "Empacthy Transcendent": "Empacthy Universe"} </h5>
         </div>
-        <h3 className="meetourplans">Conoce nuestros planes</h3>
+        
         <PlanExplanation/>
-        <PaymentForm/>
+        <button onClick={changePlanPayment} className="changeplan">Quiero cambiar mi plan</button>
+        {plan && 
+        <PaymentForm/>}
+        <Form/>
         </div>
     )
 }

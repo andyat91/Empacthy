@@ -1,6 +1,105 @@
-#paymentform h3{
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 32px;
-    color: var(--greyblue);
+#paymentform {
+  display: flex;
+  align-items: center;
 }
+
+#paymentform .factura {
+  width: 100%;
+  padding: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--white);
+}
+
+#paymentform .factura h4 {
+  margin: 0;
+  color: var(--greyblue);
+}
+#paymentform .factura h3 {
+  margin: 0;
+  margin-bottom: 8px;
+  color: var(--greyblue);
+}
+#paymentform .factura h5 {
+  margin-bottom: 16px;
+}
+#paymentform .factura .cuota {
+  margin-left: 80px;
+}
+#paymentform .factura p {
+  margin: 0;
+  margin-bottom: 4px;
+  color: var(--greyblue);
+}
+
+#paymentform .formtarjeta {
+  width: 140%;
+  padding: 40px;
+  border-radius: 8px;
+  border: 4px solid;
+  border-color: var(--green);
+  height: 100%;
+  display: flex;
+}
+
+#paymentform .factura select {
+  padding: 8px;
+  border: 4px solid;
+  border-color: var(--cleargreen);
+  color: var(--greyblue);
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 8px;
+  background-color: var(--cleargreen);
+}
+#paymentform .factura select:hover {
+  border-color: var(--cleargreen);
+}
+
+#paymentform .formtarjeta h4 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--greyblue);
+ 
+}
+#paymentform .formtarjeta form{
+    margin-left: 32px;
+    width: 50%;
+}
+#paymentform .formtarjeta form label {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 6px;
+  margin-left: 32px;
+}
+
+#paymentform .formtarjeta .clausulas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-right: 16px;
+}
+
+#paymentform .formtarjeta form input{
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 6px;
+    width: 90%;
+
+    border-color: var(--green);
+    
+}
+#paymentform .formtarjeta .linktopolitica{
+    width: 100%;
+    text-align: center;
+    background-color: var(--greyblue);
+    padding: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--white);
+}
+
