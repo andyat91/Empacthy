@@ -11,11 +11,23 @@ export default function PaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    alert("Pago procesado exitosamente (ficticio)");
+    let precio;
+    selectedPlan === "1"? precio=60:
+    selectedPlan === "2"? precio=80:"";
+   const formData = {
+    numero:cardNumber,
+    fecha:expiryDate,
+    cvv:cvv,
+    precio:precio
+   }
+
+ 
+   
   };
 
   return (
     <div id="paymentform">
+      
       <div className="factura">
         <div>
           <h5>Tipo de suscripción</h5>
@@ -70,6 +82,7 @@ export default function PaymentForm() {
       </div>
       {selectedPlan === "1" || selectedPlan === "2" ? (
         <div className="formtarjeta">
+         
           <div className="clausulas">
             <h4>Paga de forma comoda y segura.</h4>
             <p>
@@ -77,7 +90,14 @@ export default function PaymentForm() {
               al final de cada período de facturación, a menos que canceles tu
               suscripción antes de la fecha de renovación.
             </p>
-            <Link className="linktopolitica" to="politicadeprivacidad" >Términos y Condiciones</Link>
+           
+             
+              <form className="terminos">
+         <label htmlFor="checkbox">Aceptar  <Link className="linktopolitica" to="politicadeprivacidad" > Términos y Condiciones </Link>
+          <input type="checkbox"  id="checkbox"/>
+         </label>
+         </form>
+            
           </div>
           <form onSubmit={handleSubmit}>
             <label>
@@ -107,8 +127,9 @@ export default function PaymentForm() {
                 required
               />
             </label>
-            <button type="submit">Pagar</button>
+           
           </form>
+          <button type="submit" className="paybutton">Pagar</button>
         </div>
       ) : (
         ""

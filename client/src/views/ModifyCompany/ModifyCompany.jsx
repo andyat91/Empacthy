@@ -33,6 +33,7 @@ export default function ModifyCompany() {
       sector: user.sector,
       tipoempresa: user.tipoempresa,
       localizacion: user.localizacion,
+      imagen: user.imagen,
     });
   }, [user]);
 

@@ -35,7 +35,7 @@
 }
 
 #paymentform .formtarjeta {
-  width: 140%;
+  width: 160%;
   padding: 40px;
   border-radius: 8px;
   border: 4px solid;
@@ -73,7 +73,7 @@
   flex-direction: column;
   align-items: left;
   margin-top: 6px;
-  margin-left: 32px;
+  
 }
 
 #paymentform .formtarjeta .clausulas{
@@ -95,11 +95,35 @@
 }
 #paymentform .formtarjeta .linktopolitica{
     width: 100%;
-    text-align: center;
-    background-color: var(--greyblue);
-    padding: 8px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--white);
+    white-space: nowrap;
+    color: var(--blue);
+    margin-left: 8px;
 }
 
+#paymentform .formtarjeta .terminos{
+  width: 100%;
+  margin-left: 0;
+  
+  
+}
+
+#paymentform .formtarjeta .terminos label{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#paymentform .formtarjeta .paybutton{
+  background-color: var(--cleargreen);
+  border: none;
+  color: var(--blue);
+  border-radius: 8px;
+  font-weight: 600;
+
+}
+
+#paymentform .formtarjeta .paybutton:hover{
+  background-color: var(--blue);
+  color: var(--white);
+
+}
