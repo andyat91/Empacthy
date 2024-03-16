@@ -16,7 +16,9 @@ export default function CompanyInformation() {
           <div className="plancontratado">
             <div className="planseleccionado">
             <h5 className="nameplan">PLAN</h5>
-            <h5 className="plan">Empacthy Community </h5>
+            <h5 className="plan">{user.plan == "0"? "Empacthy Community":
+                                  user.plan == "1"?  "Empacthy Transcendent":
+                                  user.plan == "2"? "Empacthy Universe":""}</h5>
             </div>
             <div className="blank"></div>
           </div>

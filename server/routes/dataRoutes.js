@@ -36,4 +36,5 @@ dataRouter.get("/odsinfo/:id", getOds);
 dataRouter.post("/safevalores", safeValores);
 dataRouter.post("/safeods", safeOds);
 
+
 module.exports = dataRouter;

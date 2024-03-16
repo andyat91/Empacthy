@@ -1,29 +1,75 @@
 import { useState } from "react";
 import "./PaymentForm.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
+import { host } from "../../const/host";
+import toast from "react-hot-toast";
 
-export default function PaymentForm() {
+export default function PaymentForm({ onPlanChange }) {
+
+  const { user } = useAuthContext()
+  const navigate = useNavigate()
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
   const [selectedPlan, setSelectedPlan] = useState("0");
 
-  const handleSubmit = (event) => {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     let precio;
     selectedPlan === "1"? precio=60:
     selectedPlan === "2"? precio=80:"";
+    console.log(precio);
+
+    let idempresa = user.id;
+
    const formData = {
-    numero:cardNumber,
+    tarjeta:cardNumber,
     fecha:expiryDate,
     cvv:cvv,
-    precio:precio
+    cantidad:precio,
+    idempresa,
+   };
+
+   const formData2 = {
+    idempresa,
+    plan:selectedPlan
    }
 
- 
-   
-  };
+   try {
+    
+    const response = await fetch(`${host}/user/payment`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+
+    });
+
+    const response2 = await fetch(`${host}/user/updateplan`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData2),
+
+    });
+
+    const message = await response.json()
+    const message2 = await response2.json()
+
+    if(response.ok && response2.ok) {
+      toast.success(`${message.message} ${message2.message} `);
+      navigate("/companyhome");
+      onPlanChange(selectedPlan);
+    }
+   } catch (error) {
+    console.log(error)
+   }
+
+  }
 
   return (
     <div id="paymentform">
@@ -107,6 +153,7 @@ export default function PaymentForm() {
                 value={cardNumber}
                 onChange={(e) => setCardNumber(e.target.value)}
                 required
+                placeholder="**** **** **** ****"
               />
             </label>
             <label>
@@ -116,6 +163,7 @@ export default function PaymentForm() {
                 value={expiryDate}
                 onChange={(e) => setExpiryDate(e.target.value)}
                 required
+                placeholder="_ _ / _ _"
               />
             </label>
             <label>
@@ -125,11 +173,12 @@ export default function PaymentForm() {
                 value={cvv}
                 onChange={(e) => setCvv(e.target.value)}
                 required
+                placeholder="***"
               />
             </label>
-           
+            <button type="submit" className="paybutton">Pagar</button>
           </form>
-          <button type="submit" className="paybutton">Pagar</button>
+          
         </div>
       ) : (
         ""

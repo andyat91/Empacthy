@@ -108,6 +108,34 @@ const updateCompany = async (req, res) => {
   }
 };
 
+const insertPayment = async (req, res) => {
+  const {
+    tarjeta,
+    fecha,
+    cvv,
+    cantidad,
+    idempresa
+  } = req.body;
+
+  if (
+    !tarjeta ||
+    !fecha||
+    !cvv||
+    !cantidad ||
+    !idempresa
+  )
+    return res.status(400).send({ message: "Error al recibir campos vacios" });
+
+  try {
+  
+    const insertPayment = await dao.insertPayment(req.body);
+    if (insertPayment)
+      return res.status(201).send({ message: `Pago registrado correctamente.` });
+  } catch (e) {
+    console.log(e.message);
+    throw new Error(e);
+  }
+};
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -245,6 +273,25 @@ const updateOrganization = async (req, res) => {
   }
 };
 
+const updatePlan = async (req, res) => {
+  const { plan,idempresa } = req.body;
 
+  if (!plan || !idempresa)
+    return res.status(400).send({ message: "Error del servidor al recibir un campo vacio" });
 
-module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany, updateOrganization};
+  try {
+
+    const updatePlan = await dao.updatePlan(req.body);
+
+    if (updatePlan)
+      return res.send({
+        message: `Tu plan de Empacthy se ha actualizado correctamente`,
+      });
+  } catch (error) {
+    console.log(error);
+
+    throw new Error(error);
+  }
+};
+
+module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany, updateOrganization, insertPayment, updatePlan};

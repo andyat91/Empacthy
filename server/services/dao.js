@@ -83,6 +83,12 @@ dao.insertNewOds= async (infoData) => await dataQueries.insertNewOds(infoData);
 // Borra ods antes de insertar nuevos valores
 dao.deleteOds= async (idorg) => await dataQueries.deleteOds(idorg);
 
+// Insertar nuevo pago
+dao.insertPayment= async (infoData) => await userQueries.insertPayment(infoData);
+
+// Actualizar plan
+dao.updatePlan= async (infoData) => await userQueries.updatePlan(infoData);
+
 
 
 

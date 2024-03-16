@@ -79,7 +79,7 @@
 #paymentform .formtarjeta .clausulas{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 50%;
     margin-right: 16px;
 }
@@ -119,6 +119,9 @@
   color: var(--blue);
   border-radius: 8px;
   font-weight: 600;
+  padding: 8px;
+  width: 90%;
+  margin-top: 24px;
 
 }
 

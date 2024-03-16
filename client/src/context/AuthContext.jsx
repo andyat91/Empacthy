@@ -48,7 +48,7 @@ let response ;
 
     }
     const userLogged = await response.json();
-    console.log(logintype)
+
       if (response.ok) {
         
         setUser({...userLogged, logintipo:logintype });

@@ -261,6 +261,7 @@ const safeOds = async (req, res) => {
 };
 
 
+
 module.exports = {
   infoCard,
   infoMatch,
@@ -277,4 +278,5 @@ module.exports = {
   getOds,
   safeValores,
   safeOds
+
 };

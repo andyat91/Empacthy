@@ -4,15 +4,24 @@ import { useAuthContext } from "../../context/AuthContext"
 import PaymentForm from "../../components/PaymentForm/PaymentForm"
 import { useState } from "react"
 import Form from "../../components/Form/Form"
+
+
 export default function Plans() {
 
     const [plan, setPlan] = useState(false);
+    const { user,updateUser } = useAuthContext()
 
 function changePlanPayment(){
 setPlan(!plan);
 
 }
-const { user } = useAuthContext()
+
+function onPlanChange(newPlan) {
+    const updatedUser = { ...user, plan: newPlan };
+    updateUser(updatedUser);
+  }
+
+
     return(
         <div id="plans" className="wrap">
             <div className="currentplan">
@@ -25,7 +34,7 @@ const { user } = useAuthContext()
         <PlanExplanation/>
         <button onClick={changePlanPayment} className="changeplan">Quiero cambiar mi plan</button>
         {plan && 
-        <PaymentForm/>}
+        <PaymentForm onPlanChange={onPlanChange} />}
         <Form/>
         </div>
     )
