@@ -66,6 +66,8 @@ let response ;
   }
 
   function logout() {
+
+    toast.success("¡Gracias por ser parte de la comunidad Empacthy, hasta la próxima!")
     setUser(null);
     localStorage.removeItem("user");
   }
