@@ -25,6 +25,7 @@ export default function Match() {
       const ongList = await response.json();
       setOngList(ongList);
     }
+   
 
     filterOng();
   }, [valor, ods]);
@@ -48,7 +49,7 @@ export default function Match() {
 
       if (response.ok) {
         const insert = await response.json();
-        toast(insert.message);
+        toast.success(insert.message);
         setOngList(ongList);
       }
     } catch (error) {
@@ -106,7 +107,7 @@ export default function Match() {
 
         <div className="containercardorg">
           {ongList.length > 0 ? (
-            ongList.slice(0, showAllCards ? ongList.length : 3).map((onglist) => (
+            ongList.slice(0, showAllCards ? ongList.length : 4).map((onglist) => (
               <div className="card" key={onglist.id}>
                 <img src={`/${onglist.imagen}`} className="card-img-top" />
                 <div className="card-body1">
@@ -137,11 +138,11 @@ export default function Match() {
               </div>
             ))
           ) : (
-            <h3>Todavia no hay ONG que coincidan con tu busqueda</h3>
+            <h3 className="nomatch">Todavia no hay ONG que coincidan con tu busqueda</h3>
           )}
          
         </div>
-        {ongList.length > 3 && (
+        {ongList.length > 4 && (
             <button onClick={() => setShowAllCards(!showAllCards)} className="showmore">
               {showAllCards ? "Ver menos" : "Ver más"}
             </button>

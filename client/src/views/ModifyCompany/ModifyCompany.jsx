@@ -34,6 +34,7 @@ export default function ModifyCompany() {
       tipoempresa: user.tipoempresa,
       localizacion: user.localizacion,
       imagen: user.imagen,
+      plan: user.plan
     });
   }, [user]);
 

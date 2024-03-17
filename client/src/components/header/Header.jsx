@@ -27,7 +27,7 @@ export default function Header() {
   }, [showmenu]);
 
   return (
-    <div className="headercontainer">
+    <div id="headercontainer">
       <div className="header wrap">
         <div className="nameslogan">
           <h2>

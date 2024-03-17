@@ -1,6 +1,6 @@
 
 
-.nameslogan {
+#headercontainer .nameslogan {
   display: flex;
   flex-direction: row;
   margin-top: 16px;
@@ -8,10 +8,10 @@
   align-items: baseline;
   width: 40%;
 }
-.nameslogan h2{
+#headercontainer .nameslogan h2{
   margin: 0px;
 }
-.nameslogan h2 a{
+#headercontainer .nameslogan h2 a{
 
 
   color: var(--greyblue);
@@ -23,13 +23,14 @@
 }
 
 
-.nameslogan h5 {
+#headercontainer .nameslogan h5 {
   margin: 0px;
   font-family: "Black Ops One", system-ui;
   color: var(--green);
+  white-space: nowrap;
 }
 
-.header {
+#headercontainer .header {
 
   color: var(--blue);
   display: flex;
@@ -40,17 +41,17 @@
   z-index: 1;
   
 }
-.linkheader {
+#headercontainer .linkheader {
   margin-top: 16px;
   margin-bottom: 16px;
   position: relative;
 }
-.header button {
+#headercontainer .header button {
   font: inherit; 
   font-weight: 800;
   background-color: var(--white);
 }
-.buttonheader {
+#headercontainer .buttonheader {
   font-weight: 800;
   padding: 8px;
   border-radius: 6px;
@@ -59,19 +60,19 @@
   text-decoration: none;
 }
 
-.linkheader .loginheader {
+#headercontainer .linkheader .loginheader {
   background-color: var(--greyblue);
   color: white;
 }
 
-.linkheader .registroheader{
+#headercontainer  .linkheader .registroheader{
   border: none;
 }
 
 
 
 
-.header .containermenu {
+#headercontainer .header .containermenu {
    display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +83,7 @@
   border-radius: 6px;
 }
 
-.containermenu .linkcontainer {
+#headercontainer .containermenu .linkcontainer {
   padding: 8px;
   text-decoration: none;
 
@@ -96,40 +97,40 @@
   background-color: var(--blue);
 }
 
-.containermenu .linkcontainer:hover {
+#headercontainer  .containermenu .linkcontainer:hover {
   background-color: var(--green);
   color: var(--blue);
 } 
-.buttonheader:hover{
+#headercontainer  .buttonheader:hover{
 color: var(--white);
 background-color: var(--green);
 }
 
 
-.header .userlogged{
+#headercontainer .header .userlogged{
   display: flex;
   justify-content: right;
   align-items: center;
   
 }
-.header .userlogged img {
+#headercontainer .header .userlogged img {
   width: 7%;
   border-radius: 100%;
   margin-right: 8px;
   border: 2px solid;
   border-color: var(--greyblue);
 }
-.header .userlogged .perfil{
+#headercontainer .header .userlogged .perfil{
   text-decoration: none;
 }
-.header .userlogged h5{
+#headercontainer .header .userlogged h5{
   margin: 0;
   color: var(--greyblue);
   font-weight: 600;
   text-decoration: none;
 }
 
-.header .userlogged button {
+#headercontainer .header .userlogged button {
   margin-left: 8px ;
   padding: 8px;
   border-radius: 6px;
@@ -138,40 +139,40 @@ background-color: var(--green);
   color: white;
 }
 
-.header .userlogged button:hover{
+#headercontainer .header .userlogged button:hover{
   background-color: var(--green);
 }
 @media only screen and (max-width: 950px) {
  
-  .header {
+  #headercontainer .header {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .linkheader{
+  #headercontainer .linkheader{
     display: flex;
 
   }
-  .header .userlogged{
+  #headercontainer .header .userlogged{
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
- .buttonheader{
+  #headercontainer .buttonheader{
   font-size: 0;
   padding: 6px;
  } 
-.nameslogan {
+ #headercontainer .nameslogan {
   display: flex;
   flex-direction: column;
   align-items: center;
  
 }
-.nameslogan h2 {
+#headercontainer .nameslogan h2 {
   font-size: 200;
 }
 
- .aboutus::before{
+#headercontainer .aboutus::before{
 
   content: '\F434';
   font-family: 'bootstrap-icons';
@@ -179,7 +180,7 @@ background-color: var(--green);
   margin:0px
  }
 
- .loginheader::before{
+ #headercontainer .loginheader::before{
 
   content: '\F67A';
   font-family: 'bootstrap-icons';

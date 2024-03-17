@@ -14,6 +14,8 @@
 #searchmatch h3{
     font-family: "Bebas Neue", sans-serif;
     color: var(--blue);
+    margin: 0;
+    margin-bottom: 16px;
 }
 
 #searchmatch .filter{
@@ -21,7 +23,7 @@
  justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: var(--blue);
+    background-color: var(--greyblue);
     padding: 16px;
     border-radius: 8px;
     color: var(--white);
@@ -67,8 +69,9 @@ font-weight: 600;
     margin-bottom: 32px;
 }
 #searchmatch .containercardorg .card{
-    width: 400px;
-  margin:16px;
+    width: 300px;
+    height: auto;
+  margin:8px;
   border: 4px solid;
   border-color: var(--greyblue);
   border-radius: 8px;
@@ -80,7 +83,7 @@ font-weight: 600;
     color: var(--white);
 }
 #searchmatch .containercardorg .card-body1{
-    height: 300px;
+    height: 260px;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -105,7 +108,7 @@ font-weight: 600;
 
 #searchmatch .containercardorg img{
     width: 100%;
-     height: 300px;
+     height: 200px;
       object-fit: cover;
 }
 
@@ -129,4 +132,8 @@ font-weight: 600;
     border-color: var(--blue);
     background-color: var(--blue);
     color: var(--white);
+}
+
+#searchmatch .nomatch{
+    margin:280px
 }

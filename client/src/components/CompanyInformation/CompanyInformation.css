@@ -156,6 +156,10 @@
 #companyinformation .userinformation h4{
     margin: 0;
 }
+#companyinformation .userinformation .perfil h4:hover{
+    color: var(--cleargreen);
+    transform: none;
+}
 #companyinformation .userinformation .userdata{
     display: flex;
     justify-content: space-around;

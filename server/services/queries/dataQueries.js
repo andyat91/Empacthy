@@ -61,7 +61,7 @@ dataQueries.infoCard = async () => {
     let conn = null;
     try {
       conn = await db.createConnection();
-      return await db.query("SELECT organizaciones.id,organizaciones.denominacion,organizaciones.causas, organizaciones.tipo,organizaciones.localizacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN valores_organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones JOIN ods_organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE ods_organizaciones.idODS = ? AND valores_organizaciones.idvalores = ?;", [valor,ods], "select", conn);
+      return await db.query("SELECT organizaciones.id,organizaciones.denominacion,organizaciones.causas, organizaciones.tipo,organizaciones.localizacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN valores_organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones JOIN ods_organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE ods_organizaciones.idODS = ? AND valores_organizaciones.idvalores = ?;", [ods,valor], "select", conn);
     } catch (e) {
       throw new Error(e);
     } finally {
