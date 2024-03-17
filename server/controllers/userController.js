@@ -253,9 +253,9 @@ const addInquiry = async (req, res) => {
 };
 
 const updateOrganization = async (req, res) => {
-  const { id,denominacion,nombre,apellidos,email,telefono,cargo,causas,tipo,localizacion } = req.body;
+  const { id,denominacion,nombre,apellidos,email,telefono,cargo,causas,tipo,localizacion,descripcion } = req.body;
 
-  if (!id || !denominacion || !nombre || !apellidos || !email || !telefono || !cargo || !causas || !tipo || !localizacion)
+  if (!id || !denominacion || !nombre || !apellidos || !email || !telefono || !cargo || !causas || !tipo || !localizacion || !descripcion)
     return res.status(400).send({ message: "Error del servidor al recibir un campo vacio" });
 
   try {

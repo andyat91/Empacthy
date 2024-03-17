@@ -10,6 +10,10 @@ import State1 from "../../assets/icons/State1";
 import State2 from "../../assets/icons/State2";
 import InfoStatesOrg from "../../components/InfoStateOrg/InfoStateOrg";
 import KpisOrg from "../../components/KpisOrg/KpisOrg";
+import { Link } from "react-router-dom";
+import colaboracion from "../../assets/images/colaboración.pdf"
+import Contract from "../../assets/icons/Contract";
+
 export default function OrganizationHome() {
   const { user } = useAuthContext();
   const [infoMatch, setInfoMatch] = useState([]);
@@ -117,6 +121,7 @@ export default function OrganizationHome() {
                   </button>
                 )}
               </div>
+              <div className="statepdf">
               <div
                 className={
                   match.estado === 0
@@ -165,6 +170,10 @@ export default function OrganizationHome() {
                     </button>
                   </div>
                 )}
+              </div>
+              {match.estado === 2 &&
+                <Link to={colaboracion}  target="_blank" rel="noopener noreferrer" className="pdf">Contrato <Contract/> </Link>
+                }
               </div>
             </div>
           </div>

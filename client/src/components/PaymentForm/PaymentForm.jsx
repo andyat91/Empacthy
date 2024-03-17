@@ -139,7 +139,7 @@ export default function PaymentForm({ onPlanChange }) {
            
              
               <form className="terminos">
-         <label htmlFor="checkbox">Aceptar  <Link className="linktopolitica" to="politicadeprivacidad" > Términos y Condiciones </Link>
+         <label htmlFor="checkbox">Aceptar  <Link className="linktopolitica" to="/privacypolicy" > Términos y Condiciones </Link>
           <input type="checkbox"  id="checkbox"/>
          </label>
          </form>

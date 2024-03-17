@@ -81,7 +81,7 @@
     flex-direction: column;
 }
 
-#formbox .inputformquery input{
+#formbox .inputformquery textarea{
    
     padding-bottom: 32px;
     padding-top: 36px;
@@ -99,7 +99,7 @@
    
 }
 
-#formbox .inputformquery input::placeholder{
+#formbox .inputformquery textarea::placeholder{
     color: var(--cleargreen);
     font-family: "Inter", sans-serif;
 }

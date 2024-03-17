@@ -9,12 +9,13 @@ import State1 from "../../assets/icons/State1";
 import State2 from "../../assets/icons/State2";
 import InfoStates from "../../components/InfoState/InfoStates";
 import Kpis from "../../components/Kpis/Kpis";
-
+import { Link } from "react-router-dom";
+import colaboracion from "../../assets/images/colaboración.pdf"
+import Contract from "../../assets/icons/Contract";
 
 export default function CompanyHome() {
   const { user } = useAuthContext();
   const [infoMatch, setInfoMatch] = useState([]);
-
   const [deleteClick, setDeleteClick] = useState(false);
 
   useEffect(() => {
@@ -87,6 +88,7 @@ export default function CompanyHome() {
                 {console.log(match.id)}
                 {/* <p>{match.descripcion} </p> */}
               </div>
+              <div className="statepdf">
               <div
                 className={
                   match.estado === 0
@@ -119,7 +121,12 @@ export default function CompanyHome() {
                     ? ""
                     : `Donación: ${match.donacion}€`}
                 </p>
+               
               </div>
+              {match.estado === 2 &&
+                <Link to={colaboracion}  target="_blank" rel="noopener noreferrer" className="pdf">Contrato <Contract/> </Link>
+                }
+            </div>
             </div>
           </div>
         ))}

@@ -99,3 +99,22 @@
     
 
 }
+
+#modifyorganization .descripcion{
+   width: 100%;
+
+}
+
+#modifyorganization .descripcion textarea {
+    height: 100px;
+    padding: 6px;
+    border: none;
+    background-color: var(--cleargreen);
+    color: var(--greyblue);
+    border-radius: 6px;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+  }
+  
+  

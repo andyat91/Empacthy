@@ -79,7 +79,7 @@ export default function Form() {
         />
         </div>
         <div className="inputformquery">
-        <input
+        <textarea
           type="text"
           placeholder="¿Cuál es tu consulta?"
           value={consulta}

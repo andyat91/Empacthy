@@ -1,9 +1,12 @@
 import Form from "../../components/Form/Form";
 import "./AboutUs.css";
+import ods from "../../assets/images/ODS.png"
 
 export default function AboutUs() {
   return (
     <div id="aboutus" className="wrap">
+      <div className="textletter">
+        <div className="explanation">
       <div className="sectionaboutus">
         <div>
         <h4>Nosotros</h4>
@@ -105,10 +108,22 @@ export default function AboutUs() {
           acción.</b>
         </p>
         </div>
-     
+        </div>
+        
       </div>
-      
-      <Form/>
+      <div className="empacthyletter">
+    <div className="letter">E</div>
+    <div className="letter">M</div>
+    <div className="letter">P</div>
+    <div className="letter">A</div>
+    <div className="letter">C</div>
+    <div className="letter">T</div>
+    <div className="letter">H</div>
+    <div className="letter">Y</div>
+    <img src={ods} />
+  </div>
+  </div>
+      <Form id="form" />
     </div>
   );
 }

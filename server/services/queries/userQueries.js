@@ -146,7 +146,8 @@ userQueries.updateOrganization = async (userData) => {
         cargo: userData.cargo,
         causas: userData.causas,
         tipo: userData.tipo,
-        localizacion: userData.localizacion
+        localizacion: userData.localizacion,
+        descripcion: userData.descripcion
       };
   
       userObj = await removeUndefinedKeys(userObj);

@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import sembrar from "../../assets/images/sembrar.jpg";
 import "../CardBenefits/CardBenefits.css";
+import { useAuthContext } from "../../context/AuthContext";
 export default function CardBenefits() {
+
+  const {user} = useAuthContext();
+
   return (
     <div className=" wrap" id="cardbusiness">
       <div className="businessbenefits">
@@ -31,9 +35,13 @@ export default function CardBenefits() {
           </li>
         </ul>
         <div className="containerbuttonorg">
+          {!user? 
           <Link to="registroorg" className="registro">
             REGÍSTRATE
-          </Link>
+          </Link>:
+           <Link to="empacthy" className="registro">
+           Sobre Nosotros
+         </Link>}
         </div>
       </div>
       <img src={sembrar} alt="Beneficios de empresa" className="organizacion" />

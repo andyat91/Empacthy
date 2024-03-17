@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+
 import Layout from "./components/layout/Layout";
 import Home from "./views/Home/home";
 import Login from "./views/login/Login";
@@ -17,8 +18,11 @@ import PerfilCompany from "./views/PerfilCompany/PerfilCompany";
 import PerfilOrganization from "./views/PerfilOrganization/PerfilOrganization";
 import ModifyOrganization from "./views/ModigyOrganization/ModifyOrganization";
 import Plans from "./views/Plans/Plans";
+import PrivacyPolicy from "./views/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
+
+
   return (
     <BrowserRouter>
       <Toaster />
@@ -26,11 +30,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="/empacthy" element={<AboutUs />} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
             <Route element={<PublicRoutes />}>
               <Route path="/login" element={<Login />} />
               <Route path="/registro" element={<Registro />} />
               <Route path="/registroorg" element={<RegistroOrg />} />
-              <Route path="/empacthy" element={<AboutUs />} />
             </Route>
             <Route element={<PrivateRoutes />}>
               <Route path="/perfil" element={<PerfilCompany />} />
