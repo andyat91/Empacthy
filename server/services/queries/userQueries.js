@@ -45,7 +45,8 @@ userQueries.addCompany = async (userData) => {
            tipoempresa: userData.tipoempresa,
            localizacion: userData.localizacion,
            registerDate: moment().format("YYYY-MM-DD HH:mm:ss"),
-           rol: 0
+           rol: 0,
+           plan: 0
         }                  
         return await db.query('INSERT INTO empresas SET ?', userObj, 'insert', conn)
     } catch (e) {

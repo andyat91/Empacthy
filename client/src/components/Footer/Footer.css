@@ -25,8 +25,15 @@
 
 }
 .footer ul li:hover {
-    color:var(--purple);
+    color:var(--white);
     cursor: pointer;
+}
+.footer ul li .linkfooter{
+  text-decoration: none;
+  color: var(--cleargreen);
+}
+.footer ul li .linkfooter:hover{
+  color: var(--white);
 }
 .footer h2 {
   margin: 0px;

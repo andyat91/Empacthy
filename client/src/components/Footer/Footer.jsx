@@ -2,6 +2,7 @@ import "./Footer.css";
 import BrandLogo from "../../assets/icons/BrandLogo";
 import LinkedIn from "../../assets/icons/LinkedIn";
 import Mail from "../../assets/icons/Mail";
+import { Link } from "react-router-dom";
 
 
 export default function Footer() {
@@ -9,11 +10,11 @@ export default function Footer() {
     <div className="footercontainer">
       <div className="footer wrap">
         <ul>
-          <li>Sobre nosotros</li>
+          <li><Link to="/empacthy" className="linkfooter">Sobre Nosotros</Link> </li>
           <li>Principos basicos</li>
           <li>Empresas</li>
           <li>Organizaciones</li>
-          <li>Politica de privacidad</li>
+          <li> <Link to="/privacypolicy" className="linkfooter">Política de Privacidad</Link></li>
           <li>Administrador</li>
         </ul>
         <div className="brandcopy">
