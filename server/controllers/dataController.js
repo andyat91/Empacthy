@@ -63,7 +63,7 @@ const infoFilter = async (req, res) => {
   const { valor, ods } = req.params;
   try {
     let ongfilter = await dao.infoFilter(valor, ods);
-    if(ongfilter) return res.send(ongfilter);
+    if (ongfilter) return res.send(ongfilter);
   } catch (error) {
     console.log(error);
 
@@ -92,7 +92,7 @@ const makeMatch = async (req, res) => {
     }
   } catch (e) {
     console.log(e.message);
-    //Throw sirve para lanzar error inesperado, se puede señalar explicitamente que algo inusual ha sucedido
+   
     throw new Error(e);
   }
 };
@@ -212,20 +212,21 @@ const safeValores = async (req, res) => {
   try {
     let infoOrgValor = await dao.infoOrgValor(idorg);
     if (infoOrgValor.length <= 0) {
-    
       let insertNewValor = await dao.insertNewValor(req.body);
-      if(insertNewValor)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+      if (insertNewValor)
+        return res
+          .status(201)
+          .send({ message: `Valores guardados correctamente.` });
     } else {
-
-      let deleteValores = await dao.deleteValores(idorg)
-      if(deleteValores){
+      let deleteValores = await dao.deleteValores(idorg);
+      if (deleteValores) {
         let insertNewValor = await dao.insertNewValor(req.body);
-        if(insertNewValor)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+        if (insertNewValor)
+          return res
+            .status(201)
+            .send({ message: `Valores guardados correctamente.` });
       }
-
     }
-
- 
   } catch (error) {
     console.log(error);
 
@@ -239,28 +240,27 @@ const safeOds = async (req, res) => {
   try {
     let infoOrgOds = await dao.infoOrgOds(idorg);
     if (infoOrgOds.length <= 0) {
-    
       let insertNewOds = await dao.insertNewOds(req.body);
-      if(insertNewOds)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+      if (insertNewOds)
+        return res
+          .status(201)
+          .send({ message: `Valores guardados correctamente.` });
     } else {
-
-      let deleteOds = await dao.deleteOds(idorg)
-      if(deleteOds){
+      let deleteOds = await dao.deleteOds(idorg);
+      if (deleteOds) {
         let insertNewOds = await dao.insertNewOds(req.body);
-        if(insertNewOds)  return res.status(201).send({ message: `Valores guardados correctamente.` });
+        if (insertNewOds)
+          return res
+            .status(201)
+            .send({ message: `Valores guardados correctamente.` });
       }
-
     }
-
- 
   } catch (error) {
     console.log(error);
 
     throw new Error(error);
   }
 };
-
-
 
 module.exports = {
   infoCard,
@@ -277,6 +277,5 @@ module.exports = {
   getValores,
   getOds,
   safeValores,
-  safeOds
-
+  safeOds,
 };

@@ -1,11 +1,19 @@
-
 const express = require("express");
 
-const { loginUserCompany ,addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany,updateOrganization,  insertPayment, updatePlan } = require('../controllers/userController');
-//Routes sirve para modularizar y organizar rutas de manera mas efectiva, libreria express
+const {
+  loginUserCompany,
+  addCompany,
+  addOrganization,
+  loginUserOrganization,
+  addInquiry,
+  updateCompany,
+  updateOrganization,
+  insertPayment,
+  updatePlan,
+} = require("../controllers/userController");
+
 const userRouter = express.Router();
 
-//Exportamos rutas de controller
 
 userRouter.post("/company", addCompany);
 userRouter.post("/organization", addOrganization);
@@ -16,10 +24,5 @@ userRouter.post("/updatecompany", updateCompany);
 userRouter.post("/updateorganization", updateOrganization);
 userRouter.post("/payment", insertPayment);
 userRouter.post("/updateplan", updatePlan);
-
-
-
-
-
 
 module.exports = userRouter;

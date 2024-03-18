@@ -13,16 +13,16 @@ const addCompany = async (req, res) => {
     cargo,
     sector,
     tipoempresa,
-    localizacion
+    localizacion,
   } = req.body;
 
   if (
     !denominacion ||
-    !nombre||
-    !apellidos||
+    !nombre ||
+    !apellidos ||
     !email ||
     !password ||
-    !telefono||
+    !telefono ||
     !cargo ||
     !sector ||
     !tipoempresa ||
@@ -32,19 +32,19 @@ const addCompany = async (req, res) => {
 
   try {
     const user = await dao.getUserByEmailCompany(email);
- 
+
     if (user.length > 0)
       return res
         .status(409)
         .send({ message: "Usuario ya registrado con ese email" });
-    // Si no existe lo registramos
+
 
     const addCompany = await dao.addCompany(req.body);
     if (addCompany)
       return res.status(201).send({ message: `Bienvenido a Empacthy` });
   } catch (e) {
     console.log(e.message);
-    //Throw sirve para lanzar error inesperado, se puede señalar explicitamente que algo inusual ha sucedido
+  
     throw new Error(e);
   }
 };
@@ -62,9 +62,9 @@ const loginUserCompany = async (req, res) => {
       return res.status(404).send({ message: "Usuario no registrado" });
 
     const clienPassword = md5(PASSWORD);
- 
+
     [user] = user;
-  
+
     if (user.password != clienPassword)
       return res.status(401).send({ message: "Password incorrecta" });
 
@@ -88,13 +88,36 @@ const loginUserCompany = async (req, res) => {
 };
 
 const updateCompany = async (req, res) => {
-  const { id,denominacion,nombre,apellidos,email,telefono,cargo,sector,tipoempresa,localizacion } = req.body;
+  const {
+    id,
+    denominacion,
+    nombre,
+    apellidos,
+    email,
+    telefono,
+    cargo,
+    sector,
+    tipoempresa,
+    localizacion,
+  } = req.body;
 
-  if (!id || !denominacion || !nombre || !apellidos || !email || !telefono || !cargo || !sector || !tipoempresa || !localizacion)
-    return res.status(400).send({ message: "Error del servidor al recibir un campo vacio" });
+  if (
+    !id ||
+    !denominacion ||
+    !nombre ||
+    !apellidos ||
+    !email ||
+    !telefono ||
+    !cargo ||
+    !sector ||
+    !tipoempresa ||
+    !localizacion
+  )
+    return res
+      .status(400)
+      .send({ message: "Error del servidor al recibir un campo vacio" });
 
   try {
-
     const updateCompany = await dao.updateCompany(req.body);
 
     if (updateCompany)
@@ -109,28 +132,17 @@ const updateCompany = async (req, res) => {
 };
 
 const insertPayment = async (req, res) => {
-  const {
-    tarjeta,
-    fecha,
-    cvv,
-    cantidad,
-    idempresa
-  } = req.body;
+  const { tarjeta, fecha, cvv, cantidad, idempresa } = req.body;
 
-  if (
-    !tarjeta ||
-    !fecha||
-    !cvv||
-    !cantidad ||
-    !idempresa
-  )
+  if (!tarjeta || !fecha || !cvv || !cantidad || !idempresa)
     return res.status(400).send({ message: "Error al recibir campos vacios" });
 
   try {
-  
     const insertPayment = await dao.insertPayment(req.body);
     if (insertPayment)
-      return res.status(201).send({ message: `Pago registrado correctamente.` });
+      return res
+        .status(201)
+        .send({ message: `Pago registrado correctamente.` });
   } catch (e) {
     console.log(e.message);
     throw new Error(e);
@@ -150,16 +162,16 @@ const addOrganization = async (req, res) => {
     cargo,
     causas,
     tipo,
-    localizacion
+    localizacion,
   } = req.body;
 
   if (
     !denominacion ||
-    !nombre||
-    !apellidos||
+    !nombre ||
+    !apellidos ||
     !email ||
     !password ||
-    !telefono||
+    !telefono ||
     !cargo ||
     !causas ||
     !tipo ||
@@ -169,19 +181,19 @@ const addOrganization = async (req, res) => {
 
   try {
     const user = await dao.getUserByEmailOrganization(email);
- 
+
     if (user.length > 0)
       return res
         .status(409)
         .send({ message: "Usuario ya registrado con ese email" });
-    // Si no existe lo registramos
+
 
     const addOrganization = await dao.addOrganization(req.body);
     if (addOrganization)
       return res.status(201).send({ message: `Bienvenido a Empacthy` });
   } catch (e) {
     console.log(e.message);
-    //Throw sirve para lanzar error inesperado, se puede señalar explicitamente que algo inusual ha sucedido
+   
     throw new Error(e);
   }
 };
@@ -199,9 +211,9 @@ const loginUserOrganization = async (req, res) => {
       return res.status(404).send({ message: "Usuario no registrado" });
 
     const clienPassword = md5(PASSWORD);
- 
+
     [user] = user;
-  
+
     if (user.password != clienPassword)
       return res.status(401).send({ message: "Password incorrecta" });
 
@@ -225,26 +237,19 @@ const loginUserOrganization = async (req, res) => {
 };
 
 const addInquiry = async (req, res) => {
-  const {
-    consulta,
-    nombre,
-    email,
-    telefono
-  } = req.body;
+  const { consulta, nombre, email, telefono } = req.body;
 
-  if (
-    !consulta ||
-    !nombre||
-    !email ||
-    !telefono
-  )
+  if (!consulta || !nombre || !email || !telefono)
     return res.status(400).send({ message: "Error al recibir campos vacios" });
 
   try {
-   
     const addInquiry = await dao.addInquiry(req.body);
     if (addInquiry)
-      return res.status(201).send({ message: `Gracias ${nombre}. En breve nos pondremos en contacto con usted.` });
+      return res
+        .status(201)
+        .send({
+          message: `Gracias ${nombre}. En breve nos pondremos en contacto con usted.`,
+        });
   } catch (e) {
     console.log(e.message);
     //Throw sirve para lanzar error inesperado, se puede señalar explicitamente que algo inusual ha sucedido
@@ -253,13 +258,38 @@ const addInquiry = async (req, res) => {
 };
 
 const updateOrganization = async (req, res) => {
-  const { id,denominacion,nombre,apellidos,email,telefono,cargo,causas,tipo,localizacion,descripcion } = req.body;
+  const {
+    id,
+    denominacion,
+    nombre,
+    apellidos,
+    email,
+    telefono,
+    cargo,
+    causas,
+    tipo,
+    localizacion,
+    descripcion,
+  } = req.body;
 
-  if (!id || !denominacion || !nombre || !apellidos || !email || !telefono || !cargo || !causas || !tipo || !localizacion || !descripcion)
-    return res.status(400).send({ message: "Error del servidor al recibir un campo vacio" });
+  if (
+    !id ||
+    !denominacion ||
+    !nombre ||
+    !apellidos ||
+    !email ||
+    !telefono ||
+    !cargo ||
+    !causas ||
+    !tipo ||
+    !localizacion ||
+    !descripcion
+  )
+    return res
+      .status(400)
+      .send({ message: "Error del servidor al recibir un campo vacio" });
 
   try {
-
     const updateOrganization = await dao.updateOrganization(req.body);
 
     if (updateOrganization)
@@ -274,13 +304,14 @@ const updateOrganization = async (req, res) => {
 };
 
 const updatePlan = async (req, res) => {
-  const { plan,idempresa } = req.body;
+  const { plan, idempresa } = req.body;
 
   if (!plan || !idempresa)
-    return res.status(400).send({ message: "Error del servidor al recibir un campo vacio" });
+    return res
+      .status(400)
+      .send({ message: "Error del servidor al recibir un campo vacio" });
 
   try {
-
     const updatePlan = await dao.updatePlan(req.body);
 
     if (updatePlan)
@@ -294,4 +325,14 @@ const updatePlan = async (req, res) => {
   }
 };
 
-module.exports = { loginUserCompany , addCompany, addOrganization, loginUserOrganization, addInquiry, updateCompany, updateOrganization, insertPayment, updatePlan};
+module.exports = {
+  loginUserCompany,
+  addCompany,
+  addOrganization,
+  loginUserOrganization,
+  addInquiry,
+  updateCompany,
+  updateOrganization,
+  insertPayment,
+  updatePlan,
+};

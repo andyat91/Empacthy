@@ -15,7 +15,7 @@ const {
   getValores,
   getOds,
   safeValores,
-  safeOds
+  safeOds,
 } = require("../controllers/dataController");
 
 const dataRouter = express.Router();
@@ -35,6 +35,5 @@ dataRouter.get("/valoresinfo/:id", getValores);
 dataRouter.get("/odsinfo/:id", getOds);
 dataRouter.post("/safevalores", safeValores);
 dataRouter.post("/safeods", safeOds);
-
 
 module.exports = dataRouter;

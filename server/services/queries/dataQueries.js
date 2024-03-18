@@ -4,113 +4,138 @@ const moment = require("moment");
 
 const { removeUndefinedKeys } = require("../../utils/utils");
 
-
 const dataQueries = {};
 
-
 dataQueries.infoCard = async () => {
-    let conn = null;
-    try {
-      conn = await db.createConnection();
-      return await db.query("SELECT * FROM infotarjeta", null, "select", conn);
-    } catch (e) {
-      throw new Error(e);
-    } finally {
-      conn && (await conn.end());
-    }
-  };
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query("SELECT * FROM infotarjeta", null, "select", conn);
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
-  dataQueries.infoMatch = async (id) => {
-    let conn = null;
-    try {
-      conn = await db.createConnection();
-      return await db.query("SELECT organizaciones.id,organizaciones.denominacion as organizacionname, organizaciones.causas, organizaciones.tipo, organizaciones.localizacion,alianza.estado,alianza.donacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE empresas.id = ?", id, "select", conn);
-     
-    } catch (e) {
-      throw new Error(e);
-    } finally {
-      conn && (await conn.end());
-    }
-  };
+dataQueries.infoMatch = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT organizaciones.id,organizaciones.denominacion as organizacionname, organizaciones.causas, organizaciones.tipo, organizaciones.localizacion,alianza.estado,alianza.donacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE empresas.id = ?",
+      id,
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
-  dataQueries.infoCount = async (id) => {
-    let conn = null;
-    try {
-      conn = await db.createConnection();
-      return await db.query("SELECT COUNT(idempresa) AS cantidad FROM alianza WHERE idempresa = ?", id, "select", conn);
-    } catch (e) {
-      throw new Error(e);
-    } finally {
-      conn && (await conn.end());
-    }
-  };
+dataQueries.infoCount = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT COUNT(idempresa) AS cantidad FROM alianza WHERE idempresa = ?",
+      id,
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
-  dataQueries.infoDonation = async (id) => {
-    let conn = null;
-    try {
-      conn = await db.createConnection();
-      return await db.query("SELECT sum(donacion) AS cantidad FROM alianza WHERE idempresa = ?", id, "select", conn);
-    } catch (e) {
-      throw new Error(e);
-    } finally {
-      conn && (await conn.end());
-    }
-  };
+dataQueries.infoDonation = async (id) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT sum(donacion) AS cantidad FROM alianza WHERE idempresa = ?",
+      id,
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
-  dataQueries.infoFilter = async (valor,ods) => {
-    let conn = null;
-    try {
-      conn = await db.createConnection();
-      return await db.query("SELECT organizaciones.id,organizaciones.denominacion,organizaciones.causas, organizaciones.tipo,organizaciones.localizacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN valores_organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones JOIN ods_organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE ods_organizaciones.idODS = ? AND valores_organizaciones.idvalores = ?;", [ods,valor], "select", conn);
-    } catch (e) {
-      throw new Error(e);
-    } finally {
-      conn && (await conn.end());
-    }
-  };
+dataQueries.infoFilter = async (valor, ods) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT organizaciones.id,organizaciones.denominacion,organizaciones.causas, organizaciones.tipo,organizaciones.localizacion,organizaciones.descripcion,organizaciones.imagen FROM organizaciones JOIN valores_organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones JOIN ods_organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE ods_organizaciones.idODS = ? AND valores_organizaciones.idvalores = ?;",
+      [ods, valor],
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
- dataQueries.getMatchById = async (idong,idempresa) => {
-   
-  let conn = null
-    try {
-        conn = await db.createConnection()
-        return await db.query('SELECT * FROM alianza WHERE idorganizaciones = ? and idempresa = ?', [idong,idempresa], 'select', conn)
-    } catch (e) {
-        throw new Error(e)
-    } finally {
-        conn && await conn.end();
-    };
+dataQueries.getMatchById = async (idong, idempresa) => {
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT * FROM alianza WHERE idorganizaciones = ? and idempresa = ?",
+      [idong, idempresa],
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
 };
 
 dataQueries.makeMatch = async (infoData) => {
-  
-  let conn = null
+  let conn = null;
   try {
-      conn = await db.createConnection()
-  
-      let userObj = {
-         idempresa: infoData.idempresa,
-         idorganizaciones: infoData.idong,
-         estado: 0
-      }                  
-      return await db.query('INSERT INTO alianza SET ?', userObj, 'insert', conn)
+    conn = await db.createConnection();
+
+    let userObj = {
+      idempresa: infoData.idempresa,
+      idorganizaciones: infoData.idong,
+      estado: 0,
+    };
+    return await db.query("INSERT INTO alianza SET ?", userObj, "insert", conn);
   } catch (e) {
-     throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
 
 dataQueries.deleteMatch = async (userData) => {
-  // Conectamos con la base de datos y eliminamos el usuario por su id.
-  let conn = null
+
+  let conn = null;
   try {
-      conn = await db.createConnection()
-      return await db.query('DELETE FROM alianza WHERE idorganizaciones = ? AND idempresa = ?', [userData.idorg,userData.idempresa], 'delete', conn)         
+    conn = await db.createConnection();
+    return await db.query(
+      "DELETE FROM alianza WHERE idorganizaciones = ? AND idempresa = ?",
+      [userData.idorg, userData.idempresa],
+      "delete",
+      conn
+    );
   } catch (e) {
-      throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
 
@@ -118,7 +143,12 @@ dataQueries.infoMatchOrg = async (id) => {
   let conn = null;
   try {
     conn = await db.createConnection();
-    return await db.query("SELECT empresas.id,empresas.denominacion as empresaname, empresas.sector, empresas.tipoempresa, empresas.localizacion,alianza.estado,alianza.donacion,empresas.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE organizaciones.id = ?", id, "select", conn);
+    return await db.query(
+      "SELECT empresas.id,empresas.denominacion as empresaname, empresas.sector, empresas.tipoempresa, empresas.localizacion,alianza.estado,alianza.donacion,empresas.imagen FROM organizaciones JOIN alianza ON organizaciones.id = alianza.idorganizaciones JOIN empresas ON empresas.id = alianza.idempresa WHERE organizaciones.id = ?",
+      id,
+      "select",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -127,24 +157,29 @@ dataQueries.infoMatchOrg = async (id) => {
 };
 
 dataQueries.acceptMatch = async (infoData) => {
-  let conn = null
+  let conn = null;
   try {
-      conn = await db.createConnection();
+    conn = await db.createConnection();
 
-      let userObj = {
-         idempresa: infoData.idempresa,
-         idorganizaciones: infoData.idorg,
-         estado: 1,
-         fecha_inicio: moment().format("YYYY-MM-DD HH:mm:ss")
-      }
+    let userObj = {
+      idempresa: infoData.idempresa,
+      idorganizaciones: infoData.idorg,
+      estado: 1,
+      fecha_inicio: moment().format("YYYY-MM-DD HH:mm:ss"),
+    };
 
-      userObj = await removeUndefinedKeys(userObj)
+    userObj = await removeUndefinedKeys(userObj);
 
-      return await db.query('UPDATE alianza SET ? WHERE idempresa = ? AND idorganizaciones = ?', [userObj, infoData.idempresa,infoData.idorg], 'update', conn);
+    return await db.query(
+      "UPDATE alianza SET ? WHERE idempresa = ? AND idorganizaciones = ?",
+      [userObj, infoData.idempresa, infoData.idorg],
+      "update",
+      conn
+    );
   } catch (e) {
-     throw new Error(e);
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
 
@@ -152,7 +187,12 @@ dataQueries.infoCountOrg = async (id) => {
   let conn = null;
   try {
     conn = await db.createConnection();
-    return await db.query("SELECT COUNT(idorganizaciones) AS cantidad FROM alianza WHERE idorganizaciones = ?", id, "select", conn);
+    return await db.query(
+      "SELECT COUNT(idorganizaciones) AS cantidad FROM alianza WHERE idorganizaciones = ?",
+      id,
+      "select",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -164,7 +204,12 @@ dataQueries.infoDonationOrg = async (id) => {
   let conn = null;
   try {
     conn = await db.createConnection();
-    return await db.query("SELECT sum(donacion) AS cantidad FROM alianza WHERE idorganizaciones = ?", id, "select", conn);
+    return await db.query(
+      "SELECT sum(donacion) AS cantidad FROM alianza WHERE idorganizaciones = ?",
+      id,
+      "select",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -176,7 +221,12 @@ dataQueries.getValores = async (id) => {
   let conn = null;
   try {
     conn = await db.createConnection();
-    return await db.query("SELECT valores.id,valores.denominacion FROM valores JOIN valores_organizaciones ON valores_organizaciones.idvalores = valores.id JOIN organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones WHERE organizaciones.id= ?", id, "select", conn);
+    return await db.query(
+      "SELECT valores.id,valores.denominacion FROM valores JOIN valores_organizaciones ON valores_organizaciones.idvalores = valores.id JOIN organizaciones ON organizaciones.id = valores_organizaciones.idorganizaciones WHERE organizaciones.id= ?",
+      id,
+      "select",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -188,7 +238,12 @@ dataQueries.getOds = async (id) => {
   let conn = null;
   try {
     conn = await db.createConnection();
-    return await db.query("SELECT ods.id,ods.denominacion FROM ods JOIN ods_organizaciones ON ods_organizaciones.idods = ods.id JOIN organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE organizaciones.id= ?", id, "select", conn);
+    return await db.query(
+      "SELECT ods.id,ods.denominacion FROM ods JOIN ods_organizaciones ON ods_organizaciones.idods = ods.id JOIN organizaciones ON organizaciones.id = ods_organizaciones.idorganizaciones WHERE organizaciones.id= ?",
+      id,
+      "select",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -200,7 +255,12 @@ dataQueries.infoOrgValor = async (idorg) => {
   let conn = null;
   try {
     conn = await db.createConnection();
-    return await db.query("SELECT * from valores_organizaciones where idorganizaciones = ?", idorg, "select", conn);
+    return await db.query(
+      "SELECT * from valores_organizaciones where idorganizaciones = ?",
+      idorg,
+      "select",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -216,11 +276,16 @@ dataQueries.insertNewValor = async (infoData) => {
     const userObj = [
       [infoData.idorg, infoData.valor1],
       [infoData.idorg, infoData.valor2],
-      [infoData.idorg, infoData.valor3]
+      [infoData.idorg, infoData.valor3],
     ];
 
     for (const values of userObj) {
-      await db.query('INSERT INTO valores_organizaciones (idorganizaciones, idvalores) VALUES (?, ?)', values, 'insert', conn);
+      await db.query(
+        "INSERT INTO valores_organizaciones (idorganizaciones, idvalores) VALUES (?, ?)",
+        values,
+        "insert",
+        conn
+      );
     }
 
     return "Ok";
@@ -232,15 +297,20 @@ dataQueries.insertNewValor = async (infoData) => {
 };
 
 dataQueries.deleteValores = async (idorg) => {
-  // Conectamos con la base de datos y eliminamos el usuario por su id.
-  let conn = null
+ 
+  let conn = null;
   try {
-      conn = await db.createConnection()
-      return await db.query('DELETE FROM valores_organizaciones WHERE idorganizaciones = ?', idorg, 'delete', conn)         
+    conn = await db.createConnection();
+    return await db.query(
+      "DELETE FROM valores_organizaciones WHERE idorganizaciones = ?",
+      idorg,
+      "delete",
+      conn
+    );
   } catch (e) {
-      throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
 
@@ -248,7 +318,12 @@ dataQueries.infoOrgOds = async (idorg) => {
   let conn = null;
   try {
     conn = await db.createConnection();
-    return await db.query("SELECT * from ods_organizaciones where idorganizaciones = ?", idorg, "select", conn);
+    return await db.query(
+      "SELECT * from ods_organizaciones where idorganizaciones = ?",
+      idorg,
+      "select",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -264,11 +339,16 @@ dataQueries.insertNewOds = async (infoData) => {
     const userObj = [
       [infoData.idorg, infoData.ods1],
       [infoData.idorg, infoData.ods2],
-      [infoData.idorg, infoData.ods3]
+      [infoData.idorg, infoData.ods3],
     ];
 
     for (const values of userObj) {
-      await db.query('INSERT INTO ods_organizaciones (idorganizaciones, idods) VALUES (?, ?)', values, 'insert', conn);
+      await db.query(
+        "INSERT INTO ods_organizaciones (idorganizaciones, idods) VALUES (?, ?)",
+        values,
+        "insert",
+        conn
+      );
     }
 
     return "Ok";
@@ -280,15 +360,20 @@ dataQueries.insertNewOds = async (infoData) => {
 };
 
 dataQueries.deleteOds = async (idorg) => {
-  // Conectamos con la base de datos y eliminamos el usuario por su id.
-  let conn = null
+  
+  let conn = null;
   try {
-      conn = await db.createConnection()
-      return await db.query('DELETE FROM ods_organizaciones WHERE idorganizaciones = ?', idorg, 'delete', conn)         
+    conn = await db.createConnection();
+    return await db.query(
+      "DELETE FROM ods_organizaciones WHERE idorganizaciones = ?",
+      idorg,
+      "delete",
+      conn
+    );
   } catch (e) {
-      throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
-module.exports =  dataQueries ;
+module.exports = dataQueries;
