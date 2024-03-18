@@ -1,16 +1,10 @@
-import OrganizationInfo from "../../components/OrganizationInfo/OrganizationInfo"
-import "./PerfilOrganization.css"
-
-
+import OrganizationInfo from "../../components/OrganizationInfo/OrganizationInfo";
+import "./PerfilOrganization.css";
 
 export default function PerfilOrganization() {
-
-
-
-    return(
-
-        <div className="perfilorganization wrap">
-        <OrganizationInfo/>
-        </div>
-    )
+  return (
+    <div className="perfilorganization wrap">
+      <OrganizationInfo />
+    </div>
+  );
 }

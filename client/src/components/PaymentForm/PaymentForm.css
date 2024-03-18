@@ -62,58 +62,53 @@
   margin: 0;
   font-family: "Bebas Neue", sans-serif;
   color: var(--greyblue);
- 
 }
-#paymentform .formtarjeta form{
-    margin-left: 32px;
-    width: 50%;
+#paymentform .formtarjeta form {
+  margin-left: 32px;
+  width: 50%;
 }
 #paymentform .formtarjeta form label {
   display: flex;
   flex-direction: column;
   align-items: left;
   margin-top: 6px;
-  
 }
 
-#paymentform .formtarjeta .clausulas{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    margin-right: 16px;
+#paymentform .formtarjeta .clausulas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  margin-right: 16px;
 }
 
-#paymentform .formtarjeta form input{
-    border: 2px solid;
-    border-radius: 8px;
-    padding: 6px;
-    width: 90%;
+#paymentform .formtarjeta form input {
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 6px;
+  width: 90%;
 
-    border-color: var(--green);
-    
+  border-color: var(--green);
 }
-#paymentform .formtarjeta .linktopolitica{
-    width: 100%;
-    white-space: nowrap;
-    color: var(--blue);
-    margin-left: 8px;
+#paymentform .formtarjeta .linktopolitica {
+  width: 100%;
+  white-space: nowrap;
+  color: var(--blue);
+  margin-left: 8px;
 }
 
-#paymentform .formtarjeta .terminos{
+#paymentform .formtarjeta .terminos {
   width: 100%;
   margin-left: 0;
-  
-  
 }
 
-#paymentform .formtarjeta .terminos label{
+#paymentform .formtarjeta .terminos label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#paymentform .formtarjeta .paybutton{
+#paymentform .formtarjeta .paybutton {
   background-color: var(--cleargreen);
   border: none;
   color: var(--blue);
@@ -122,11 +117,9 @@
   padding: 8px;
   width: 90%;
   margin-top: 24px;
-
 }
 
-#paymentform .formtarjeta .paybutton:hover{
+#paymentform .formtarjeta .paybutton:hover {
   background-color: var(--blue);
   color: var(--white);
-
 }

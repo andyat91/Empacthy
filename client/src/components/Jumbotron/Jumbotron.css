@@ -6,14 +6,11 @@
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
   overflow: hidden;
-  
-  
 }
 .jumbotroncontainer {
   border-bottom: 2px solid;
   margin-bottom: 32px;
 }
-
 
 .textphoto {
   text-align: right;
@@ -26,14 +23,13 @@
 }
 
 .jumbotron .video {
-  width: 100vw; /* 100% del ancho de la ventana */
-  height: 90vh; /* Ajusta la altura según tus necesidades */
+  width: 100vw;
+  height: 90vh;
   object-fit: cover;
 }
 
-
 @media only screen and (max-width: 800px) {
-   .jumbotron {
+  .jumbotron {
     width: 100%;
   }
   .jumbotron img {

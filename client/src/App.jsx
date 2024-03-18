@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Home from "./views/Home/home";
 import Login from "./views/login/Login";
@@ -19,19 +18,19 @@ import PerfilOrganization from "./views/PerfilOrganization/PerfilOrganization";
 import ModifyOrganization from "./views/ModigyOrganization/ModifyOrganization";
 import Plans from "./views/Plans/Plans";
 import PrivacyPolicy from "./views/PrivacyPolicy/PrivacyPolicy";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
-
-
   return (
     <BrowserRouter>
       <Toaster />
       <AuthContextProvider>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/empacthy" element={<AboutUs />} />
-            <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route element={<PublicRoutes />}>
               <Route path="/login" element={<Login />} />
               <Route path="/registro" element={<Registro />} />
@@ -42,10 +41,13 @@ function App() {
               <Route path="/companyhome" element={<CompanyHome />} />
               <Route path="/companyhome/match" element={<Match />} />
               <Route path="/companyhome/modify" element={<ModifyCompany />} />
-              <Route path="/companyhome/plans" element={<Plans/>}/>
+              <Route path="/companyhome/plans" element={<Plans />} />
               <Route path="/organizationhome" element={<OrganizationHome />} />
-              <Route path="/organizationhome/modify" element={<ModifyOrganization/>}/>
-              <Route path="/perfilorg" element={<PerfilOrganization/>}/>
+              <Route
+                path="/organizationhome/modify"
+                element={<ModifyOrganization />}
+              />
+              <Route path="/perfilorg" element={<PerfilOrganization />} />
             </Route>
           </Route>
         </Routes>

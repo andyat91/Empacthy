@@ -35,14 +35,13 @@ export default function Header() {
           </h2>
           <h5>Matchmaking B2Org </h5>
         </div>
-        
+
         <div className="linkheader">
           {user ? (
             <div className="userlogged">
               <img src={`/${user.imagen}`} />
-              
+
               <Link
-              
                 to={
                   user?.logintipo === "Soy una Empresa"
                     ? "/companyhome"

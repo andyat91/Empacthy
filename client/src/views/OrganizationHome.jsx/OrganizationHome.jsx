@@ -11,7 +11,7 @@ import State2 from "../../assets/icons/State2";
 import InfoStatesOrg from "../../components/InfoStateOrg/InfoStateOrg";
 import KpisOrg from "../../components/KpisOrg/KpisOrg";
 import { Link } from "react-router-dom";
-import colaboracion from "../../assets/images/colaboración.pdf"
+import colaboracion from "../../assets/images/colaboración.pdf";
 import Contract from "../../assets/icons/Contract";
 
 export default function OrganizationHome() {
@@ -102,7 +102,7 @@ export default function OrganizationHome() {
             <div className="info">
               <div className="principalinfo">
                 <h5>
-                  <b>{match.empresaname}</b>{" "}
+                  <b>{match.empresaname}</b>
                 </h5>
                 <p>{match.sector} </p>
               </div>
@@ -122,58 +122,65 @@ export default function OrganizationHome() {
                 )}
               </div>
               <div className="statepdf">
-              <div
-                className={
-                  match.estado === 0
-                    ? "estado state0"
-                    : match.estado === 1
-                    ? "estado state1"
-                    : match.estado === 2
-                    ? "estado state2"
-                    : ""
-                }
-              >
-                <div className="estadoname">
-                  <p>
-                    {match.estado === 0 && <State0 />}
-                    {match.estado === 1 && <State1 />}
-                    {match.estado === 2 && <State2 />}
-                  </p>
-                  <p>
-                    {match.estado === 0
-                      ? "Match en proceso de validación"
+                <div
+                  className={
+                    match.estado === 0
+                      ? "estado state0"
                       : match.estado === 1
-                      ? "Has aceptado el Match de la empresa."
+                      ? "estado state1"
                       : match.estado === 2
-                      ? "Match firmado"
-                      : ""}
-                  </p>
-                </div>
-                <p>
-                  {match.donacion === null
-                    ? ""
-                    : `Donación: ${match.donacion}€`}
-                </p>
-                {match.estado === 0 && (
-                  <div className="state0button">
-                    <button
-                      onClick={() => acceptMatch(match.id)}
-                      className="accept"
-                    >
-                      Aceptar MATCH
-                    </button>
-                    <button
-                      onClick={() => deleteMatch(match.id)}
-                      className="decline"
-                    >
-                      Declinar MATCH
-                    </button>
+                      ? "estado state2"
+                      : ""
+                  }
+                >
+                  <div className="estadoname">
+                    <p>
+                      {match.estado === 0 && <State0 />}
+                      {match.estado === 1 && <State1 />}
+                      {match.estado === 2 && <State2 />}
+                    </p>
+                    <p>
+                      {match.estado === 0
+                        ? "Match en proceso de validación"
+                        : match.estado === 1
+                        ? "Has aceptado el Match de la empresa."
+                        : match.estado === 2
+                        ? "Match firmado"
+                        : ""}
+                    </p>
                   </div>
+                  <p>
+                    {match.donacion === null
+                      ? ""
+                      : `Donación: ${match.donacion}€`}
+                  </p>
+                  {match.estado === 0 && (
+                    <div className="state0button">
+                      <button
+                        onClick={() => acceptMatch(match.id)}
+                        className="accept"
+                      >
+                        Aceptar MATCH
+                      </button>
+                      <button
+                        onClick={() => deleteMatch(match.id)}
+                        className="decline"
+                      >
+                        Declinar MATCH
+                      </button>
+                    </div>
+                  )}
+                </div>
+                {match.estado === 2 && (
+                  <Link
+                    to={colaboracion}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pdf"
+                  >
+                    Contrato <Contract />{" "}
+                  </Link>
                 )}
-              </div>
-              {match.estado === 2 &&
-                <Link to={colaboracion}  target="_blank" rel="noopener noreferrer" className="pdf">Contrato <Contract/> </Link>
-                }
               </div>
             </div>
           </div>

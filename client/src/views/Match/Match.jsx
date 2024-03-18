@@ -25,7 +25,6 @@ export default function Match() {
       const ongList = await response.json();
       setOngList(ongList);
     }
-   
 
     filterOng();
   }, [valor, ods]);
@@ -107,46 +106,52 @@ export default function Match() {
 
         <div className="containercardorg">
           {ongList.length > 0 ? (
-            ongList.slice(0, showAllCards ? ongList.length : 4).map((onglist) => (
-              <div className="card" key={onglist.id}>
-                <img src={`/${onglist.imagen}`} className="card-img-top" />
-                <div className="card-body1">
-                  <h5 className="card-title">
-                    <b>{onglist.denominacion}</b>
-                  </h5>
-                  <p className="card-text">{onglist.descripcion}</p>
-                  <button
-                    className="card-link"
-                    onClick={() => makeMatch(onglist.id)}
-                  >
-                    Quiero hacer MATCH
-                  </button>
+            ongList
+              .slice(0, showAllCards ? ongList.length : 4)
+              .map((onglist) => (
+                <div className="card" key={onglist.id}>
+                  <img src={`/${onglist.imagen}`} className="card-img-top" />
+                  <div className="card-body1">
+                    <h5 className="card-title">
+                      <b>{onglist.denominacion}</b>
+                    </h5>
+                    <p className="card-text">{onglist.descripcion}</p>
+                    <button
+                      className="card-link"
+                      onClick={() => makeMatch(onglist.id)}
+                    >
+                      Quiero hacer MATCH
+                    </button>
+                  </div>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">
+                      <b>Causa principal:</b> {onglist.causas}.
+                    </li>
+                    <li className="list-group-item">
+                      <b>Tipo de Organización: </b>
+                      {onglist.tipo}.
+                    </li>
+                    <li className="list-group-item">
+                      <b>Provincia: </b>
+                      {onglist.localizacion}.
+                    </li>
+                  </ul>
                 </div>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item">
-                    <b>Causa principal:</b> {onglist.causas}.{" "}
-                  </li>
-                  <li className="list-group-item">
-                    <b>Tipo de Organización: </b>
-                    {onglist.tipo}.{" "}
-                  </li>
-                  <li className="list-group-item">
-                    <b>Provincia: </b>
-                    {onglist.localizacion}.{" "}
-                  </li>
-                </ul>
-              </div>
-            ))
+              ))
           ) : (
-            <h3 className="nomatch">Todavia no hay ONG que coincidan con tu busqueda</h3>
+            <h3 className="nomatch">
+              Todavia no hay ONG que coincidan con tu busqueda
+            </h3>
           )}
-         
         </div>
         {ongList.length > 4 && (
-            <button onClick={() => setShowAllCards(!showAllCards)} className="showmore">
-              {showAllCards ? "Ver menos" : "Ver más"}
-            </button>
-          )}
+          <button
+            onClick={() => setShowAllCards(!showAllCards)}
+            className="showmore"
+          >
+            {showAllCards ? "Ver menos" : "Ver más"}
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,53 +1,51 @@
-#plans .currentplan{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    
-    padding: 16px;
-    background-color: var(--greyblue);
-    border-radius: 8px;
-    color: var(--white);
-    margin-top: 8px;
+#plans .currentplan {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 
+  padding: 16px;
+  background-color: var(--greyblue);
+  border-radius: 8px;
+  color: var(--white);
+  margin-top: 8px;
 }
-#plans  h3{
-    margin: 0;
-    font-family: "Bebas Neue", sans-serif;
-}
-
-#plans #currentplanselected{
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    background-color: var(--cleargreen);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    color: var(--blue);
-    padding: 8px;
-
+#plans h3 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
 }
 
-#plans .meetourplans{
-    font-family: "Bebas Neue", sans-serif;
-    text-align: center;
-    color: var(--greyblue);
-    margin-bottom: 32px;
+#plans #currentplanselected {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background-color: var(--cleargreen);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  padding: 8px;
 }
 
-#plans .changeplan{
-    margin: 40px 0px;
-    padding: 8px;
-    width: 100%;
-    background-color: var(--white);
-    color: var(--greyblue);
-    font-size: large;
-    font-weight: 600;
-    border: 3px solid;
-    border-radius: 8px;
+#plans .meetourplans {
+  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+  color: var(--greyblue);
+  margin-bottom: 32px;
 }
-#plans .changeplan:hover{
-    background-color: var(--blue);
-    border-color: var(--blue);
-    color: var(--white);
+
+#plans .changeplan {
+  margin: 40px 0px;
+  padding: 8px;
+  width: 100%;
+  background-color: var(--white);
+  color: var(--greyblue);
+  font-size: large;
+  font-weight: 600;
+  border: 3px solid;
+  border-radius: 8px;
+}
+#plans .changeplan:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
 }

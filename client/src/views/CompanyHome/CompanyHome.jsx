@@ -10,7 +10,7 @@ import State2 from "../../assets/icons/State2";
 import InfoStates from "../../components/InfoState/InfoStates";
 import Kpis from "../../components/Kpis/Kpis";
 import { Link } from "react-router-dom";
-import colaboracion from "../../assets/images/colaboración.pdf"
+import colaboracion from "../../assets/images/colaboración.pdf";
 import Contract from "../../assets/icons/Contract";
 
 export default function CompanyHome() {
@@ -31,8 +31,6 @@ export default function CompanyHome() {
       }
     }
     fetchMatch();
-
-   
   }, [user, deleteClick]);
 
   async function deleteMatch(idorg) {
@@ -74,7 +72,7 @@ export default function CompanyHome() {
             <div className="info">
               <div className="principalinfo">
                 <h5>
-                  <b>{match.organizacionname}</b>{" "}
+                  <b>{match.organizacionname}</b>
                 </h5>
                 <p>{match.causas} </p>
               </div>
@@ -89,49 +87,55 @@ export default function CompanyHome() {
                 {/* <p>{match.descripcion} </p> */}
               </div>
               <div className="statepdf">
-              <div
-                className={
-                  match.estado === 0
-                    ? "estado state0"
-                    : match.estado === 1
-                    ? "estado state1"
-                    : match.estado === 2
-                    ? "estado state2"
-                    : ""
-                }
-              >
-                <div className="estadoname">
-                  <p>
-                    {match.estado === 0 && <State0 />}
-                    {match.estado === 1 && <State1 />}
-                    {match.estado === 2 && <State2 />}
-                  </p>
-                  <p>
-                    {match.estado === 0
-                      ? "Match en proceso de validación"
+                <div
+                  className={
+                    match.estado === 0
+                      ? "estado state0"
                       : match.estado === 1
-                      ? "Match aceptado por la Organización"
+                      ? "estado state1"
                       : match.estado === 2
-                      ? "Match firmado"
-                      : ""}
+                      ? "estado state2"
+                      : ""
+                  }
+                >
+                  <div className="estadoname">
+                    <p>
+                      {match.estado === 0 && <State0 />}
+                      {match.estado === 1 && <State1 />}
+                      {match.estado === 2 && <State2 />}
+                    </p>
+                    <p>
+                      {match.estado === 0
+                        ? "Match en proceso de validación"
+                        : match.estado === 1
+                        ? "Match aceptado por la Organización"
+                        : match.estado === 2
+                        ? "Match firmado"
+                        : ""}
+                    </p>
+                  </div>
+                  <p>
+                    {match.donacion === null
+                      ? ""
+                      : `Donación: ${match.donacion}€`}
                   </p>
                 </div>
-                <p>
-                  {match.donacion === null
-                    ? ""
-                    : `Donación: ${match.donacion}€`}
-                </p>
-               
+                {match.estado === 2 && (
+                  <Link
+                    to={colaboracion}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pdf"
+                  >
+                    Contrato <Contract />{" "}
+                  </Link>
+                )}
               </div>
-              {match.estado === 2 &&
-                <Link to={colaboracion}  target="_blank" rel="noopener noreferrer" className="pdf">Contrato <Contract/> </Link>
-                }
-            </div>
             </div>
           </div>
         ))}
       </div>
-     <Kpis deleteClick={deleteClick} />
+      <Kpis deleteClick={deleteClick} />
     </div>
   );
 }

@@ -17,11 +17,11 @@ export default function Login() {
       email,
       PASSWORD,
     };
-    login(user,logintype);
+    login(user, logintype);
   };
 
   function handleLogintype(type) {
-    setLogintype(type)
+    setLogintype(type);
   }
 
   return (
@@ -30,10 +30,30 @@ export default function Login() {
         <h1>
           <PersonLogin />
         </h1>
-        <h4>Bienvenido de nuevo a <BrandLogo />. </h4>
+        <h4>
+          Bienvenido de nuevo a <BrandLogo />.{" "}
+        </h4>
         <div className="togglelogin">
-        <button onClick={() => handleLogintype("Soy una Empresa")} className={logintype == "Soy una Empresa" ? "activebuttontoggle buttontoggle" : "buttontoggle"} >Empresa</button>
-        <button onClick={() => handleLogintype("Soy una Organizacion")} className={logintype == "Soy una Organizacion" ? "activebuttontoggle buttontoggle" : "buttontoggle"}>Organización </button>
+          <button
+            onClick={() => handleLogintype("Soy una Empresa")}
+            className={
+              logintype == "Soy una Empresa"
+                ? "activebuttontoggle buttontoggle"
+                : "buttontoggle"
+            }
+          >
+            Empresa
+          </button>
+          <button
+            onClick={() => handleLogintype("Soy una Organizacion")}
+            className={
+              logintype == "Soy una Organizacion"
+                ? "activebuttontoggle buttontoggle"
+                : "buttontoggle"
+            }
+          >
+            Organización{" "}
+          </button>
         </div>
         <form onSubmit={handleLogin}>
           <div>

@@ -1,5 +1,3 @@
-
-
 #headercontainer .nameslogan {
   display: flex;
   flex-direction: row;
@@ -8,20 +6,16 @@
   align-items: baseline;
   width: 40%;
 }
-#headercontainer .nameslogan h2{
+#headercontainer .nameslogan h2 {
   margin: 0px;
 }
-#headercontainer .nameslogan h2 a{
-
-
+#headercontainer .nameslogan h2 a {
   color: var(--greyblue);
   font-family: "Bebas Neue", sans-serif;
   font-weight: 600;
   font-style: normal;
   text-decoration: none;
-
 }
-
 
 #headercontainer .nameslogan h5 {
   margin: 0px;
@@ -31,7 +25,6 @@
 }
 
 #headercontainer .header {
-
   color: var(--blue);
   display: flex;
   flex-direction: row;
@@ -39,7 +32,6 @@
   align-items: center;
   position: relative;
   z-index: 1;
-  
 }
 #headercontainer .linkheader {
   margin-top: 16px;
@@ -47,7 +39,7 @@
   position: relative;
 }
 #headercontainer .header button {
-  font: inherit; 
+  font: inherit;
   font-weight: 800;
   background-color: var(--white);
 }
@@ -65,19 +57,16 @@
   color: white;
 }
 
-#headercontainer  .linkheader .registroheader{
+#headercontainer .linkheader .registroheader {
   border: none;
 }
 
-
-
-
 #headercontainer .header .containermenu {
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 100%; 
+  top: 100%;
   left: 30%;
   padding: 8px;
   border-radius: 6px;
@@ -88,7 +77,7 @@
   text-decoration: none;
 
   border-radius: 6px;
- 
+
   width: 100%;
   text-align: center;
   margin-bottom: 8px;
@@ -97,21 +86,19 @@
   background-color: var(--blue);
 }
 
-#headercontainer  .containermenu .linkcontainer:hover {
+#headercontainer .containermenu .linkcontainer:hover {
   background-color: var(--green);
   color: var(--blue);
-} 
-#headercontainer  .buttonheader:hover{
-color: var(--white);
-background-color: var(--green);
+}
+#headercontainer .buttonheader:hover {
+  color: var(--white);
+  background-color: var(--green);
 }
 
-
-#headercontainer .header .userlogged{
+#headercontainer .header .userlogged {
   display: flex;
   justify-content: right;
   align-items: center;
-  
 }
 #headercontainer .header .userlogged img {
   width: 7%;
@@ -120,10 +107,10 @@ background-color: var(--green);
   border: 2px solid;
   border-color: var(--greyblue);
 }
-#headercontainer .header .userlogged .perfil{
+#headercontainer .header .userlogged .perfil {
   text-decoration: none;
 }
-#headercontainer .header .userlogged h5{
+#headercontainer .header .userlogged h5 {
   margin: 0;
   color: var(--greyblue);
   font-weight: 600;
@@ -131,7 +118,7 @@ background-color: var(--green);
 }
 
 #headercontainer .header .userlogged button {
-  margin-left: 8px ;
+  margin-left: 8px;
   padding: 8px;
   border-radius: 6px;
   background-color: var(--greyblue);
@@ -139,53 +126,47 @@ background-color: var(--green);
   color: white;
 }
 
-#headercontainer .header .userlogged button:hover{
+#headercontainer .header .userlogged button:hover {
   background-color: var(--green);
 }
 @media only screen and (max-width: 950px) {
- 
   #headercontainer .header {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  #headercontainer .linkheader{
+  #headercontainer .linkheader {
     display: flex;
-
   }
-  #headercontainer .header .userlogged{
+  #headercontainer .header .userlogged {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  #headercontainer .buttonheader{
-  font-size: 0;
-  padding: 6px;
- } 
- #headercontainer .nameslogan {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-}
-#headercontainer .nameslogan h2 {
-  font-size: 200;
-}
+  #headercontainer .buttonheader {
+    font-size: 0;
+    padding: 6px;
+  }
+  #headercontainer .nameslogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #headercontainer .nameslogan h2 {
+    font-size: 200;
+  }
 
-#headercontainer .aboutus::before{
+  #headercontainer .aboutus::before {
+    content: "\F434";
+    font-family: "bootstrap-icons";
+    font-size: 20px;
+    margin: 0px;
+  }
 
-  content: '\F434';
-  font-family: 'bootstrap-icons';
-  font-size: 20px;
-  margin:0px
- }
-
- #headercontainer .loginheader::before{
-
-  content: '\F67A';
-  font-family: 'bootstrap-icons';
-  font-size: 20px;
-  margin:0px
- }
- 
+  #headercontainer .loginheader::before {
+    content: "\F67A";
+    font-family: "bootstrap-icons";
+    font-size: 20px;
+    margin: 0px;
+  }
 }

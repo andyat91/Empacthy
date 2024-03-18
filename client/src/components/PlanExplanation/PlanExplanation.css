@@ -1,56 +1,54 @@
-#planexplanation{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 16px;
-    background-color: var(--grey);
-    border-radius: 8px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+#planexplanation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: var(--grey);
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-#planexplanation .allplans{
-    padding: 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    width: 32%;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
-    transition: transform 0.5s;
+#planexplanation .allplans {
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 32%;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  transition: transform 0.5s;
 }
-#planexplanation .allplans:hover{
-    transform: scale(1.1);
+#planexplanation .allplans:hover {
+  transform: scale(1.1);
 }
-#planexplanation ul{
-    margin-top: 8px;
-}
-
-#planexplanation h5{
-    border-top: 2px solid;
-    margin-top: 24px;
-    padding-top: 16;
-    width: 100%;
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-#planexplanation div h4, div h5{
-    margin: 0;
- 
-}
-#planexplanation .community{
-    background-color: var(--green);
+#planexplanation ul {
+  margin-top: 8px;
 }
 
-
-#planexplanation .transcendent{
-    background-color: var(--greyblue);
+#planexplanation h5 {
+  border-top: 2px solid;
+  margin-top: 24px;
+  padding-top: 16;
+  width: 100%;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+#planexplanation div h4,
+div h5 {
+  margin: 0;
+}
+#planexplanation .community {
+  background-color: var(--green);
 }
 
-#planexplanation .universe{
-    background-color: var(--blue);
+#planexplanation .transcendent {
+  background-color: var(--greyblue);
 }
 
+#planexplanation .universe {
+  background-color: var(--blue);
+}

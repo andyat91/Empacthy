@@ -1,70 +1,67 @@
 #cardbusiness {
-    display: flex;
-    justify-content: space-between;
-    align-items: top;
-    border-radius: 6px;
-    overflow: hidden;
-    padding: 40px;
-    color: var(--blue);
-    margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 40px;
+  color: var(--blue);
+  margin-bottom: 32px;
 }
-
 
 #cardbusiness img {
-   width: 35%;
-   height: auto;
-   border-radius: 6px;
-   filter: brightness(80%);
-   max-width: 480px; /* Ancho máximo deseado */
-   max-height: 400px; /* Altura máxima deseada */
+  width: 35%;
+  height: auto;
+  border-radius: 6px;
+  filter: brightness(80%);
+  max-width: 480px;
+  max-height: 400px;
 }
 
-#cardbusiness  .empresa{
-    margin-right: 40px;
+#cardbusiness .empresa {
+  margin-right: 40px;
 }
 
-#cardbusiness  .organizacion{
-    margin-left: 40px;
+#cardbusiness .organizacion {
+  margin-left: 40px;
 }
 
-
-#cardbusiness h4{
-    margin: 0;
-    font-family: "Bebas Neue", sans-serif;
-    text-align: center;
-    border-bottom: 2px solid;
-    border-color: var(--green);
+#cardbusiness h4 {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+  border-bottom: 2px solid;
+  border-color: var(--green);
 }
-#cardbusiness ul{
-    list-style-type:circle;
-    margin-top: 8px;
+#cardbusiness ul {
+  list-style-type: circle;
+  margin-top: 8px;
 }
 #cardbusiness ul li {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
-#cardbusiness .registro{
-    text-decoration: none;
-    background-color: var(--blue);
-    color: white;
-    text-align: center;
-    padding: 8px 40px;
-    border-radius: 6px;
-    font-weight: 600;
-    margin-top: 16px;
-    display: block;
+#cardbusiness .registro {
+  text-decoration: none;
+  background-color: var(--blue);
+  color: white;
+  text-align: center;
+  padding: 8px 40px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 16px;
+  display: block;
 }
-#cardbusiness .registro:hover{
-    background-color: var(--green);
-    color: white;
- 
+#cardbusiness .registro:hover {
+  background-color: var(--green);
+  color: white;
 }
 #cardbusiness .containerbutton {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #cardbusiness .containerbuttonorg {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

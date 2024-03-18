@@ -6,9 +6,8 @@ import { host } from "../../const/host";
 import toast from "react-hot-toast";
 
 export default function PaymentForm({ onPlanChange }) {
-
-  const { user } = useAuthContext()
-  const navigate = useNavigate()
+  const { user } = useAuthContext();
+  const navigate = useNavigate();
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
@@ -18,62 +17,60 @@ export default function PaymentForm({ onPlanChange }) {
     event.preventDefault();
 
     let precio;
-    selectedPlan === "1"? precio=60:
-    selectedPlan === "2"? precio=80:"";
+    selectedPlan === "1"
+      ? (precio = 60)
+      : selectedPlan === "2"
+      ? (precio = 80)
+      : "";
     console.log(precio);
 
     let idempresa = user.id;
 
-   const formData = {
-    tarjeta:cardNumber,
-    fecha:expiryDate,
-    cvv:cvv,
-    cantidad:precio,
-    idempresa,
-   };
+    const formData = {
+      tarjeta: cardNumber,
+      fecha: expiryDate,
+      cvv: cvv,
+      cantidad: precio,
+      idempresa,
+    };
 
-   const formData2 = {
-    idempresa,
-    plan:selectedPlan
-   }
+    const formData2 = {
+      idempresa,
+      plan: selectedPlan,
+    };
 
-   try {
-    
-    const response = await fetch(`${host}/user/payment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
+    try {
+      const response = await fetch(`${host}/user/payment`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    });
+      const response2 = await fetch(`${host}/user/updateplan`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData2),
+      });
 
-    const response2 = await fetch(`${host}/user/updateplan`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData2),
+      const message = await response.json();
+      const message2 = await response2.json();
 
-    });
-
-    const message = await response.json()
-    const message2 = await response2.json()
-
-    if(response.ok && response2.ok) {
-      toast.success(`${message.message} ${message2.message} `);
-      navigate("/companyhome");
-      onPlanChange(selectedPlan);
+      if (response.ok && response2.ok) {
+        toast.success(`${message.message} ${message2.message} `);
+        navigate("/companyhome");
+        onPlanChange(selectedPlan);
+      }
+    } catch (error) {
+      console.log(error);
     }
-   } catch (error) {
-    console.log(error)
-   }
-
   }
 
   return (
     <div id="paymentform">
-      
       <div className="factura">
         <div>
           <h5>Tipo de suscripción</h5>
@@ -128,22 +125,24 @@ export default function PaymentForm({ onPlanChange }) {
       </div>
       {selectedPlan === "1" || selectedPlan === "2" ? (
         <div className="formtarjeta">
-         
           <div className="clausulas">
             <h4>Paga de forma comoda y segura.</h4>
             <p>
-              <b>Renovación Automática</b> Tu suscripción se renovará automáticamente
-              al final de cada período de facturación, a menos que canceles tu
-              suscripción antes de la fecha de renovación.
+              <b>Renovación Automática</b> Tu suscripción se renovará
+              automáticamente al final de cada período de facturación, a menos
+              que canceles tu suscripción antes de la fecha de renovación.
             </p>
-           
-             
-              <form className="terminos">
-         <label htmlFor="checkbox">Aceptar  <Link className="linktopolitica" to="/privacypolicy" > Términos y Condiciones </Link>
-          <input type="checkbox"  id="checkbox"/>
-         </label>
-         </form>
-            
+
+            <form className="terminos">
+              <label htmlFor="checkbox">
+                Aceptar{" "}
+                <Link className="linktopolitica" to="/privacypolicy">
+                  {" "}
+                  Términos y Condiciones{" "}
+                </Link>
+                <input type="checkbox" id="checkbox" />
+              </label>
+            </form>
           </div>
           <form onSubmit={handleSubmit}>
             <label>
@@ -176,9 +175,10 @@ export default function PaymentForm({ onPlanChange }) {
                 placeholder="***"
               />
             </label>
-            <button type="submit" className="paybutton">Pagar</button>
+            <button type="submit" className="paybutton">
+              Pagar
+            </button>
           </form>
-          
         </div>
       ) : (
         ""

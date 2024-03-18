@@ -1,171 +1,147 @@
-
-#companyinformation{
-    margin: 48px;
-    width:70%;
-    padding: 40px;
-    border-radius: 6px;
-    background-color: var(--greyblue);
-    margin-bottom: 60px;
-    margin-right: 32px;
-   color:var(--cleargreen);
-   
-
+#companyinformation {
+  margin: 48px;
+  width: 70%;
+  padding: 40px;
+  border-radius: 6px;
+  background-color: var(--greyblue);
+  margin-bottom: 60px;
+  margin-right: 32px;
+  color: var(--cleargreen);
 }
 
-#companyinformation .image{
-    display: flex;
-    justify-content: left;
-    align-items: top;
+#companyinformation .image {
+  display: flex;
+  justify-content: left;
+  align-items: top;
 }
 #companyinformation .companyinformation {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 32px;
-    margin-bottom: 32px;
-    border-bottom: 2px solid;
-    border-color: var(--green);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid;
+  border-color: var(--green);
 }
-#companyinformation .companyinformation .imagename{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    
+#companyinformation .companyinformation .imagename {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#companyinformation h3{
-    margin: 0;
-    margin-left: 40px;
-
- 
+#companyinformation h3 {
+  margin: 0;
+  margin-left: 40px;
 }
 #companyinformation img {
-    width: 20%;
-    border-radius: 100%;
-    border: 4px solid;
-    border-color: var(--cleargreen);
- 
+  width: 20%;
+  border-radius: 100%;
+  border: 4px solid;
+  border-color: var(--cleargreen);
 }
 
 #companyinformation .principalinfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
-   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #companyinformation .aditionalinfo {
-    display: flex;
-    justify-content: space-between;
-
-   
+  display: flex;
+  justify-content: space-between;
 }
 
-
-#companyinformation .plancontratado h5{
-    margin: 0;
-    white-space: nowrap;
+#companyinformation .plancontratado h5 {
+  margin: 0;
+  white-space: nowrap;
 }
-#companyinformation .plancontratado{
-    display: flex;
-    flex-direction: column;
-    align-items: top;
-    border-radius: 6px;
-    color: var(--greyblue);
-    margin-top: 0;
-    margin-bottom: 0;
-   
+#companyinformation .plancontratado {
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  border-radius: 6px;
+  color: var(--greyblue);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-#companyinformation .planseleccionado{
-    background-color: var(--cleargreen);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    color: var(--blue);
-    padding: 8px;
-
+#companyinformation .planseleccionado {
+  background-color: var(--cleargreen);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  padding: 8px;
 }
 
-
-
-
-#companyinformation .blank{
-    padding-top: 48px;
+#companyinformation .blank {
+  padding-top: 48px;
 }
 
-#companyinformation  .plan{
-    display: flex;
-    flex-direction: row;
-    padding-left: 32px;
-    border-left: 2px solid;
-   
-    
-   
+#companyinformation .plan {
+  display: flex;
+  flex-direction: row;
+  padding-left: 32px;
+  border-left: 2px solid;
 }
 
-#companyinformation .nameplan{
-    padding-right: 32px;
+#companyinformation .nameplan {
+  padding-right: 32px;
 }
 
-
-#companyinformation .userinformation .buttonmodify{
-    padding: 8px;
-    width: 100%;
-    text-align: center;
-    border: 2px solid;
-    text-decoration: none;
-    border-radius: 6px;
-    border-color: var(--purple);
-    font-weight: 600;
-    font-size: large;
-    color: var(--white);
-    display: block;
-    margin-bottom: 16px;
+#companyinformation .userinformation .buttonmodify {
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid;
+  text-decoration: none;
+  border-radius: 6px;
+  border-color: var(--purple);
+  font-weight: 600;
+  font-size: large;
+  color: var(--white);
+  display: block;
+  margin-bottom: 16px;
 }
-#companyinformation .userinformation .buttonplan{
-    padding: 8px;
-    width: 100%;
-    text-align: center;
-    border: 2px solid;
-    text-decoration: none;
-    border-radius: 6px;
-    border-color: var(--cleargreen);
-    background-color: var(--cleargreen);
-    color:var(--blue);
-    font-weight: 600;
-    font-size: large;
-    display: block;
-    margin-bottom: 16px;
+#companyinformation .userinformation .buttonplan {
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid;
+  text-decoration: none;
+  border-radius: 6px;
+  border-color: var(--cleargreen);
+  background-color: var(--cleargreen);
+  color: var(--blue);
+  font-weight: 600;
+  font-size: large;
+  display: block;
+  margin-bottom: 16px;
 }
-#companyinformation .userinformation .buttonmodify:hover{
-    background-color: var(--green);
-    border-color: var(--green);
-    color: var(--blue);
-}
-
-#companyinformation .userinformation .buttonplan:hover{
-    background-color: var(--green);
-    border-color: var(--green);
-}
-#companyinformation .userinformation .perfil{
-
-    display: flex;
-    justify-content: center;
-}
-#companyinformation .userinformation h4{
-    margin: 0;
-}
-#companyinformation .userinformation .perfil h4:hover{
-    color: var(--cleargreen);
-    transform: none;
-}
-#companyinformation .userinformation .userdata{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 16px;
-    margin-bottom: 16px;
-
+#companyinformation .userinformation .buttonmodify:hover {
+  background-color: var(--green);
+  border-color: var(--green);
+  color: var(--blue);
 }
 
+#companyinformation .userinformation .buttonplan:hover {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+#companyinformation .userinformation .perfil {
+  display: flex;
+  justify-content: center;
+}
+#companyinformation .userinformation h4 {
+  margin: 0;
+}
+#companyinformation .userinformation .perfil h4:hover {
+  color: var(--cleargreen);
+  transform: none;
+}
+#companyinformation .userinformation .userdata {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

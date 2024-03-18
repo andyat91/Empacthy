@@ -1,126 +1,116 @@
-
-#formbox h5{
-    margin: 0;
-    color: var(--cleargreen);
+#formbox h5 {
+  margin: 0;
+  color: var(--cleargreen);
 }
 
-#formbox{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    padding: 40px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    background-image: url(../../assets/images/ordenador.jpg);
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+#formbox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-image: url(../../assets/images/ordenador.jpg);
+  background-size: cover;
   background-position: center center;
- 
-    color: var(--white);
-    transition: transform 0.5s;
+
+  color: var(--white);
+  transition: transform 0.5s;
 }
-#formbox h4{
-    color: var(--cleargreen);
+#formbox h4 {
+  color: var(--cleargreen);
 }
 #formbox p {
-    color: var(--cleargreen);
+  color: var(--cleargreen);
 }
-#formbox:hover{
-    transform:scale(1.06);
+#formbox:hover {
+  transform: scale(1.06);
 }
 
-#formbox .formtext{
-    width: 45%;
-    padding-right: 16px;
-    border-right: 2px solid;
-    
+#formbox .formtext {
+  width: 45%;
+  padding-right: 16px;
+  border-right: 2px solid;
 }
 #formbox .formtext .icon {
-    margin-right: 44px;
-    text-align: right;
-    font-size: 60px;
+  margin-right: 44px;
+  text-align: right;
+  font-size: 60px;
 }
 
 #formbox form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 60%;
-    margin-left: 32px;
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60%;
+  margin-left: 32px;
 }
 
 #formbox .inputformcontact {
-   
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-   
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 #formbox .inputformcontact input {
-    padding: 8px;
-    color: var(--cleargreen);
-    border: none;
-    background-color: transparent;
-    border-bottom: 2px solid;
-    border-color: var(--white);
-    outline: none;
-    border-radius: 6px;
-
+  padding: 8px;
+  color: var(--cleargreen);
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid;
+  border-color: var(--white);
+  outline: none;
+  border-radius: 6px;
 }
-#formbox .inputformcontact input::placeholder{
-    color: var(--cleargreen);
-    font-family: "Inter", sans-serif;
-}
-
-#formbox .inputformquery{
-    display: flex;
-    flex-direction: column;
+#formbox .inputformcontact input::placeholder {
+  color: var(--cleargreen);
+  font-family: "Inter", sans-serif;
 }
 
-#formbox .inputformquery textarea{
-   
-    padding-bottom: 32px;
-    padding-top: 36px;
-    padding-right: 0;
-    padding-left: 0;
-    border: none;
-    color: var(--white);
-    background-color: transparent;
-    border-bottom: 2px solid;
-    border-color: var(--white);
-    margin-top: 8px;
-    margin-bottom: 16px;
-    outline: none;
-    border-radius: 6px;
-   
+#formbox .inputformquery {
+  display: flex;
+  flex-direction: column;
 }
 
-#formbox .inputformquery textarea::placeholder{
-    color: var(--cleargreen);
-    font-family: "Inter", sans-serif;
+#formbox .inputformquery textarea {
+  padding-bottom: 32px;
+  padding-top: 36px;
+  padding-right: 0;
+  padding-left: 0;
+  border: none;
+  color: var(--white);
+  background-color: transparent;
+  border-bottom: 2px solid;
+  border-color: var(--white);
+  margin-top: 8px;
+  margin-bottom: 16px;
+  outline: none;
+  border-radius: 6px;
 }
 
-#formbox .inputformquery button{
-    font-family: "Inter", sans-serif;
-    padding: 8px;
-    border: none;
-    color: var(--blue);
-    background-color: var(--cleargreen);
-    border-radius: 6px;
+#formbox .inputformquery textarea::placeholder {
+  color: var(--cleargreen);
+  font-family: "Inter", sans-serif;
+}
 
+#formbox .inputformquery button {
+  font-family: "Inter", sans-serif;
+  padding: 8px;
+  border: none;
+  color: var(--blue);
+  background-color: var(--cleargreen);
+  border-radius: 6px;
 }
 
 #formbox .inputformquery button:hover {
-    border: none;
-    color: var(--white);
-    background-color: var(--green);
+  border: none;
+  color: var(--white);
+  background-color: var(--green);
 }
 
-#formbox h4{
-    margin: 0;
-    font-family: "Black Ops One", system-ui;
+#formbox h4 {
+  margin: 0;
+  font-family: "Black Ops One", system-ui;
 }

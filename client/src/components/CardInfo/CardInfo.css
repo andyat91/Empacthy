@@ -1,58 +1,58 @@
 #cardinfo {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 36px;
-  }
-  
-  #cardinfo  .card {
-    border: none;
-    border-radius: 6px;
-    border-color: var(--purple);
-    overflow: hidden;
-    width: 24%;
-    background-color: white;
-    position: relative;
-    transition: transform 0.5s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  #cardinfo  .card:hover {
-    transform: scale(1.1);
-  }
-  
-  #cardinfo  .card img {
-    width: 100%;
-    filter: brightness(60%);
-  }
-  
-  #cardinfo h3 {
-    font-family: "Bebas Neue", sans-serif;
-    color: var(--cleargreen);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 1;
-    transition: opacity 0.5s;
-  }
-  
-  #cardinfo .card:hover h3 {
-    opacity: 0;
-  }
-  
-  #cardinfo .info-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    opacity: 0;
-    
-    color: white;
-    z-index: 2;
-  }
-  
-  #cardinfo .card:hover .info-text {
-    opacity: 1;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+#cardinfo .card {
+  border: none;
+  border-radius: 6px;
+  border-color: var(--purple);
+  overflow: hidden;
+  width: 24%;
+  background-color: white;
+  position: relative;
+  transition: transform 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#cardinfo .card:hover {
+  transform: scale(1.1);
+}
+
+#cardinfo .card img {
+  width: 100%;
+  filter: brightness(60%);
+}
+
+#cardinfo h3 {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--cleargreen);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  transition: opacity 0.5s;
+}
+
+#cardinfo .card:hover h3 {
+  opacity: 0;
+}
+
+#cardinfo .info-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+
+  color: white;
+  z-index: 2;
+}
+
+#cardinfo .card:hover .info-text {
+  opacity: 1;
+}

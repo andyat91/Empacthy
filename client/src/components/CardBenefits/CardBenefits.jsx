@@ -3,11 +3,14 @@ import benefitsempresa from "../../assets/images/benefitsempresa.jpg";
 import "./CardBenefits.css";
 import { useAuthContext } from "../../context/AuthContext";
 export default function CardBenefits() {
-
-  const { user } = useAuthContext()
+  const { user } = useAuthContext();
   return (
     <div className=" wrap" id="cardbusiness">
-      <img src={benefitsempresa} alt="Beneficios de empresa" className="empresa" />
+      <img
+        src={benefitsempresa}
+        alt="Beneficios de empresa"
+        className="empresa"
+      />
       <div className="businessbenefits">
         <h4>Beneficios y ventajas para Empresas</h4>
         <ul>
@@ -36,13 +39,15 @@ export default function CardBenefits() {
         </ul>
 
         <div className="containerbutton">
-          {!user? 
-          <Link to="registro" className="registro">
-            REGÍSTRATE
-          </Link>
-          :<Link to="empacthy" className="registro">
-          Sobre nosotros
-        </Link> }
+          {!user ? (
+            <Link to="registro" className="registro">
+              REGÍSTRATE
+            </Link>
+          ) : (
+            <Link to="empacthy" className="registro">
+              Sobre nosotros
+            </Link>
+          )}
         </div>
       </div>
     </div>

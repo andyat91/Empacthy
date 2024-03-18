@@ -2,11 +2,10 @@ import { useState } from "react";
 import "./Registro.css";
 import toast from "react-hot-toast";
 import { host } from "../../const/host";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import FingerPrint from "../../assets/icons/FingerPrint";
 //Boton switch registro empresa o registro organizacion
 export default function Registro() {
-
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -34,7 +33,6 @@ export default function Registro() {
       tipoempresa,
       localizacion,
     };
-   
 
     try {
       const response = await fetch(`${host}/user/company`, {
@@ -58,7 +56,6 @@ export default function Registro() {
         setTipoempresa("");
         setLocalizacion("");
         navigate("/login");
-        
       } else {
         const errorData = await response.json();
         toast.error(errorData.message);
@@ -72,7 +69,7 @@ export default function Registro() {
     <div className="registercontainer">
       <div className="register">
         <div className="fingerprint">
-        <FingerPrint />
+          <FingerPrint />
         </div>
         <h4>Registro de Empresa</h4>
         <form onSubmit={handleRegister}>

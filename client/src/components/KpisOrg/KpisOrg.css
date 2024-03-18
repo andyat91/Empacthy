@@ -1,107 +1,101 @@
-#organizationhome .kpis{
-    padding: 60px;
-    margin-left: 32px;
-    width: 35%;
-    background-color: var(--cleargreen);
-    color: var(--blue);
-    border-radius: 8px;
-
+#organizationhome .kpis {
+  padding: 60px;
+  margin-left: 32px;
+  width: 35%;
+  background-color: var(--cleargreen);
+  color: var(--blue);
+  border-radius: 8px;
 }
-#organizationhome .kpis h4{
-    margin: 0;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    font-family: "Bebas Neue", sans-serif;
-    text-align: center;
-    border-bottom: 2px solid; 
-}
-
-#organizationhome .kpis .kpisdata{
-    margin-top: 40px;
-    background-color: var(--greyblue);
-    border-radius: 8px;
-    padding: 24px;
-    color: var(--white);
-
-}
- #organizationhome .kpis .kpisdata h4{
-    border: none;
-    margin:0;
-    padding: 16px;
-}
- #organizationhome .kpis .kpisdata div{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid; 
-    border-color: var(--cleargreen);
-  
-   
+#organizationhome .kpis h4 {
+  margin: 0;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+  border-bottom: 2px solid;
 }
 
-#organizationhome .kpis .kpisdata .donation{
-    border: none;
-    padding-top: 8px;
+#organizationhome .kpis .kpisdata {
+  margin-top: 40px;
+  background-color: var(--greyblue);
+  border-radius: 8px;
+  padding: 24px;
+  color: var(--white);
 }
-#organizationhome .kpis .matchlink{
-    margin-top: 16px;
-    display: block;
-    padding: 8px;
-    text-decoration: none;
-    background-color: var(--blue);
-    color: var(--white);
-    text-align: center;
-    font-weight: 600;
-    font-size: large;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+#organizationhome .kpis .kpisdata h4 {
+  border: none;
+  margin: 0;
+  padding: 16px;
 }
-#organizationhome .kpis .perfil{
-    margin-top: 16px;
-    display: block;
-    padding: 8px;
-    text-decoration: none;
-    background-color: var(--blue);
-    color: var(--white);
-    text-align: center;
-    font-weight: 600;
-    font-size: large;
-    border-radius: 8px;
-    transition-duration: 0.5s;
+#organizationhome .kpis .kpisdata div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid;
+  border-color: var(--cleargreen);
 }
 
- #organizationhome .kpis .matchlink:hover, .perfil:hover{
-    transform: scale(1.1);
+#organizationhome .kpis .kpisdata .donation {
+  border: none;
+  padding-top: 8px;
+}
+#organizationhome .kpis .matchlink {
+  margin-top: 16px;
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  font-weight: 600;
+  font-size: large;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+#organizationhome .kpis .perfil {
+  margin-top: 16px;
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  font-weight: 600;
+  font-size: large;
+  border-radius: 8px;
+  transition-duration: 0.5s;
 }
 
-
-#organizationhome .kpis .news{
-    margin-top: 32px;
+#organizationhome .kpis .matchlink:hover,
+.perfil:hover {
+  transform: scale(1.1);
 }
 
-#organizationhome .kpis .news a{
-text-decoration: none;
-color: var(--blue);
-margin: 0;
+#organizationhome .kpis .news {
+  margin-top: 32px;
+}
 
+#organizationhome .kpis .news a {
+  text-decoration: none;
+  color: var(--blue);
+  margin: 0;
 }
 
 #organizationhome .kpis .news a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-#organizationhome .kpis .news .new{
- border-bottom: 2px solid;
- padding-bottom: 16px;
- margin-bottom: 32px;
-}
-
- #organizationhome .kpis .news .new h5{
-    padding: 8px;
-    margin: 0;
+#organizationhome .kpis .news .new {
+  border-bottom: 2px solid;
+  padding-bottom: 16px;
+  margin-bottom: 32px;
 }
 
- #organizationhome .kpis img {
-    width: 100%;
+#organizationhome .kpis .news .new h5 {
+  padding: 8px;
+  margin: 0;
 }
 
+#organizationhome .kpis img {
+  width: 100%;
+}

@@ -1,17 +1,17 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 
-
 export default function PublicRoutes() {
+  const { user } = useAuthContext();
+  const location = useLocation();
+  const destinationLogin =
+    user?.logintipo === "Soy una Empresa"
+      ? "/companyhome"
+      : "/organizationhome";
 
-const {user} = useAuthContext();
-const location = useLocation();
-const destinationLogin = user?.logintipo === "Soy una Empresa" ? "/companyhome" : "/organizationhome" ;
-
-return user ? (
-    <Navigate to={destinationLogin} state={{from: location }} replace/>
-) : (
-    <Outlet/>
-)
-
+  return user ? (
+    <Navigate to={destinationLogin} state={{ from: location }} replace />
+  ) : (
+    <Outlet />
+  );
 }

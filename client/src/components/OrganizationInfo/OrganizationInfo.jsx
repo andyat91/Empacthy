@@ -26,7 +26,6 @@ export default function OrganizationInfo() {
     let id = user.id;
 
     async function showValor() {
-
       try {
         const response = await fetch(`${host}/data/valoresinfo/${id}`);
         const valor = await response.json();
@@ -35,16 +34,14 @@ export default function OrganizationInfo() {
         setValor2(valor[1].id);
         setValor3(valor[2].id);
 
-        setPrevValor1(valor[0].id)
-        setPrevValor2(valor[1].id)
-        setPrevValor3(valor[2].id)
-
+        setPrevValor1(valor[0].id);
+        setPrevValor2(valor[1].id);
+        setPrevValor3(valor[2].id);
       } catch (error) {
         console.log(error);
       }
     }
     async function showOds() {
-
       try {
         const response = await fetch(`${host}/data/odsinfo/${id}`);
         const ods = await response.json();
@@ -53,10 +50,9 @@ export default function OrganizationInfo() {
         setOds2(ods[1].id);
         setOds3(ods[2].id);
 
-        setPrevOds1(ods[0].id)
-        setPrevOds2(ods[1].id)
-        setPrevOds3(ods[2].id)
-
+        setPrevOds1(ods[0].id);
+        setPrevOds2(ods[1].id);
+        setPrevOds3(ods[2].id);
       } catch (error) {
         console.log(error);
       }
@@ -70,9 +66,8 @@ export default function OrganizationInfo() {
   }
 
   async function savePreferencesValor() {
-
     let idorg = user.id;
-    
+
     const formDataValor = {
       idorg,
       prevValor1,
@@ -81,10 +76,9 @@ export default function OrganizationInfo() {
       valor1,
       valor2,
       valor3,
-    }
+    };
 
     try {
-      
       const response = await fetch(`${host}/data/safevalores`, {
         method: "POST",
         headers: {
@@ -93,19 +87,17 @@ export default function OrganizationInfo() {
         body: JSON.stringify(formDataValor),
       });
       const message = await response.json();
-      if(response.ok){
-        toast.success(message.message)
-      } 
-
+      if (response.ok) {
+        toast.success(message.message);
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   async function savePreferencesOds() {
-
     let idorg = user.id;
-    
+
     const formDataOds = {
       idorg,
       prevOds1,
@@ -113,11 +105,10 @@ export default function OrganizationInfo() {
       prevOds3,
       ods1,
       ods2,
-      ods3
-    }
+      ods3,
+    };
 
     try {
-      
       const response = await fetch(`${host}/data/safeods`, {
         method: "POST",
         headers: {
@@ -126,12 +117,11 @@ export default function OrganizationInfo() {
         body: JSON.stringify(formDataOds),
       });
       const message = await response.json();
-      if(response.ok){
-        toast.success(message.message)
-      } 
-
+      if (response.ok) {
+        toast.success(message.message);
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -160,7 +150,7 @@ export default function OrganizationInfo() {
         <h4>Mis valores y ODS</h4>
         <div className="select">
           <div className="containervalor">
-            <div >
+            <div>
               <p>Primer Valor</p>
               <select
                 value={valor1 || ""}
@@ -227,15 +217,21 @@ export default function OrganizationInfo() {
                 <option value="5">Igualdad de género</option>
                 <option value="6">Agua limpia y saneamiento</option>
                 <option value="7">Energía asequible y no contaminante</option>
-                <option value="8">Trabajo decente y crecimiento económico</option>
-                <option value="9">Industria, innovación e infraestructuras</option>
+                <option value="8">
+                  Trabajo decente y crecimiento económico
+                </option>
+                <option value="9">
+                  Industria, innovación e infraestructuras
+                </option>
                 <option value="10">Reducción de desigualdades</option>
                 <option value="11">Ciudades y comunidades sostenibles</option>
                 <option value="12">Producción y consumo responsable</option>
                 <option value="13">Acción por el clima</option>
                 <option value="14">Vida submarina</option>
                 <option value="15">Vida de ecosistemas terrestres</option>
-                <option value="16">Paz, justicia e instituciones solidarias</option>
+                <option value="16">
+                  Paz, justicia e instituciones solidarias
+                </option>
                 <option value="17">Alianzas para lograr los objetivos</option>
               </select>
             </div>
@@ -252,15 +248,21 @@ export default function OrganizationInfo() {
                 <option value="5">Igualdad de género</option>
                 <option value="6">Agua limpia y saneamiento</option>
                 <option value="7">Energía asequible y no contaminante</option>
-                <option value="8">Trabajo decente y crecimiento económico</option>
-                <option value="9">Industria, innovación e infraestructuras</option>
+                <option value="8">
+                  Trabajo decente y crecimiento económico
+                </option>
+                <option value="9">
+                  Industria, innovación e infraestructuras
+                </option>
                 <option value="10">Reducción de desigualdades</option>
                 <option value="11">Ciudades y comunidades sostenibles</option>
                 <option value="12">Producción y consumo responsable</option>
                 <option value="13">Acción por el clima</option>
                 <option value="14">Vida submarina</option>
                 <option value="15">Vida de ecosistemas terrestres</option>
-                <option value="16">Paz, justicia e instituciones solidarias</option>
+                <option value="16">
+                  Paz, justicia e instituciones solidarias
+                </option>
                 <option value="17">Alianzas para lograr los objetivos</option>
               </select>
             </div>
@@ -277,15 +279,21 @@ export default function OrganizationInfo() {
                 <option value="5">Igualdad de género</option>
                 <option value="6">Agua limpia y saneamiento</option>
                 <option value="7">Energía asequible y no contaminante</option>
-                <option value="8">Trabajo decente y crecimiento económico</option>
-                <option value="9">Industria, innovación e infraestructuras</option>
+                <option value="8">
+                  Trabajo decente y crecimiento económico
+                </option>
+                <option value="9">
+                  Industria, innovación e infraestructuras
+                </option>
                 <option value="10">Reducción de desigualdades</option>
                 <option value="11">Ciudades y comunidades sostenibles</option>
                 <option value="12">Producción y consumo responsable</option>
                 <option value="13">Acción por el clima</option>
                 <option value="14">Vida submarina</option>
                 <option value="15">Vida de ecosistemas terrestres</option>
-                <option value="16">Paz, justicia e instituciones solidarias</option>
+                <option value="16">
+                  Paz, justicia e instituciones solidarias
+                </option>
                 <option value="17">Alianzas para lograr los objetivos</option>
               </select>
             </div>
@@ -294,29 +302,28 @@ export default function OrganizationInfo() {
         </div>
       </div>
       <div className="userinformation">
-        
-          <h4>Responsable</h4>
-        
+        <h4>Responsable</h4>
+
         <div className="userdata">
           <div>
             <p>
-              <b>Nombre:</b> {user.nombre}{" "}
+              <b>Nombre:</b> {user.nombre}  
             </p>
             <p>
               <b>Apellidos: </b>
-              {user.apellidos}{" "}
+              {user.apellidos}  
             </p>
             <p>
               <b>Cargo: </b>
-              {user.cargo}{" "}
+              {user.cargo}  
             </p>
           </div>
           <div>
             <p>
-              <b>Teléfono:</b> {user.telefono}{" "}
+              <b>Teléfono:</b> {user.telefono}  
             </p>
             <p>
-              <b>Email:</b> {user.email}{" "}
+              <b>Email:</b> {user.email}  
             </p>
           </div>
         </div>
