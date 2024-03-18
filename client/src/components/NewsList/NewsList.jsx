@@ -1,5 +1,5 @@
 import News from "../News/News"
-import "./NewsList.css"
+
 
 export default function NewsList({newslist}){
 

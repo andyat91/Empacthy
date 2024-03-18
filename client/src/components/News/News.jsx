@@ -1,4 +1,4 @@
-import "./News.css";
+
 
 export default function News({ title, photo, link }) {
   return (
